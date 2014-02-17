@@ -168,19 +168,30 @@
 }
 
 // possible way to restrict email by 5C students?
+// you can make it display an alert specific to a given error
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
            shouldBeginSignUp:(NSDictionary *)info {
     NSString *email = info[@"email"];
+    BOOL returnVal;
     if ([email length] > 7) {
         NSString *ending = [email substringFromIndex:[email length] - 7];
-        return (BOOL)([ending isEqual: @"hmc.edu"]); // prevent sign up if not HMC email
+        returnVal = [ending isEqual: @"hmc.edu"]; // prevent sign up if not HMC email
     } else {
-        return NO;
+        returnVal = NO;
     }
+    
+    // invalid email
+    if (!returnVal) {
+        [[[UIAlertView alloc] initWithTitle:@"Invalid Email Address"
+                                    message:@"Make sure you use a Harvey Mudd account!"
+                                   delegate:nil
+                          cancelButtonTitle:@"ok"
+                          otherButtonTitles:nil] show];
+    }
+    return returnVal;
 };
 
-// Is there a way to have more specific errors for login/signup?
-// like, that username is taken, or make sure you have an hmc email
+
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
     NSLog(@"Failed to sign up...");
     // Not sure how to make an alert like they have for incorrect login, even
