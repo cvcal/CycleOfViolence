@@ -36,7 +36,10 @@
         
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
         
+        
         // Create the sign up view controller
+        // sign up is enabled even if you only have the logInViewController
+        // but this way you can keep the dismiss button for signup, and return to login
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
         [signUpViewController setDelegate:self]; // Set ourselves as the delegate
         
@@ -155,6 +158,32 @@
 - (void)logInViewController:(PFLogInViewController *)controller
                didLogInUser:(PFUser *)user {
     [self.viewController dismissModalViewControllerAnimated:YES];
+}
+
+
+// I've been changing self to self.viewController all over the place, I think because
+// this code could be written in a view controller or the app delegate
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+    [self.viewController dismissModalViewControllerAnimated:YES];
+}
+
+// possible way to restrict email by 5C students?
+- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
+           shouldBeginSignUp:(NSDictionary *)info {
+    NSString *email = info[@"email"];
+    if ([email length] > 7) {
+        NSString *ending = [email substringFromIndex:[email length] - 7];
+        return (BOOL)([ending isEqual: @"hmc.edu"]); // prevent sign up if not HMC email
+    } else {
+        return NO;
+    }
+};
+
+// Is there a way to have more specific errors for login/signup?
+// like, that username is taken, or make sure you have an hmc email
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didFailToSignUpWithError:(NSError *)error {
+    NSLog(@"Failed to sign up...");
+    // Not sure how to make an alert like they have for incorrect login, even
 }
 
 @end
