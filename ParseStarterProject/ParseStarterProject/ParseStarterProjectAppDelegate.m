@@ -11,7 +11,8 @@
     [Parse setApplicationId:@"BEVfOYy7YCJRCjgrOXtOTifPUOPS2TTfmg0CGIUB"
                   clientKey:@"Lz7BVLm3vv3JHM0BnC64wfA4galQATP5iNSkwFyD"];
 
-    [PFUser enableAutomaticUser];
+    //[PFUser enableAutomaticUser];
+    [PFUser logOut]; //log out user... until we have an actual logout button FIXME
     
     PFACL *defaultACL = [PFACL ACL];
 
@@ -24,7 +25,29 @@
      
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    if (![PFUser currentUser]) { // No user logged in
+        // Create the log in view controller
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        logInViewController.fields = PFLogInFieldsUsernameAndPassword
+            | PFLogInFieldsLogInButton
+            | PFLogInFieldsSignUpButton
+            | PFLogInFieldsPasswordForgotten;
+        
+        [logInViewController setDelegate:self]; // Set ourselves as the delegate
+        
+        // Create the sign up view controller
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
+        // Present the log in view controller
+        [self.viewController presentModalViewController:logInViewController animated:YES];
+    }
 
+    
     if (application.applicationState != UIApplicationStateBackground) {
         // Track an app open here if we launch with a push, unless
         // "content_available" was used to trigger a background push (introduced
@@ -129,5 +152,9 @@
     }
 }
 
+- (void)logInViewController:(PFLogInViewController *)controller
+               didLogInUser:(PFUser *)user {
+    [self.viewController dismissModalViewControllerAnimated:YES];
+}
 
 @end
