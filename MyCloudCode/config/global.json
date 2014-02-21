@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "Hello World": {
+            "applicationId": "BEVfOYy7YCJRCjgrOXtOTifPUOPS2TTfmg0CGIUB", 
+            "masterKey": "i5mdMWUP3ZNx1StDnDaPDb1G8GNYPsrPM2r4KQqo"
+        }, 
+        "_default": {
+            "link": "Hello World"
+        }
+    }
+}
