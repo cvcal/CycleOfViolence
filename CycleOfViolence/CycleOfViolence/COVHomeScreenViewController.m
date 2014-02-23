@@ -1,0 +1,77 @@
+//
+//  COVHomeScreenViewController.m
+//  CycleOfViolence
+//
+//  Created by Laptop 16 on 2/23/14.
+//
+//
+
+#import "COVHomeScreenViewController.h"
+
+@interface COVHomeScreenViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *logOut;
+
+@end
+
+@implementation COVHomeScreenViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    if (![PFUser currentUser]) { // No user logged in
+        // Create the log in view controller
+        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+        logInViewController.fields = PFLogInFieldsUsernameAndPassword
+            | PFLogInFieldsLogInButton
+            | PFLogInFieldsSignUpButton
+            | PFLogInFieldsPasswordForgotten;
+        
+        [logInViewController setDelegate:self]; // Set ourselves as the delegate
+        
+        
+        // Create the sign up view controller
+        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+        
+        // Assign our sign up controller to be displayed from the login controller
+        [logInViewController setSignUpController:signUpViewController];
+        
+        // Present the log in view controller
+        [self presentViewController:logInViewController animated:YES completion:NULL];
+    }
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+// If logOut is tapped, log out the user and return to the home page with
+// modal login.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (sender != self.logOut) {
+        return;
+    } else {
+        [PFUser logOut];
+        //[self viewDidLoad];
+    }
+}
+
+// Dismiss the modal login after successful login.
+- (void)logInViewController:(PFLogInViewController *)controller
+               didLogInUser:(PFUser *)user {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+@end

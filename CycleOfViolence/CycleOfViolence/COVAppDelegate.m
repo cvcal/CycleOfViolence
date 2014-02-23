@@ -17,10 +17,9 @@
                   clientKey:@"Lz7BVLm3vv3JHM0BnC64wfA4galQATP5iNSkwFyD"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    
+    
+    
     return YES;
 }
 
