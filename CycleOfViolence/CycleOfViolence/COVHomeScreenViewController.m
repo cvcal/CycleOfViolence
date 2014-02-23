@@ -71,12 +71,12 @@
 // Dismiss the modal login after successful login.
 - (void)logInViewController:(PFLogInViewController *)controller
                didLogInUser:(PFUser *)user {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
-    [self dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
+    [self dismissViewControllerAnimated:YES completion:NULL]; // Dismiss the PFSignUpViewController
 }
 
 // Verify hmc email address. Otherwise, display an alert.
