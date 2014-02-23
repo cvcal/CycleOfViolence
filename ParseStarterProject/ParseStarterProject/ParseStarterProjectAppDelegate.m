@@ -158,6 +158,36 @@
 - (void)logInViewController:(PFLogInViewController *)controller
                didLogInUser:(PFUser *)user {
     [self.viewController dismissModalViewControllerAnimated:YES];
+    user[@"inGame"] = @YES;
+    [user save];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query whereKey:@"inGame" equalTo:@NO];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        if (!object) {
+            NSLog(@"The getFirstObject request failed.");
+        } else {
+            // The find succeeded.
+            NSLog(@"Successfully retrieved the object.");
+            user[@"target"] = object;
+            //object[@"target"] = user; // can't modify User if not loggedIn
+            // or at least it doesn't work here and I couldn't get it to work
+            // in CloudCode
+            [user save];
+        }
+    }];
+//    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+//    [query whereKey:@"inGame" equalTo:@YES];
+//    [PFCloud callFunctionInBackground:@"makeTargetCycle"
+//                       withParameters:@{@"query": query}
+//                       block:^(NSNumber *success, NSError *error) {
+//                           if (!error) {
+//                               [user save]; // inGame changes, but target still doesn't (but no error?)
+//                               NSLog(@"hey it worked");
+//                           } else {
+//                               NSLog(@"failure");
+//                           }
+//    }];
 }
 
 
