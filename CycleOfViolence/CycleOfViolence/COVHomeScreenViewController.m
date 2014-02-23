@@ -79,4 +79,28 @@
     [self dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
 }
 
+// Verify hmc email address. Otherwise, display an alert.
+- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
+           shouldBeginSignUp:(NSDictionary *)info {
+    NSString *email = info[@"email"];
+    NSString *requiredEnding = @"@hmc.edu";
+    BOOL returnVal;
+    if ([email length] > [requiredEnding length]) {
+        NSString *ending = [email substringFromIndex:[email length] - [requiredEnding length]];
+        returnVal = [ending isEqual: @"@hmc.edu"]; // prevent sign up if not HMC email
+    } else {
+        returnVal = NO;
+    }
+    
+    // invalid email
+    if (!returnVal) {
+        [[[UIAlertView alloc] initWithTitle:@"Invalid Email Address"
+                                    message:@"Make sure you use a Harvey Mudd account!"
+                                   delegate:nil
+                          cancelButtonTitle:@"ok"
+                          otherButtonTitles:nil] show];
+    }
+    return returnVal;
+};
+
 @end
