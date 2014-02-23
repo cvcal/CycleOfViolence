@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DAC409BB18BA7C8C0066A552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409BA18BA7C8C0066A552 /* Foundation.framework */; };
+		DA16D64F18BAB16D00AA604B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409E918BA7D610066A552 /* Parse.framework */; };
 		DAC409BD18BA7C8C0066A552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409BC18BA7C8C0066A552 /* CoreGraphics.framework */; };
 		DAC409BF18BA7C8C0066A552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409BE18BA7C8C0066A552 /* UIKit.framework */; };
 		DAC409C518BA7C8C0066A552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAC409C318BA7C8C0066A552 /* InfoPlist.strings */; };
@@ -19,7 +19,6 @@
 		DAC409D618BA7C8D0066A552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409BE18BA7C8C0066A552 /* UIKit.framework */; };
 		DAC409DE18BA7C8D0066A552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAC409DC18BA7C8D0066A552 /* InfoPlist.strings */; };
 		DAC409E018BA7C8D0066A552 /* CycleOfViolenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC409DF18BA7C8D0066A552 /* CycleOfViolenceTests.m */; };
-		DAC409EA18BA7D610066A552 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409E918BA7D610066A552 /* Parse.framework */; };
 		DAC409EC18BA7E170066A552 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409EB18BA7E170066A552 /* AudioToolbox.framework */; };
 		DAC409EE18BA7E200066A552 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409ED18BA7E200066A552 /* CFNetwork.framework */; };
 		DAC409F018BA7E300066A552 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409EF18BA7E300066A552 /* CoreLocation.framework */; };
@@ -80,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA16D64F18BAB16D00AA604B /* Parse.framework in Frameworks */,
 				DAC409FC18BA7E620066A552 /* SystemConfiguration.framework in Frameworks */,
 				DAC409FA18BA7E5B0066A552 /* StoreKit.framework in Frameworks */,
 				DAC409F818BA7E550066A552 /* Security.framework in Frameworks */,
@@ -91,8 +91,6 @@
 				DAC409EE18BA7E200066A552 /* CFNetwork.framework in Frameworks */,
 				DAC409EC18BA7E170066A552 /* AudioToolbox.framework in Frameworks */,
 				DAC409BF18BA7C8C0066A552 /* UIKit.framework in Frameworks */,
-				DAC409EA18BA7D610066A552 /* Parse.framework in Frameworks */,
-				DAC409BB18BA7C8C0066A552 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +410,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jarthurcs/Documents/cs121rhulett/CycleOfViolence/CycleOfViolence,
+					/Users/jarthurcs/CycleOfViolence/CycleOfViolence,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CycleOfViolence/CycleOfViolence-Prefix.pch";
@@ -429,6 +428,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jarthurcs/Documents/cs121rhulett/CycleOfViolence/CycleOfViolence,
+					/Users/jarthurcs/CycleOfViolence/CycleOfViolence,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CycleOfViolence/CycleOfViolence-Prefix.pch";
@@ -499,6 +499,7 @@
 				DAC409E518BA7C8D0066A552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DAC409E618BA7C8D0066A552 /* Build configuration list for PBXNativeTarget "CycleOfViolenceTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +508,7 @@
 				DAC409E818BA7C8D0066A552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
