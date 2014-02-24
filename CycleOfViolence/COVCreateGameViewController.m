@@ -9,6 +9,8 @@
 #import "COVCreateGameViewController.h"
 
 @interface COVCreateGameViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UIButton *createButton;
 
 @end
 
@@ -37,7 +39,15 @@
 
 - (IBAction) unwindToMainWithGame:(UIStoryboardSegue *)segue
 {
+    NSLog(@"Called unwind");
     //COVGame* newGame = [[COVGame alloc] init:@"newGame"];
+    PFObject *newGame = [PFObject objectWithClassName:@"Game"];
+    newGame[@"cycle"] = [[NSMutableArray alloc] init];
+    newGame[@"numberOfPlayers"] = 0;
+    newGame[@"playersRemaining"] = 0;
+    newGame[@"name"] = self.name.text;
+    
+    [newGame saveInBackground];
 }
 
 @end
