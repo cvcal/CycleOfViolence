@@ -8,17 +8,17 @@
 
 #import "COVAppDelegate.h"
 #import <Parse/Parse.h>
+#import "COVGame.h"
 
 @implementation COVAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Make Parse recognized COVGame as a real subclass of PFObject.
+    [COVGame registerSubclass];
     [Parse setApplicationId:@"G2COjJL1DD77K0V0up4a7nJnlcNjYdziTC9J0Pow"
                   clientKey:@"H8WAWNmWVPFKQCfQWwQBtrCQ6kswGOGW5d1HXPef"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
-    
-    
     
     return YES;
 }

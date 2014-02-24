@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import <Parse/PFObject.h>
 
-@interface COVGame : NSObject
+// Boilerplate to subclass PFObject.
+@interface COVGame : PFObject < PFSubclassing >
++ (NSString *)parseClassName;
 
+// The stuff we actually care about.
 @property NSMutableArray *cycle;
 
 @property NSString *name;
