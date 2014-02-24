@@ -14,6 +14,8 @@
 
 @property NSString *inputName;
 
-- (IBAction) unwindToMainWithGame:(UIStoryboardSegue *)segue;
+//- (IBAction) unwindToMainWithGame:(UIStoryboardSegue *)segue;
+//
+//- (IBAction) unwindToMainWithoutGame:(UIStoryboardSegue *)segue;
 
 @end

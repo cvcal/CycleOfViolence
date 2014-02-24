@@ -23,6 +23,10 @@
 
 @property u_int32_t playersRemaining;
 
+// Initializes the game with name gameName and no players.
 - (id) init:(NSString *) gameName;
+
+// Adds the specified player to the game (in theory).
+- (void) addPlayer:(PFUser *)newPlayer;
 
 @end

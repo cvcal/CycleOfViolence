@@ -28,6 +28,7 @@
     self = [super init];
     if(self)
     {
+        // These all work once we have declared the relevant properties dynamic.
         self.cycle = [[NSMutableArray alloc] init];
         self.numberOfPlayers = 0;
         self.playersRemaining = 0;
@@ -39,11 +40,6 @@
     return self;
 }
 
-- (void) initializeGame
-{
-    return;
-}
-
 - (void) addPlayer:(PFUser *)newPlayer
 {
     // Generate a random position for the new player and insert them.
@@ -52,46 +48,6 @@
     ++self.numberOfPlayers;
     ++self.playersRemaining;
 }
-
-//- (void) setNumberOfPlayers:(u_int32_t)numberOfPlayers
-//{
-//    self.numberOfPlayers = numberOfPlayers;
-//}
-//
-//- (void) setPlayersRemaining:(u_int32_t)playersRemaining
-//{
-//    self.playersRemaining = playersRemaining;
-//}
-//
-//- (void) setName:(NSString *)Name
-//{
-//    self.name = Name;
-//}
-//
-//- (void)setCycle:(NSMutableArray *) cycle
-//{
-//    self.cycle = cycle;
-//}
-//
-//- (NSString *)name
-//{
-//    return self.name;
-//}
-//
-//- (u_int32_t)numberOfPlayers
-//{
-//    return self.numberOfPlayers;
-//}
-//
-//- (u_int32_t)playersRemaining
-//{
-//    return self.playersRemaining;
-//}
-//
-//- (NSMutableArray *)cycle
-//{
-//    return self.cycle;
-//}
 
 
 @end
