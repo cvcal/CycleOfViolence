@@ -11,6 +11,7 @@
 @interface COVCreateGameViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end
 
@@ -39,15 +40,41 @@
 
 - (IBAction) unwindToMainWithGame:(UIStoryboardSegue *)segue
 {
-    NSLog(@"Called unwind");
+    NSLog(@"Called unwindToMainWithGame");
     //COVGame* newGame = [[COVGame alloc] init:@"newGame"];
-    PFObject *newGame = [PFObject objectWithClassName:@"Game"];
-    newGame[@"cycle"] = [[NSMutableArray alloc] init];
-    newGame[@"numberOfPlayers"] = 0;
-    newGame[@"playersRemaining"] = 0;
-    newGame[@"name"] = self.name.text;
-    
-    [newGame saveInBackground];
+//    PFObject *newGame = [PFObject objectWithClassName:@"Game"];
+//    newGame[@"cycle"] = [[NSMutableArray alloc] init];
+//    newGame[@"numberOfPlayers"] = 0;
+//    newGame[@"playersRemaining"] = 0;
+//    newGame[@"name"] = self.name.text;
+//    
+//    [newGame saveInBackground];
 }
+
+- (IBAction) unwindToMainWithoutGame:(UIStoryboardSegue *)segue
+{
+    NSLog(@"Called unwindToMainWithoutGame");
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (sender == self.createButton) {
+        //TODO: Make the game
+        COVGame* newGame = [COVGame alloc];
+        NSLog(@"Allocated COVGame");
+        newGame = [newGame init:@"newGame"];
+        NSLog(@"Initialized COVGame");
+        [newGame saveInBackground];
+        NSLog(@"Called prepareForSegue via createButton");
+        return;
+    } else if (sender == self.cancelButton) {
+        NSLog(@"Called prepareForSegue via cancelButton");
+        return;
+    } else {
+        NSLog(@"Called prepareForSegue via someOtherMeans");
+        return;
+    }
+    
+}
+
 
 @end

@@ -101,6 +101,18 @@
                           otherButtonTitles:nil] show];
     }
     return returnVal;
-};
+}
+
+// Allow COVHomeScreenViewController to be unwound to.
+-(IBAction)unwindToMainWithGame:(UIStoryboardSegue *)segue {
+    //do stuff
+}
+
+// Allow COVHomeScreenViewController to be unwound to.
+-(IBAction)unwindToMainWithoutGame:(UIStoryboardSegue *)segue {
+    //do stuff
+}
+
+
 
 @end
