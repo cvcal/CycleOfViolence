@@ -19,4 +19,6 @@
 
 @property u_int32_t playersRemaining;
 
+- (id) init:(NSString *) gameName;
+
 @end

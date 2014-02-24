@@ -12,7 +12,7 @@
 
 @interface COVCreateGameViewController : UIViewController
 
-//@property
+@property NSString *inputName;
 
 - (IBAction) unwindToMainWithGame:(UIStoryboardSegue *)segue;
 
