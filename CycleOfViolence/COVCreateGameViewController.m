@@ -61,9 +61,16 @@
         //TODO: Make the game
         COVGame* newGame = [COVGame alloc];
         NSLog(@"Allocated COVGame");
-        newGame = [newGame init:@"newGame"];
+        newGame = [newGame init:self.name.text];
         NSLog(@"Initialized COVGame");
-        [newGame saveInBackground];
+        //[newGame saveInBackground];
+        [newGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Sucessfully saved in background.");
+            } else {
+                NSLog(@"Failed to save in background.");
+            }
+        }];
         NSLog(@"Called prepareForSegue via createButton");
         return;
     } else if (sender == self.cancelButton) {

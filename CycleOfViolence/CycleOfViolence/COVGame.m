@@ -24,7 +24,7 @@
         //self.cycle = [[NSMutableArray alloc] init];
         //self.numberOfPlayers = 0;
         //self.playersRemaining = 0;
-        //self.name = gameName;
+        //[self setName:gameName];
     }
     
     //TODO: Add the player who created the game!
@@ -58,7 +58,8 @@
 
 - (void) setName:(NSString *)Name
 {
-    self.name = Name;
+    //self.name = Name;
+    //self.name = [[NSString alloc] init];
 }
 
 - (void)setCycle:(NSMutableArray *) cycle
