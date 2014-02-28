@@ -16,11 +16,8 @@
 
 // The stuff we actually care about.
 @property NSMutableArray *cycle;
-
 @property NSString *name;
-
 @property u_int32_t numberOfPlayers;
-
 @property u_int32_t playersRemaining;
 
 // Initializes the game with name gameName and no players.

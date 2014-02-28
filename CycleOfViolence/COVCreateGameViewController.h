@@ -14,8 +14,10 @@
 
 @property NSString *inputName;
 
-//- (IBAction) unwindToMainWithGame:(UIStoryboardSegue *)segue;
-//
-//- (IBAction) unwindToMainWithoutGame:(UIStoryboardSegue *)segue;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+
 
 @end

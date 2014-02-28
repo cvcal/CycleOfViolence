@@ -57,15 +57,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-// If logOut is tapped, log out the user and return to the home page with
-// modal login.
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)buttonTapped:(UIButton *)sender {
     if (sender != self.logOut) {
         return;
     } else {
         [PFUser logOut];
-        //[self viewDidLoad];
+        [self viewDidLoad];
     }
+}
+
+// If logOut is tapped, log out the user and bring up the modal login.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // do we still need this?
 }
 
 // Dismiss the modal login after successful login.
