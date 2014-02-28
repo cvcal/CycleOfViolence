@@ -36,6 +36,8 @@
     }
     
     //TODO: Add the player who created the game!
+    PFUser *creator = [PFUser currentUser];
+    [self addPlayer:creator];
     
     return self;
 }

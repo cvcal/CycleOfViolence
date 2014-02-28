@@ -38,26 +38,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-// THESE FUNCTIONS ARE NOT NECESSARY. UNWINDS NEED TO GO IN THE TARGET
-// VIEWCONTROLLER, NOT THE SOURCE.
-//- (IBAction) unwindToMainWithGame:(UIStoryboardSegue *)segue
-//{
-//    NSLog(@"Called unwindToMainWithGame");
-//    //COVGame* newGame = [[COVGame alloc] init:@"newGame"];
-////    PFObject *newGame = [PFObject objectWithClassName:@"Game"];
-////    newGame[@"cycle"] = [[NSMutableArray alloc] init];
-////    newGame[@"numberOfPlayers"] = 0;
-////    newGame[@"playersRemaining"] = 0;
-////    newGame[@"name"] = self.name.text;
-////    
-////    [newGame saveInBackground];
-//}
-//
-//- (IBAction) unwindToMainWithoutGame:(UIStoryboardSegue *)segue
-//{
-//    NSLog(@"Called unwindToMainWithoutGame");
-//}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // If we hit the create button, we should make the game!
     if (sender == self.createButton) {
