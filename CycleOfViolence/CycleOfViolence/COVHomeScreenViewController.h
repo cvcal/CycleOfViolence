@@ -15,6 +15,7 @@
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 
+- (void)bringUpLoginIfNoUser;
 - (void)buttonTapped:(UIButton *)sender;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;

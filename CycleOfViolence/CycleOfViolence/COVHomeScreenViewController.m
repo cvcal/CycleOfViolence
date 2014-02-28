@@ -27,14 +27,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self bringUpLoginIfNoUser];
 	// Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)bringUpLoginIfNoUser {
     if (![PFUser currentUser]) { // No user logged in
         // Create the log in view controller
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
         logInViewController.fields = PFLogInFieldsUsernameAndPassword
-            | PFLogInFieldsLogInButton
-            | PFLogInFieldsSignUpButton
-            | PFLogInFieldsPasswordForgotten;
+        | PFLogInFieldsLogInButton
+        | PFLogInFieldsSignUpButton
+        | PFLogInFieldsPasswordForgotten;
         
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
         
@@ -51,18 +61,12 @@
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)buttonTapped:(UIButton *)sender {
     if (sender != self.logOut) {
         return;
     } else {
         [PFUser logOut];
-        [self viewDidLoad];
+        [self bringUpLoginIfNoUser];
     }
 }
 
