@@ -3,6 +3,7 @@
 //  ParseStarterProject
 //
 //  Created by James Yu on 12/29/11.
+// Adapted by John Phillpot and Reyna Hulett 2/27/2014.
 //
 
 #import "COVJoinGameViewController.h"
@@ -212,6 +213,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    COVGame *currentGame = [self objectAtIndexPath:indexPath];
+    NSLog(@"Selected game: %@", currentGame.name);
 }
 
 
