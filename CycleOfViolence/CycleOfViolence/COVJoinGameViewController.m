@@ -213,9 +213,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    if ([indexPath row] > self.objects.count -1 ) {
+        return;
+    }
     COVGame *currentGame = [self objectAtIndexPath:indexPath];
     NSLog(@"Selected game: %@", currentGame.name);
     [self performSegueWithIdentifier:@"ConfirmationSegue" sender:self];
+    
 }
 
 
