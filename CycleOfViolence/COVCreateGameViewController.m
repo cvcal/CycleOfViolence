@@ -50,7 +50,7 @@
         // Let us know how we got here.
         NSLog(@"Called prepareForSegue via createButton");
         
-        COVGame* newGame = [COVGame alloc];
+        COVGame *newGame = [COVGame alloc];
         NSLog(@"Allocated COVGame");
         newGame = [newGame init:self.name.text]; // Use the name from the UITextField.
         NSLog(@"Initialized COVGame");
@@ -73,5 +73,37 @@
         NSLog(@"Called prepareForSegue via someOtherMeans");
     }
 }
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    // If the segue was iniated by the create button, verify that the game name is unique.
+    if (sender == self.createButton) {
+        // Let us know how we got here.
+        NSLog(@"Called shouldPerformSegueWithIdentifier via createButton");
+        
+        // Verify that the game name is not taken.
+        PFQuery *query = [PFQuery queryWithClassName:@"COVGame"];
+        [query whereKey:@"name" equalTo:self.name.text];
+        NSInteger numberGamesWithSameName = [query countObjects];
+        
+        if (numberGamesWithSameName != 0) {
+            // Display an alert.
+            [[[UIAlertView alloc] initWithTitle:@"Duplicate Game Name"
+                                        message:@"That name is already in use!"
+                                       delegate:nil
+                              cancelButtonTitle:@"ok"
+                              otherButtonTitles:nil] show];
+            return NO;
+        } else {
+            // Game name is okay; proceed with segue.
+            return YES;
+        }
+        
+    } else {
+        // Nothing to check if sender is not createButton.
+        return YES;
+    }
+}
+
 
 @end
