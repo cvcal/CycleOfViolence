@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0A094C18C2525E0011F92A /* COVConfirmJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A094B18C2525E0011F92A /* COVConfirmJoinGameViewController.m */; };
 		DA16D64F18BAB16D00AA604B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409E918BA7D610066A552 /* Parse.framework */; };
 		DA16D65B18BABF4700AA604B /* COVCreateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA16D65A18BABF4700AA604B /* COVCreateGameViewController.m */; };
 		DA16D65E18BABF5800AA604B /* COVGame.m in Sources */ = {isa = PBXBuildFile; fileRef = DA16D65D18BABF5800AA604B /* COVGame.m */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0A094A18C2525E0011F92A /* COVConfirmJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVConfirmJoinGameViewController.h; sourceTree = "<group>"; };
+		DA0A094B18C2525E0011F92A /* COVConfirmJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVConfirmJoinGameViewController.m; sourceTree = "<group>"; };
 		DA16D65918BABF4700AA604B /* COVCreateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = COVCreateGameViewController.h; path = ../COVCreateGameViewController.h; sourceTree = "<group>"; };
 		DA16D65A18BABF4700AA604B /* COVCreateGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = COVCreateGameViewController.m; path = ../COVCreateGameViewController.m; sourceTree = "<group>"; };
 		DA16D65C18BABF5800AA604B /* COVGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVGame.h; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				DAC40A0018BA8A980066A552 /* COVHomeScreenViewController.m */,
 				DA912B4B18C067AB002EC131 /* COVJoinGameViewController.h */,
 				DA912B4C18C067AB002EC131 /* COVJoinGameViewController.m */,
+				DA0A094A18C2525E0011F92A /* COVConfirmJoinGameViewController.h */,
+				DA0A094B18C2525E0011F92A /* COVConfirmJoinGameViewController.m */,
 				DAC409CC18BA7C8D0066A552 /* Images.xcassets */,
 				DAC409C118BA7C8C0066A552 /* Supporting Files */,
 			);
@@ -306,6 +311,7 @@
 				DAC40A0118BA8A980066A552 /* COVHomeScreenViewController.m in Sources */,
 				DA912B4D18C067AB002EC131 /* COVJoinGameViewController.m in Sources */,
 				DA16D65E18BABF5800AA604B /* COVGame.m in Sources */,
+				DA0A094C18C2525E0011F92A /* COVConfirmJoinGameViewController.m in Sources */,
 				DAC409CB18BA7C8C0066A552 /* COVAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

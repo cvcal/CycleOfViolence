@@ -8,6 +8,7 @@
 
 #import <Parse/Parse.h>
 #import "COVGame.h"
+#import "COVConfirmJoinGameViewController.h"
 
 @interface COVJoinGameViewController : PFQueryTableViewController
 

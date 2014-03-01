@@ -215,7 +215,14 @@
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
     COVGame *currentGame = [self objectAtIndexPath:indexPath];
     NSLog(@"Selected game: %@", currentGame.name);
+    COVConfirmJoinGameViewController *nextScreen = [[COVConfirmJoinGameViewController alloc] initWithGame:currentGame];
+    [self presentViewController:nextScreen animated:YES completion:NULL];
+    NSLog(@"Theoretically presented next viewController.");
+    
+    
 }
+
+
 
 
 @end
