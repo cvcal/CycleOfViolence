@@ -23,7 +23,7 @@
     return self;
 }
 
-- (id)initWithGame:(COVGame *) currentGame
+- (id)initWithGame:(COVGame *)currentGame
 {
     if (self) {
         self.currentGame = currentGame;
