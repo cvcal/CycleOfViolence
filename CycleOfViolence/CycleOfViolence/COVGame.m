@@ -18,24 +18,23 @@
 @dynamic numberOfPlayers;
 @dynamic playersRemaining;
 
-// Required to make a proper subclass of PFObject.
 + (NSString *)parseClassName {
     return @"COVGame";
 }
 
-- (id) init:(NSString *) gameName
+- (id)init:(NSString *)gameName
 {
     self = [super init];
+    
     if(self)
     {
-        // These all work once we have declared the relevant properties dynamic.
+        // Initialize COVGame properties. numberOfPlayes and playersRemaining are automatically
+        // set to zero.
         self.cycle = [[NSMutableArray alloc] init];
-        self.numberOfPlayers = 0;
-        self.playersRemaining = 0;
         self.name = gameName;
     }
     
-    //TODO: Add the player who created the game!
+    // Add the player who created the game.
     PFUser *creator = [PFUser currentUser];
     [self addPlayer:creator];
     

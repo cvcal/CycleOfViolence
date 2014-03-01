@@ -12,12 +12,9 @@
 
 @interface COVCreateGameViewController : UIViewController
 
-@property NSString *inputName;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
-
 
 @end

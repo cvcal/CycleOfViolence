@@ -9,9 +9,12 @@
 #import "COVHomeScreenViewController.h"
 
 @interface COVHomeScreenViewController ()
+
+// These is a private propertie, the button on the storyboard we need to interact with.
 @property (weak, nonatomic) IBOutlet UIButton *logOut;
 
 @end
+
 
 @implementation COVHomeScreenViewController
 
@@ -27,8 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // Users can only access the app if they are logged in.
     [self bringUpLoginIfNoUser];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,8 +42,8 @@
 }
 
 - (void)bringUpLoginIfNoUser {
-    if (![PFUser currentUser]) { // No user logged in
-        // Create the log in view controller
+    if (![PFUser currentUser]) {
+        // If no user is logged in, create the log in view controller.
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
         logInViewController.fields = PFLogInFieldsUsernameAndPassword
         | PFLogInFieldsLogInButton
@@ -47,7 +51,6 @@
         | PFLogInFieldsPasswordForgotten;
         
         [logInViewController setDelegate:self]; // Set ourselves as the delegate
-        
         
         // Create the sign up view controller
         PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
@@ -65,14 +68,10 @@
     if (sender != self.logOut) {
         return;
     } else {
+        // Log out the user and return to the log in/sign up modal.
         [PFUser logOut];
         [self bringUpLoginIfNoUser];
     }
-}
-
-// If logOut is tapped, log out the user and bring up the modal login.
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // do we still need this?
 }
 
 // Dismiss the modal login after successful login.
@@ -82,7 +81,8 @@
 }
 
 // Sent to the delegate when a PFUser is signed up.
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+- (void)signUpViewController:(PFSignUpViewController *)signUpController
+               didSignUpUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:NULL]; // Dismiss the PFSignUpViewController
 }
 
@@ -99,7 +99,7 @@
         returnVal = NO;
     }
     
-    // invalid email
+    // Invalid email, so display alert.
     if (!returnVal) {
         [[[UIAlertView alloc] initWithTitle:@"Invalid Email Address"
                                     message:@"Make sure you use a Harvey Mudd account!"
@@ -112,15 +112,12 @@
 
 // Allow COVHomeScreenViewController to be unwound to.
 -(IBAction)unwindToMainWithGame:(UIStoryboardSegue *)segue {
-    // Currently we do all of the work in prepareForSegue
-    // It may be better style to do it here.
+    // Nothing to do. Actions handled in prepareForSegue.
 }
 
 // Allow COVHomeScreenViewController to be unwound to.
 -(IBAction)unwindToMainWithoutGame:(UIStoryboardSegue *)segue {
-    //do stuff
+    // Nothing to do.
 }
-
-
 
 @end

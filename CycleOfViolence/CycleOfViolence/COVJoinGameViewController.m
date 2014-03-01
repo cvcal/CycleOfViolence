@@ -13,26 +13,22 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom the table
+        // Customize the table.
         
-        // The className to query on
+        // The className to query on.
         self.parseClassName = @"COVGame";
         
-        // The key of the PFObject to display in the label of the default cell style
+        // The key of the PFObject to display in the label of the default cell style.
         self.textKey = @"name";
         
         // The title for this table in the Navigation Controller.
         self.title = @"Games";
         
-        // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
-        
-        // Whether the built-in pagination is enabled
         self.paginationEnabled = YES;
-        
-        // The number of objects to show per page
         self.objectsPerPage = 10;
     }
+    
     return self;
 }
 
@@ -48,7 +44,7 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // Uncomment the following line to display an Edit button in the navigation bar.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 

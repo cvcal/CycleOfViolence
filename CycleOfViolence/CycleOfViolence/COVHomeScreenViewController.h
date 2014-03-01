@@ -2,7 +2,7 @@
 //  COVHomeScreenViewController.h
 //  CycleOfViolence
 //
-//  Created by Laptop 16 on 2/23/14.
+//  Created by Reyna Hulett on 2/23/14.
 //
 //
 
@@ -15,15 +15,17 @@
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 
-- (void)bringUpLoginIfNoUser;
+// Used to handle response to Log Out button.
 - (void)buttonTapped:(UIButton *)sender;
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+- (void)bringUpLoginIfNoUser;
 - (void)logInViewController:(PFLogInViewController *)controller;
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user;
+- (void)signUpViewController:(PFSignUpViewController *)signUpController
+               didSignUpUser:(PFUser *)user;
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
            shouldBeginSignUp:(NSDictionary *)info;
 
 -(IBAction)unwindToMainWithGame:(UIStoryboardSegue *)segue;
 -(IBAction)unwindToMainWithoutGame:(UIStoryboardSegue *)segue;
+
 @end

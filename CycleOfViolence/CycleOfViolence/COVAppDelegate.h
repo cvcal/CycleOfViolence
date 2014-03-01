@@ -2,7 +2,7 @@
 //  COVAppDelegate.h
 //  CycleOfViolence
 //
-//  Created by Laptop 16 on 2/23/14.
+//  Created by Reyna Hulett on 2/23/14.
 //
 //
 
@@ -13,12 +13,12 @@
 @property (strong, nonatomic) IBOutlet UIWindow *window;
 @property (strong, nonatomic) IBOutlet UIViewController *viewController;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+- (BOOL)application:(UIApplication *)application
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 - (void)applicationWillResignActive:(UIApplication *)application;
 - (void)applicationDidEnterBackground:(UIApplication *)application;
 - (void)applicationWillEnterForeground:(UIApplication *)application;
 - (void)applicationDidBecomeActive:(UIApplication *)application;
 - (void)applicationWillTerminate:(UIApplication *)application;
-
 
 @end

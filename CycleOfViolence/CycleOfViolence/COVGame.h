@@ -12,18 +12,19 @@
 
 // Boilerplate to subclass PFObject.
 @interface COVGame : PFObject < PFSubclassing >
+
+@property NSMutableArray *cycle; // array of players indicating taget ordering
+@property NSString *name; // name of the game
+@property u_int32_t numberOfPlayers; // number of total participants
+@property u_int32_t playersRemaining; // number not yet assassinated
+
+// Required to make a proper subclass of PFObject.
 + (NSString *)parseClassName;
 
-// The stuff we actually care about.
-@property NSMutableArray *cycle;
-@property NSString *name;
-@property u_int32_t numberOfPlayers;
-@property u_int32_t playersRemaining;
-
 // Initializes the game with name gameName and no players.
-- (id) init:(NSString *) gameName;
+- (id) init:(NSString *)gameName;
 
-// Adds the specified player to the game (in theory).
+// Adds the specified player to the game.
 - (void) addPlayer:(PFUser *)newPlayer;
 
 @end
