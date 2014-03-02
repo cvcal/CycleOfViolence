@@ -48,6 +48,7 @@
     [self.cycle insertObject:newPlayer atIndex:random];
     ++self.numberOfPlayers;
     ++self.playersRemaining;
+    [self save];
 }
 
 

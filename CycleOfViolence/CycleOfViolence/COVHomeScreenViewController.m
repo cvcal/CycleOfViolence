@@ -111,13 +111,8 @@
 }
 
 // Allow COVHomeScreenViewController to be unwound to.
--(IBAction)unwindToMainWithGame:(UIStoryboardSegue *)segue {
+-(IBAction)unwindToMain:(UIStoryboardSegue *)segue {
     // Nothing to do. Actions handled in prepareForSegue.
-}
-
-// Allow COVHomeScreenViewController to be unwound to.
--(IBAction)unwindToMainWithoutGame:(UIStoryboardSegue *)segue {
-    // Nothing to do.
 }
 
 @end

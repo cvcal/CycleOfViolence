@@ -25,7 +25,6 @@
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
            shouldBeginSignUp:(NSDictionary *)info;
 
--(IBAction)unwindToMainWithGame:(UIStoryboardSegue *)segue;
--(IBAction)unwindToMainWithoutGame:(UIStoryboardSegue *)segue;
+-(IBAction)unwindToMain:(UIStoryboardSegue *)segue;
 
 @end

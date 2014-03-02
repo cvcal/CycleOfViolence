@@ -231,7 +231,9 @@
     }
 }
 
-
-
+// Allow COVJoinGameViewController to be unwound to.
+-(IBAction)unwindToJoinGame:(UIStoryboardSegue *)segue {
+    // Nothing to do.
+}
 
 @end
