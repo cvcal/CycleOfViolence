@@ -10,9 +10,9 @@
 
 @implementation COVJoinGameViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithStyle:style];
+    self = [super initWithCoder:aDecoder];
     if (self) {
         // Customize the table.
         
@@ -37,9 +37,6 @@
 
 - (void)viewDidLoad
 {
-    // Initialize the table so that it knows to look for COVGame objects.
-    // TODO: Make this less hacky or convince ourselves that it is not a hack.
-    [self init];
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
