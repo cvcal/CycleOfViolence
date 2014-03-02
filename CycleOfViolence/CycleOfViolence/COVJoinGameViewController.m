@@ -219,6 +219,18 @@
     
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ConfirmationSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        COVGame *currentGame = [self objectAtIndexPath:indexPath];
+        COVConfirmJoinGameViewController *destination = segue.destinationViewController;
+        destination.currentGame = currentGame;
+    } else {
+        NSLog(@"Segue from JoinGame VC, but not to ConfirmJoinGame.");
+    }
+}
+
 
 
 

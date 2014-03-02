@@ -13,6 +13,4 @@
 
 @property COVGame *currentGame;
 
-- (id)initWithGame:(COVGame *) currentGame;
-
 @end

@@ -23,14 +23,6 @@
     return self;
 }
 
-- (id)initWithGame:(COVGame *)currentGame
-{
-    if (self) {
-        self.currentGame = currentGame;
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
