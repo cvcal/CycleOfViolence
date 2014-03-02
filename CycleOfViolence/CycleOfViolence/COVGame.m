@@ -17,6 +17,7 @@
 @dynamic name;
 @dynamic numberOfPlayers;
 @dynamic playersRemaining;
+@dynamic gameManager;
 
 + (NSString *)parseClassName {
     return @"COVGame";
@@ -37,6 +38,8 @@
     // Add the player who created the game.
     PFUser *creator = [PFUser currentUser];
     [self addPlayer:creator];
+    // The creator is the game manager by default.
+    self.gameManager = creator;
     
     return self;
 }
