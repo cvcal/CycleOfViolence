@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA0A094C18C2525E0011F92A /* COVConfirmJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A094B18C2525E0011F92A /* COVConfirmJoinGameViewController.m */; };
+		DA16D64F18BAB16D00AA604B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409E918BA7D610066A552 /* Parse.framework */; };
+		DA16D65B18BABF4700AA604B /* COVCreateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA16D65A18BABF4700AA604B /* COVCreateGameViewController.m */; };
+		DA16D65E18BABF5800AA604B /* COVGame.m in Sources */ = {isa = PBXBuildFile; fileRef = DA16D65D18BABF5800AA604B /* COVGame.m */; };
+		DA912B4D18C067AB002EC131 /* COVJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA912B4C18C067AB002EC131 /* COVJoinGameViewController.m */; };
+		DAC409BD18BA7C8C0066A552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409BC18BA7C8C0066A552 /* CoreGraphics.framework */; };
+		DAC409BF18BA7C8C0066A552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409BE18BA7C8C0066A552 /* UIKit.framework */; };
+		DAC409C518BA7C8C0066A552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAC409C318BA7C8C0066A552 /* InfoPlist.strings */; };
+		DAC409C718BA7C8C0066A552 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC409C618BA7C8C0066A552 /* main.m */; };
+		DAC409CB18BA7C8C0066A552 /* COVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC409CA18BA7C8C0066A552 /* COVAppDelegate.m */; };
+		DAC409CD18BA7C8D0066A552 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC409CC18BA7C8D0066A552 /* Images.xcassets */; };
+		DAC409D418BA7C8D0066A552 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409D318BA7C8D0066A552 /* XCTest.framework */; };
+		DAC409D518BA7C8D0066A552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409BA18BA7C8C0066A552 /* Foundation.framework */; };
+		DAC409D618BA7C8D0066A552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409BE18BA7C8C0066A552 /* UIKit.framework */; };
+		DAC409DE18BA7C8D0066A552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAC409DC18BA7C8D0066A552 /* InfoPlist.strings */; };
+		DAC409E018BA7C8D0066A552 /* CycleOfViolenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC409DF18BA7C8D0066A552 /* CycleOfViolenceTests.m */; };
+		DAC409EC18BA7E170066A552 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409EB18BA7E170066A552 /* AudioToolbox.framework */; };
+		DAC409EE18BA7E200066A552 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409ED18BA7E200066A552 /* CFNetwork.framework */; };
+		DAC409F018BA7E300066A552 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409EF18BA7E300066A552 /* CoreLocation.framework */; };
+		DAC409F218BA7E3C0066A552 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409F118BA7E3C0066A552 /* libz.dylib */; };
+		DAC409F418BA7E430066A552 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409F318BA7E430066A552 /* MobileCoreServices.framework */; };
+		DAC409F618BA7E4D0066A552 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409F518BA7E4D0066A552 /* QuartzCore.framework */; };
+		DAC409F818BA7E550066A552 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409F718BA7E550066A552 /* Security.framework */; };
+		DAC409FA18BA7E5B0066A552 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409F918BA7E5B0066A552 /* StoreKit.framework */; };
+		DAC409FC18BA7E620066A552 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409FB18BA7E620066A552 /* SystemConfiguration.framework */; };
+		DAC409FE18BA81350066A552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC409FD18BA81350066A552 /* Main.storyboard */; };
+		DAC40A0118BA8A980066A552 /* COVHomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC40A0018BA8A980066A552 /* COVHomeScreenViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DAC409D718BA7C8D0066A552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAC409AF18BA7C8C0066A552 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAC409B618BA7C8C0066A552;
+			remoteInfo = CycleOfViolence;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA0A094A18C2525E0011F92A /* COVConfirmJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVConfirmJoinGameViewController.h; sourceTree = "<group>"; };
+		DA0A094B18C2525E0011F92A /* COVConfirmJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVConfirmJoinGameViewController.m; sourceTree = "<group>"; };
+		DA16D65918BABF4700AA604B /* COVCreateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = COVCreateGameViewController.h; path = ../COVCreateGameViewController.h; sourceTree = "<group>"; };
+		DA16D65A18BABF4700AA604B /* COVCreateGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = COVCreateGameViewController.m; path = ../COVCreateGameViewController.m; sourceTree = "<group>"; };
+		DA16D65C18BABF5800AA604B /* COVGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVGame.h; sourceTree = "<group>"; };
+		DA16D65D18BABF5800AA604B /* COVGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVGame.m; sourceTree = "<group>"; };
+		DA912B4B18C067AB002EC131 /* COVJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVJoinGameViewController.h; sourceTree = "<group>"; };
+		DA912B4C18C067AB002EC131 /* COVJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVJoinGameViewController.m; sourceTree = "<group>"; };
+		DAC409B718BA7C8C0066A552 /* CycleOfViolence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CycleOfViolence.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAC409BA18BA7C8C0066A552 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DAC409BC18BA7C8C0066A552 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DAC409BE18BA7C8C0066A552 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DAC409C218BA7C8C0066A552 /* CycleOfViolence-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CycleOfViolence-Info.plist"; sourceTree = "<group>"; };
+		DAC409C418BA7C8C0066A552 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DAC409C618BA7C8C0066A552 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DAC409C818BA7C8C0066A552 /* CycleOfViolence-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CycleOfViolence-Prefix.pch"; sourceTree = "<group>"; };
+		DAC409C918BA7C8C0066A552 /* COVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = COVAppDelegate.h; sourceTree = "<group>"; };
+		DAC409CA18BA7C8C0066A552 /* COVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = COVAppDelegate.m; sourceTree = "<group>"; };
+		DAC409CC18BA7C8D0066A552 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DAC409D218BA7C8D0066A552 /* CycleOfViolenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CycleOfViolenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAC409D318BA7C8D0066A552 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DAC409DB18BA7C8D0066A552 /* CycleOfViolenceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CycleOfViolenceTests-Info.plist"; sourceTree = "<group>"; };
+		DAC409DD18BA7C8D0066A552 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DAC409DF18BA7C8D0066A552 /* CycleOfViolenceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CycleOfViolenceTests.m; sourceTree = "<group>"; };
+		DAC409E918BA7D610066A552 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		DAC409EB18BA7E170066A552 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DAC409ED18BA7E200066A552 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		DAC409EF18BA7E300066A552 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DAC409F118BA7E3C0066A552 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DAC409F318BA7E430066A552 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DAC409F518BA7E4D0066A552 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DAC409F718BA7E550066A552 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DAC409F918BA7E5B0066A552 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DAC409FB18BA7E620066A552 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DAC409FD18BA81350066A552 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DAC409FF18BA8A980066A552 /* COVHomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVHomeScreenViewController.h; sourceTree = "<group>"; };
+		DAC40A0018BA8A980066A552 /* COVHomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVHomeScreenViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAC409B418BA7C8C0066A552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA16D64F18BAB16D00AA604B /* Parse.framework in Frameworks */,
+				DAC409FC18BA7E620066A552 /* SystemConfiguration.framework in Frameworks */,
+				DAC409FA18BA7E5B0066A552 /* StoreKit.framework in Frameworks */,
+				DAC409F818BA7E550066A552 /* Security.framework in Frameworks */,
+				DAC409F618BA7E4D0066A552 /* QuartzCore.framework in Frameworks */,
+				DAC409F418BA7E430066A552 /* MobileCoreServices.framework in Frameworks */,
+				DAC409F218BA7E3C0066A552 /* libz.dylib in Frameworks */,
+				DAC409F018BA7E300066A552 /* CoreLocation.framework in Frameworks */,
+				DAC409BD18BA7C8C0066A552 /* CoreGraphics.framework in Frameworks */,
+				DAC409EE18BA7E200066A552 /* CFNetwork.framework in Frameworks */,
+				DAC409EC18BA7E170066A552 /* AudioToolbox.framework in Frameworks */,
+				DAC409BF18BA7C8C0066A552 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAC409CF18BA7C8D0066A552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC409D418BA7C8D0066A552 /* XCTest.framework in Frameworks */,
+				DAC409D618BA7C8D0066A552 /* UIKit.framework in Frameworks */,
+				DAC409D518BA7C8D0066A552 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DAC409AE18BA7C8C0066A552 = {
+			isa = PBXGroup;
+			children = (
+				DAC409C018BA7C8C0066A552 /* CycleOfViolence */,
+				DAC409D918BA7C8D0066A552 /* CycleOfViolenceTests */,
+				DAC409B918BA7C8C0066A552 /* Frameworks */,
+				DAC409B818BA7C8C0066A552 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DAC409B818BA7C8C0066A552 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAC409B718BA7C8C0066A552 /* CycleOfViolence.app */,
+				DAC409D218BA7C8D0066A552 /* CycleOfViolenceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAC409B918BA7C8C0066A552 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAC409FB18BA7E620066A552 /* SystemConfiguration.framework */,
+				DAC409F918BA7E5B0066A552 /* StoreKit.framework */,
+				DAC409F718BA7E550066A552 /* Security.framework */,
+				DAC409F518BA7E4D0066A552 /* QuartzCore.framework */,
+				DAC409F318BA7E430066A552 /* MobileCoreServices.framework */,
+				DAC409F118BA7E3C0066A552 /* libz.dylib */,
+				DAC409EF18BA7E300066A552 /* CoreLocation.framework */,
+				DAC409ED18BA7E200066A552 /* CFNetwork.framework */,
+				DAC409EB18BA7E170066A552 /* AudioToolbox.framework */,
+				DAC409E918BA7D610066A552 /* Parse.framework */,
+				DAC409BA18BA7C8C0066A552 /* Foundation.framework */,
+				DAC409BC18BA7C8C0066A552 /* CoreGraphics.framework */,
+				DAC409BE18BA7C8C0066A552 /* UIKit.framework */,
+				DAC409D318BA7C8D0066A552 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAC409C018BA7C8C0066A552 /* CycleOfViolence */ = {
+			isa = PBXGroup;
+			children = (
+				DA16D65918BABF4700AA604B /* COVCreateGameViewController.h */,
+				DA16D65A18BABF4700AA604B /* COVCreateGameViewController.m */,
+				DAC409C918BA7C8C0066A552 /* COVAppDelegate.h */,
+				DAC409CA18BA7C8C0066A552 /* COVAppDelegate.m */,
+				DAC409FD18BA81350066A552 /* Main.storyboard */,
+				DA16D65C18BABF5800AA604B /* COVGame.h */,
+				DA16D65D18BABF5800AA604B /* COVGame.m */,
+				DAC409FF18BA8A980066A552 /* COVHomeScreenViewController.h */,
+				DAC40A0018BA8A980066A552 /* COVHomeScreenViewController.m */,
+				DA912B4B18C067AB002EC131 /* COVJoinGameViewController.h */,
+				DA912B4C18C067AB002EC131 /* COVJoinGameViewController.m */,
+				DA0A094A18C2525E0011F92A /* COVConfirmJoinGameViewController.h */,
+				DA0A094B18C2525E0011F92A /* COVConfirmJoinGameViewController.m */,
+				DAC409CC18BA7C8D0066A552 /* Images.xcassets */,
+				DAC409C118BA7C8C0066A552 /* Supporting Files */,
+			);
+			path = CycleOfViolence;
+			sourceTree = "<group>";
+		};
+		DAC409C118BA7C8C0066A552 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAC409C218BA7C8C0066A552 /* CycleOfViolence-Info.plist */,
+				DAC409C318BA7C8C0066A552 /* InfoPlist.strings */,
+				DAC409C618BA7C8C0066A552 /* main.m */,
+				DAC409C818BA7C8C0066A552 /* CycleOfViolence-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DAC409D918BA7C8D0066A552 /* CycleOfViolenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				DAC409DF18BA7C8D0066A552 /* CycleOfViolenceTests.m */,
+				DAC409DA18BA7C8D0066A552 /* Supporting Files */,
+			);
+			path = CycleOfViolenceTests;
+			sourceTree = "<group>";
+		};
+		DAC409DA18BA7C8D0066A552 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAC409DB18BA7C8D0066A552 /* CycleOfViolenceTests-Info.plist */,
+				DAC409DC18BA7C8D0066A552 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAC409B618BA7C8C0066A552 /* CycleOfViolence */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAC409E318BA7C8D0066A552 /* Build configuration list for PBXNativeTarget "CycleOfViolence" */;
+			buildPhases = (
+				DAC409B318BA7C8C0066A552 /* Sources */,
+				DAC409B418BA7C8C0066A552 /* Frameworks */,
+				DAC409B518BA7C8C0066A552 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CycleOfViolence;
+			productName = CycleOfViolence;
+			productReference = DAC409B718BA7C8C0066A552 /* CycleOfViolence.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DAC409D118BA7C8D0066A552 /* CycleOfViolenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAC409E618BA7C8D0066A552 /* Build configuration list for PBXNativeTarget "CycleOfViolenceTests" */;
+			buildPhases = (
+				DAC409CE18BA7C8D0066A552 /* Sources */,
+				DAC409CF18BA7C8D0066A552 /* Frameworks */,
+				DAC409D018BA7C8D0066A552 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DAC409D818BA7C8D0066A552 /* PBXTargetDependency */,
+			);
+			name = CycleOfViolenceTests;
+			productName = CycleOfViolenceTests;
+			productReference = DAC409D218BA7C8D0066A552 /* CycleOfViolenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAC409AF18BA7C8C0066A552 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = COV;
+				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					DAC409D118BA7C8D0066A552 = {
+						TestTargetID = DAC409B618BA7C8C0066A552;
+					};
+				};
+			};
+			buildConfigurationList = DAC409B218BA7C8C0066A552 /* Build configuration list for PBXProject "CycleOfViolence" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DAC409AE18BA7C8C0066A552;
+			productRefGroup = DAC409B818BA7C8C0066A552 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAC409B618BA7C8C0066A552 /* CycleOfViolence */,
+				DAC409D118BA7C8D0066A552 /* CycleOfViolenceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DAC409B518BA7C8C0066A552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC409FE18BA81350066A552 /* Main.storyboard in Resources */,
+				DAC409C518BA7C8C0066A552 /* InfoPlist.strings in Resources */,
+				DAC409CD18BA7C8D0066A552 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAC409D018BA7C8D0066A552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC409DE18BA7C8D0066A552 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAC409B318BA7C8C0066A552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC409C718BA7C8C0066A552 /* main.m in Sources */,
+				DA16D65B18BABF4700AA604B /* COVCreateGameViewController.m in Sources */,
+				DAC40A0118BA8A980066A552 /* COVHomeScreenViewController.m in Sources */,
+				DA912B4D18C067AB002EC131 /* COVJoinGameViewController.m in Sources */,
+				DA16D65E18BABF5800AA604B /* COVGame.m in Sources */,
+				DA0A094C18C2525E0011F92A /* COVConfirmJoinGameViewController.m in Sources */,
+				DAC409CB18BA7C8C0066A552 /* COVAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAC409CE18BA7C8D0066A552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAC409E018BA7C8D0066A552 /* CycleOfViolenceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DAC409D818BA7C8D0066A552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAC409B618BA7C8C0066A552 /* CycleOfViolence */;
+			targetProxy = DAC409D718BA7C8D0066A552 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DAC409C318BA7C8C0066A552 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAC409C418BA7C8C0066A552 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DAC409DC18BA7C8D0066A552 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAC409DD18BA7C8D0066A552 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DAC409E118BA7C8D0066A552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DAC409E218BA7C8D0066A552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DAC409E418BA7C8D0066A552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jarthurcs/Documents/cs121rhulett/CycleOfViolence/CycleOfViolence,
+					/Users/jarthurcs/CycleOfViolence/CycleOfViolence,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CycleOfViolence/CycleOfViolence-Prefix.pch";
+				INFOPLIST_FILE = "CycleOfViolence/CycleOfViolence-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DAC409E518BA7C8D0066A552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/jarthurcs/Documents/cs121rhulett/CycleOfViolence/CycleOfViolence,
+					/Users/jarthurcs/CycleOfViolence/CycleOfViolence,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CycleOfViolence/CycleOfViolence-Prefix.pch";
+				INFOPLIST_FILE = "CycleOfViolence/CycleOfViolence-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DAC409E718BA7C8D0066A552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CycleOfViolence.app/CycleOfViolence";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CycleOfViolence/CycleOfViolence-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CycleOfViolenceTests/CycleOfViolenceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		DAC409E818BA7C8D0066A552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CycleOfViolence.app/CycleOfViolence";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CycleOfViolence/CycleOfViolence-Prefix.pch";
+				INFOPLIST_FILE = "CycleOfViolenceTests/CycleOfViolenceTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAC409B218BA7C8C0066A552 /* Build configuration list for PBXProject "CycleOfViolence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAC409E118BA7C8D0066A552 /* Debug */,
+				DAC409E218BA7C8D0066A552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAC409E318BA7C8D0066A552 /* Build configuration list for PBXNativeTarget "CycleOfViolence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAC409E418BA7C8D0066A552 /* Debug */,
+				DAC409E518BA7C8D0066A552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAC409E618BA7C8D0066A552 /* Build configuration list for PBXNativeTarget "CycleOfViolenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAC409E718BA7C8D0066A552 /* Debug */,
+				DAC409E818BA7C8D0066A552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DAC409AF18BA7C8C0066A552 /* Project object */;
+}
