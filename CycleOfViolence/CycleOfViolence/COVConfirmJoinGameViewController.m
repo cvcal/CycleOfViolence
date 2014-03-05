@@ -46,7 +46,7 @@
     if (sender == self.joinGameButton) {
         NSLog(@"Called prepareForSegue from Join Game button.");
         PFUser *currUser = [PFUser currentUser];
-        [self.currentGame addPlayer:currUser];
+        [self.currentGame addPlayer:currUser]; // This method also saves the game.
     } else {
         NSLog(@"Segue initiated by a button besides Join Game.");
     }
