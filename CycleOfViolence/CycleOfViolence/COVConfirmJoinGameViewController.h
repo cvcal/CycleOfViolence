@@ -13,4 +13,11 @@
 
 @property COVGame *currentGame;
 
+- (id)initWithCoder:(NSCoder *)aDecoder;
+
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+
 @end

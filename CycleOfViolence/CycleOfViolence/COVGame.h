@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import <Parse/PFObject.h>
+#import <Parse/PFObject+Subclass.h>
 
 // Boilerplate to subclass PFObject.
 @interface COVGame : PFObject < PFSubclassing >

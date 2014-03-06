@@ -7,7 +7,6 @@
 //
 
 #import "COVGame.h"
-#import <Parse/PFObject+Subclass.h>
 
 @implementation COVGame
 
@@ -51,7 +50,7 @@
     [self.cycle insertObject:newPlayer atIndex:random];
     ++self.numberOfPlayers;
     ++self.playersRemaining;
-    [self save];
+    [self save]; // We need the objectId for the User, so we can't saveInBackground.
     
     // Store the game's ID in the User who joined (pointers don't save properly).
     PFUser *currUser = [PFUser currentUser];
