@@ -35,8 +35,11 @@
     }
     
     // Add the player who created the game.
+    [self save]; // We need to access the objectId in addPlayer; save creates the ID.
+    
     PFUser *creator = [PFUser currentUser];
     [self addPlayer:creator];
+    
     // The creator is the game manager by default.
     self.gameManager = creator;
     
@@ -50,7 +53,7 @@
     [self.cycle insertObject:newPlayer atIndex:random];
     ++self.numberOfPlayers;
     ++self.playersRemaining;
-    [self save]; // We need the objectId for the User, so we can't saveInBackground.
+    [self saveInBackground];
     
     // Store the game's ID in the User who joined (pointers don't save properly).
     PFUser *currUser = [PFUser currentUser];
