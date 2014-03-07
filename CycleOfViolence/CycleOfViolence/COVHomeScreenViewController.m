@@ -50,10 +50,6 @@
 {
     PFUser *currUser = [PFUser currentUser];
     if (currUser[@"currentGameID"] != nil) {
-        // FIXME TODO REMOVE THIS
-        //[PFUser logOut];
-        //[self bringUpLogIn];
-        
         NSLog(@"The user is in a game.");
         [self performSegueWithIdentifier:@"ToInactiveGameScreen" sender:self];
     } else {
@@ -137,7 +133,8 @@
 // Allow COVHomeScreenViewController to be unwound to.
 -(IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
-    // Nothing to do. Actions handled in prepareForSegue.
+    [self checkForGameStateSegue]; // The user may now be in a game.
+    // Nothing else to do. Actions handled in prepareForSegue.
 }
 
 @end
