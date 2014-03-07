@@ -7,6 +7,7 @@
 //
 
 #import "COVHomeScreenViewController.h"
+#import "COVGame.h"
 
 @interface COVHomeScreenViewController ()
 
@@ -50,12 +51,16 @@
 {
     PFUser *currUser = [PFUser currentUser];
     if (currUser[@"currentGameID"] != nil) {
-        // FIXME TODO REMOVE THIS
-        //[PFUser logOut];
-        //[self bringUpLogIn];
-        
         NSLog(@"The user is in a game.");
-        [self performSegueWithIdentifier:@"ToInactiveGameScreen" sender:self];
+        COVGame * currGame = (COVGame *)[PFQuery getObjectOfClass: @"COVGame" objectId: currUser[@"currentGameID"]];
+        
+        // A game has either started, or it hasn't.
+        if (currGame.gameStarted) {
+            [self performSegueWithIdentifier:@"ToActiveGame" sender:self];
+        } else {
+            [self performSegueWithIdentifier:@"ToInactiveGameScreen" sender:self];
+        }
+        
     } else {
         NSLog(@"The user is not in a game yet.");
     }

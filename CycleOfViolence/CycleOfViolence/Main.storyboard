@@ -59,7 +59,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DDi-Nc-c5w" kind="push" id="r5n-xu-GYZ"/>
+                                    <segue destination="DDi-Nc-c5w" kind="push" identifier="ToJoinGameScreen" id="r5n-xu-GYZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,7 +75,7 @@
                     <connections>
                         <outlet property="logOut" destination="CRW-ln-Cni" id="WYx-8W-0KY"/>
                         <segue destination="eGU-AY-flX" kind="push" identifier="ToInactiveGameScreen" id="O2X-Ad-Qr1"/>
-                        <segue destination="nC7-Ma-fzX" kind="push" id="9I3-kK-dcH"/>
+                        <segue destination="nC7-Ma-fzX" kind="push" identifier="ToActiveGame" id="9I3-kK-dcH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6P-iw-iZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -147,7 +147,7 @@
     if ([indexPath row] > self.objects.count -1 ) {
         return;
     }
-    COVGame *currentGame = [self objectAtIndexPath:indexPath];
+    COVGame *currentGame = (COVGame *)[self objectAtIndexPath:indexPath];
     NSLog(@"Selected game: %@", currentGame.name);
     [self performSegueWithIdentifier:@"ConfirmationSegue" sender:self];
     
@@ -158,7 +158,7 @@
 {
     if ([segue.identifier isEqualToString:@"ConfirmationSegue"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        COVGame *currentGame = [self objectAtIndexPath:indexPath];
+        COVGame *currentGame = (COVGame *)[self objectAtIndexPath:indexPath];
         COVConfirmJoinGameViewController *destination = segue.destinationViewController;
         destination.currentGame = currentGame;
     } else {
