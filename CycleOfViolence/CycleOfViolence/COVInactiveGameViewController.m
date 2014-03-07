@@ -14,7 +14,8 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        // Don't allow users to return to the home screen while they are in a game.
+        self.navigationItem.hidesBackButton = YES;
     }
     return self;
 }

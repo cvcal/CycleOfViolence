@@ -19,6 +19,7 @@
 @property u_int32_t numberOfPlayers; // Number of total participants.
 @property u_int32_t playersRemaining; // Number not yet assassinated.
 @property PFUser *gameManager; // The player who can start the game.
+@property BOOL gameStarted; // Whether game play has begun.
 
 // Required to make a proper subclass of PFObject.
 + (NSString *)parseClassName;

@@ -17,8 +17,10 @@
 @dynamic numberOfPlayers;
 @dynamic playersRemaining;
 @dynamic gameManager;
+@dynamic gameStarted;
 
-+ (NSString *)parseClassName {
++ (NSString *)parseClassName
+{
     return @"COVGame";
 }
 
@@ -32,16 +34,17 @@
         // set to zero.
         self.cycle = [[NSMutableArray alloc] init];
         self.name = gameName;
+        self.gameStarted = NO;
+    
+        // Add the player who created the game.
+        [self save]; // We need to access the objectId in addPlayer; save creates the ID.
+    
+        PFUser *creator = [PFUser currentUser];
+        [self addPlayer:creator];
+    
+        // The creator is the game manager by default.
+        self.gameManager = creator;
     }
-    
-    // Add the player who created the game.
-    [self save]; // We need to access the objectId in addPlayer; save creates the ID.
-    
-    PFUser *creator = [PFUser currentUser];
-    [self addPlayer:creator];
-    
-    // The creator is the game manager by default.
-    self.gameManager = creator;
     
     return self;
 }
