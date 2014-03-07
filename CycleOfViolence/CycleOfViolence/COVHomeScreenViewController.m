@@ -142,7 +142,8 @@
 // Allow COVHomeScreenViewController to be unwound to.
 -(IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
-    // Nothing to do. Actions handled in prepareForSegue.
+    [self checkForGameStateSegue]; // The user may now be in a game.
+    // Nothing else to do. Actions handled in prepareForSegue.
 }
 
 @end
