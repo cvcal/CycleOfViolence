@@ -51,11 +51,11 @@
     PFUser *currUser = [PFUser currentUser];
     if (currUser[@"currentGameID"] != nil) {
         // FIXME TODO REMOVE THIS
-        [PFUser logOut];
-        [self bringUpLogIn];
+        //[PFUser logOut];
+        //[self bringUpLogIn];
         
-        //NSLog(@"The user is in a game.");
-        //[self performSegueWithIdentifier:@"ToInactiveGameScreen" sender:self];
+        NSLog(@"The user is in a game.");
+        [self performSegueWithIdentifier:@"ToInactiveGameScreen" sender:self];
     } else {
         NSLog(@"The user is not in a game yet.");
     }
