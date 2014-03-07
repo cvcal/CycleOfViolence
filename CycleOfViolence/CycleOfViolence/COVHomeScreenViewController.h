@@ -18,7 +18,7 @@
 // Used to handle response to Log Out button.
 - (void)buttonTapped:(UIButton *)sender;
 
-- (void)bringUpLoginIfNoUser;
+- (void)bringUpLogIn;
 - (void)logInViewController:(PFLogInViewController *)controller;
 - (void)signUpViewController:(PFSignUpViewController *)signUpController
                didSignUpUser:(PFUser *)user;

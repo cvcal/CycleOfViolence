@@ -74,11 +74,31 @@
                     <navigationItem key="navigationItem" id="i6b-Z9-f2G"/>
                     <connections>
                         <outlet property="logOut" destination="CRW-ln-Cni" id="WYx-8W-0KY"/>
+                        <segue destination="eGU-AY-flX" kind="push" identifier="ToInactiveGameScreen" id="O2X-Ad-Qr1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6P-iw-iZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885" y="-42"/>
+        </scene>
+        <!--Inactive Game View Controller-->
+        <scene sceneID="dUa-GL-0v5">
+            <objects>
+                <viewController id="eGU-AY-flX" customClass="COVInactiveGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oTM-ov-fBX"/>
+                        <viewControllerLayoutGuide type="bottom" id="u7O-gG-91v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rmp-Ko-bNn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ilW-ik-sbq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2IY-xN-4f5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="-800"/>
         </scene>
         <!--Join Game View Controller-->
         <scene sceneID="NUt-Ek-Wey">

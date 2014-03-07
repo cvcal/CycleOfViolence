@@ -2,7 +2,7 @@
 //  COVHomeScreenViewController.m
 //  CycleOfViolence
 //
-//  Created by Laptop 16 on 2/23/14.
+//  Created by Reyna Hulett on 2/23/14.
 //
 //
 
@@ -32,7 +32,12 @@
     [super viewDidLoad];
     
     // Users can only access the app if they are logged in.
-    [self bringUpLoginIfNoUser];
+    if ([PFUser currentUser]) {
+        // Display a different screen if the user is in a game.
+        [self checkForGameStateSegue];
+    } else {
+        [self bringUpLogIn];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,54 +46,68 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)bringUpLoginIfNoUser {
-    if (![PFUser currentUser]) {
-        // If no user is logged in, create the log in view controller.
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        logInViewController.fields = PFLogInFieldsUsernameAndPassword
-        | PFLogInFieldsLogInButton
-        | PFLogInFieldsSignUpButton
-        | PFLogInFieldsPasswordForgotten;
-        
-        [logInViewController setDelegate:self]; // Set ourselves as the delegate
-        
-        // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        // Present the log in view controller
-        [self presentViewController:logInViewController animated:YES completion:NULL];
+- (void)checkForGameStateSegue
+{
+    PFUser *currUser = [PFUser currentUser];
+    if (currUser[@"currentGameID"] != nil) {
+        NSLog(@"You are in a game!");
+    } else {
+        NSLog(@"You are not in a game yet! :'(");
     }
 }
 
-- (void)buttonTapped:(UIButton *)sender {
+- (void)bringUpLogIn
+{
+    // Create the log in view controller.
+    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+    logInViewController.fields = PFLogInFieldsUsernameAndPassword
+        | PFLogInFieldsLogInButton
+        | PFLogInFieldsSignUpButton
+        | PFLogInFieldsPasswordForgotten;
+
+    [logInViewController setDelegate:self]; // Set ourselves as the delegate
+        
+    // Create the sign up view controller
+    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+    [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+    
+    // Assign our sign up controller to be displayed from the login controller
+    [logInViewController setSignUpController:signUpViewController];
+    
+    // Present the log in view controller
+    [self presentViewController:logInViewController animated:YES completion:NULL];
+}
+
+- (void)buttonTapped:(UIButton *)sender
+{
     if (sender != self.logOut) {
         return;
     } else {
         // Log out the user and return to the log in/sign up modal.
         [PFUser logOut];
-        [self bringUpLoginIfNoUser];
+        [self bringUpLogIn];
     }
 }
 
 // Dismiss the modal login after successful login.
 - (void)logInViewController:(PFLogInViewController *)controller
-               didLogInUser:(PFUser *)user {
+               didLogInUser:(PFUser *)user
+{
     [self dismissViewControllerAnimated:YES completion:NULL];
+    [self checkForGameStateSegue];
 }
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController
-               didSignUpUser:(PFUser *)user {
+               didSignUpUser:(PFUser *)user
+{
     [self dismissViewControllerAnimated:YES completion:NULL]; // Dismiss the PFSignUpViewController
 }
 
 // Verify hmc email address. Otherwise, display an alert.
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
-           shouldBeginSignUp:(NSDictionary *)info {
+           shouldBeginSignUp:(NSDictionary *)info
+{
     NSString *email = info[@"email"];
     NSString *requiredEnding = @"@hmc.edu";
     BOOL returnVal;
@@ -111,7 +130,8 @@
 }
 
 // Allow COVHomeScreenViewController to be unwound to.
--(IBAction)unwindToMain:(UIStoryboardSegue *)segue {
+-(IBAction)unwindToMain:(UIStoryboardSegue *)segue
+{
     // Nothing to do. Actions handled in prepareForSegue.
 }
 
