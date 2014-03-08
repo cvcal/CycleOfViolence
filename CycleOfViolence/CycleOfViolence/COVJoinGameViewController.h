@@ -15,7 +15,6 @@
 - (id)initWithCoder:(NSCoder *)aDecoder;
 
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewDidAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
@@ -26,7 +25,9 @@
 - (void)objectsWillLoad;
 
 - (PFQuery *)queryForTable;
-- (UITableViewCell *)tableView:(UITableView *)tableView;
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+                        object:(PFObject *)object;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;

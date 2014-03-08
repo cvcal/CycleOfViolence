@@ -7,7 +7,6 @@
 //
 
 #import "COVHomeScreenViewController.h"
-#import "COVGame.h"
 
 @interface COVHomeScreenViewController ()
 
@@ -58,34 +57,12 @@
         if (currGame.gameStarted) {
             [self performSegueWithIdentifier:@"ToActiveGame" sender:self];
         } else {
-            [self performSegueWithIdentifier:@"ToInactiveGameScreen" sender:self];
+            [self performSegueWithIdentifier:@"ToInactiveGame" sender:self];
         }
         
     } else {
         NSLog(@"The user is not in a game yet.");
     }
-}
-
-- (void)bringUpLogIn
-{
-    // Create the log in view controller.
-    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-    logInViewController.fields = PFLogInFieldsUsernameAndPassword
-        | PFLogInFieldsLogInButton
-        | PFLogInFieldsSignUpButton
-        | PFLogInFieldsPasswordForgotten;
-
-    [logInViewController setDelegate:self]; // Set ourselves as the delegate
-        
-    // Create the sign up view controller
-    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-    [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-    
-    // Assign our sign up controller to be displayed from the login controller
-    [logInViewController setSignUpController:signUpViewController];
-    
-    // Present the log in view controller
-    [self presentViewController:logInViewController animated:YES completion:NULL];
 }
 
 - (void)buttonTapped:(UIButton *)sender
@@ -97,6 +74,28 @@
         [PFUser logOut];
         [self bringUpLogIn];
     }
+}
+
+- (void)bringUpLogIn
+{
+    // Create the log in view controller.
+    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+    logInViewController.fields = PFLogInFieldsUsernameAndPassword
+    | PFLogInFieldsLogInButton
+    | PFLogInFieldsSignUpButton
+    | PFLogInFieldsPasswordForgotten;
+    
+    [logInViewController setDelegate:(id)self]; // Set ourselves as the delegate
+    
+    // Create the sign up view controller
+    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+    [signUpViewController setDelegate:(id)self]; // Set ourselves as the delegate
+    
+    // Assign our sign up controller to be displayed from the login controller
+    [logInViewController setSignUpController:signUpViewController];
+    
+    // Present the log in view controller
+    [self presentViewController:logInViewController animated:YES completion:NULL];
 }
 
 // Dismiss the modal login after successful login.

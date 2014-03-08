@@ -74,7 +74,7 @@
                     <navigationItem key="navigationItem" id="i6b-Z9-f2G"/>
                     <connections>
                         <outlet property="logOut" destination="CRW-ln-Cni" id="WYx-8W-0KY"/>
-                        <segue destination="eGU-AY-flX" kind="push" identifier="ToInactiveGameScreen" id="O2X-Ad-Qr1"/>
+                        <segue destination="eGU-AY-flX" kind="push" identifier="ToInactiveGame" id="O2X-Ad-Qr1"/>
                         <segue destination="nC7-Ma-fzX" kind="push" identifier="ToActiveGame" id="9I3-kK-dcH"/>
                     </connections>
                 </viewController>
@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LN0-ud-6GF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2190" y="-42"/>
+            <point key="canvasLocation" x="1942" y="-640"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vpq-EJ-5gq">
