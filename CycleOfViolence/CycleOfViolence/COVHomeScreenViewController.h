@@ -14,6 +14,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
 
 - (void)checkForGameStateSegue;
