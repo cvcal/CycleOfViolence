@@ -30,14 +30,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     // Users can only access the app if they are logged in.
-    if ([PFUser currentUser]) {
-        // Display a different screen if the user is in a game.
-        [self checkForGameStateSegue];
-    } else {
+    if (![PFUser currentUser]) {
         [self bringUpLogIn];
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    // Make sure this is the right screen to be displaying.
+    [self checkForGameStateSegue];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +54,8 @@
     PFUser *currUser = [PFUser currentUser];
     if (currUser[@"currentGameID"] != nil) {
         NSLog(@"The user is in a game.");
-        COVGame * currGame = (COVGame *)[PFQuery getObjectOfClass: @"COVGame" objectId: currUser[@"currentGameID"]];
+        COVGame * currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+                                                         objectId:currUser[@"currentGameID"]];
         
         // A game has either started, or it hasn't.
         if (currGame.gameStarted) {
@@ -103,7 +107,6 @@
                didLogInUser:(PFUser *)user
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
-    [self checkForGameStateSegue];
 }
 
 // Sent to the delegate when a PFUser is signed up.
@@ -139,10 +142,15 @@
 }
 
 // Allow COVHomeScreenViewController to be unwound to.
--(IBAction)unwindToMain:(UIStoryboardSegue *)segue
+- (IBAction)unwindToMain:(UIStoryboardSegue *)segue
 {
-    [self checkForGameStateSegue]; // The user may now be in a game.
     // Nothing else to do. Actions handled in prepareForSegue.
+}
+
+- (IBAction)unwindAndLogOut:(UIStoryboardSegue *)segue
+{
+    [PFUser logOut];
+    [self bringUpLogIn];
 }
 
 @end

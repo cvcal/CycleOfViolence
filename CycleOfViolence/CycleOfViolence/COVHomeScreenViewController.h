@@ -14,6 +14,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
 - (void)didReceiveMemoryWarning;
 
 - (void)checkForGameStateSegue;
@@ -29,6 +30,7 @@
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
            shouldBeginSignUp:(NSDictionary *)info;
 
--(IBAction)unwindToMain:(UIStoryboardSegue *)segue;
+- (IBAction)unwindToMain:(UIStoryboardSegue *)segue;
+- (IBAction)unwindAndLogOut:(UIStoryboardSegue *)segue;
 
 @end
