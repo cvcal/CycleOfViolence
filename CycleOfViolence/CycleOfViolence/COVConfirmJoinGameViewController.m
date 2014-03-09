@@ -38,15 +38,17 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    
     // Dispose of any resources that can be recreated.
 }
 
+// Add the user to the game if they selected Join Game.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if (sender == self.joinGameButton) {
         NSLog(@"Called prepareForSegue from Join Game button.");
         PFUser *currUser = [PFUser currentUser];
-        [self.currentGame addPlayer:currUser];
+        [self.currentGame addPlayer:currUser]; // This method also saves the game.
     } else {
         NSLog(@"Segue initiated by a button besides Join Game.");
     }

@@ -59,7 +59,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="DDi-Nc-c5w" kind="push" id="r5n-xu-GYZ"/>
+                                    <segue destination="DDi-Nc-c5w" kind="push" identifier="ToJoinGameScreen" id="r5n-xu-GYZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,11 +74,41 @@
                     <navigationItem key="navigationItem" id="i6b-Z9-f2G"/>
                     <connections>
                         <outlet property="logOut" destination="CRW-ln-Cni" id="WYx-8W-0KY"/>
+                        <segue destination="eGU-AY-flX" kind="push" identifier="ToInactiveGame" id="O2X-Ad-Qr1"/>
+                        <segue destination="nC7-Ma-fzX" kind="push" identifier="ToActiveGame" id="9I3-kK-dcH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6P-iw-iZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="-42"/>
+            <point key="canvasLocation" x="757" y="-42"/>
+        </scene>
+        <!--Inactive Game View Controller-->
+        <scene sceneID="dUa-GL-0v5">
+            <objects>
+                <viewController id="eGU-AY-flX" customClass="COVInactiveGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oTM-ov-fBX"/>
+                        <viewControllerLayoutGuide type="bottom" id="u7O-gG-91v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rmp-Ko-bNn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You're in a game! It hasn't started yet...." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="222" translatesAutoresizingMaskIntoConstraints="NO" id="9eG-e6-a7g">
+                                <rect key="frame" x="49" y="81" width="222" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ilW-ik-sbq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2IY-xN-4f5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292" y="-640"/>
         </scene>
         <!--Join Game View Controller-->
         <scene sceneID="NUt-Ek-Wey">
@@ -110,7 +140,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyF-4g-06D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1361" y="-545"/>
+            <point key="canvasLocation" x="1292" y="770"/>
         </scene>
         <!--Confirm Join Game View Controller-->
         <scene sceneID="GQb-hO-MLh">
@@ -169,7 +199,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdr-OT-nzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kqB-BU-ryU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2034" y="-1049"/>
+            <point key="canvasLocation" x="1738" y="770"/>
         </scene>
         <!--Create Game View Controller-->
         <scene sceneID="qbG-Oy-SR9">
@@ -222,7 +252,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mEb-UH-RfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="PHK-3Q-4y7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1368" y="370"/>
+            <point key="canvasLocation" x="1292" y="50"/>
+        </scene>
+        <!--Game Main View Controller-->
+        <scene sceneID="PVK-9q-tOx">
+            <objects>
+                <viewController id="nC7-Ma-fzX" customClass="COVGameMainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dNa-iW-bqS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Abw-eN-3HK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sXL-y3-di9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let The Blood Spilling Begin!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ud0-7F-as5">
+                                <rect key="frame" x="46" y="93" width="229" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KRa-53-bbc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LN0-ud-6GF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942" y="-640"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vpq-EJ-5gq">

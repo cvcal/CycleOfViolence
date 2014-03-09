@@ -7,8 +7,6 @@
 //
 
 #import "COVAppDelegate.h"
-#import <Parse/Parse.h>
-#import "COVGame.h"
 
 @implementation COVAppDelegate
 
