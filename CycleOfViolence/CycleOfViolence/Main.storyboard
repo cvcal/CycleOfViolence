@@ -74,8 +74,8 @@
                     <navigationItem key="navigationItem" id="i6b-Z9-f2G"/>
                     <connections>
                         <outlet property="logOut" destination="CRW-ln-Cni" id="WYx-8W-0KY"/>
-                        <segue destination="eGU-AY-flX" kind="push" identifier="ToInactiveGame" id="O2X-Ad-Qr1"/>
-                        <segue destination="nC7-Ma-fzX" kind="push" identifier="ToActiveGame" id="9I3-kK-dcH"/>
+                        <segue destination="eGU-AY-flX" kind="push" identifier="ToInactiveGame" customClass="COVUnanimatedSegue" id="oLY-wd-06p"/>
+                        <segue destination="nC7-Ma-fzX" kind="push" identifier="ToActiveGame" id="jWX-x7-T2b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6P-iw-iZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -104,9 +104,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ilW-ik-sbq"/>
+                    <navigationItem key="navigationItem" id="ilW-ik-sbq">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="xwx-dH-RZZ">
+                            <connections>
+                                <segue destination="JVl-2J-Nhm" kind="unwind" unwindAction="unwindAndLogOut:" id="qRd-hE-CC2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IY-xN-4f5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="JVl-2J-Nhm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1292" y="-640"/>
         </scene>
@@ -126,9 +133,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="253" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="bdp-So-SBM" kind="push" identifier="ConfirmationSegue" trigger="accessoryAction" id="ex0-nD-jn9"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -137,6 +141,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="xeq-Cs-aUj"/>
+                    <connections>
+                        <segue destination="bdp-So-SBM" kind="push" identifier="ConfirmationSegue" id="rvL-0l-gsr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyF-4g-06D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,9 +282,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KRa-53-bbc"/>
+                    <navigationItem key="navigationItem" id="KRa-53-bbc">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="xYv-cf-G4l">
+                            <connections>
+                                <segue destination="mug-yP-JMz" kind="unwind" unwindAction="unwindAndLogOut:" id="Zzx-Bb-TBp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LN0-ud-6GF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="mug-yP-JMz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1942" y="-640"/>
         </scene>
