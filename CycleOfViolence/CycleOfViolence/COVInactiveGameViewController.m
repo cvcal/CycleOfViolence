@@ -11,6 +11,8 @@
 @interface COVInactiveGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *targetDisplay;
+@property (weak, nonatomic) IBOutlet UIButton *leaveButton;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 
 @end
@@ -40,7 +42,7 @@
     
     // Get the target from the cycle in the user's current game.
     COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
-                                                     objectId:currUser[@"currentGameID"]];
+                                            objectId:currUser[@"currentGameID"]];
     
     // Find the current user in the cycle.
     NSUInteger userIndex = -1;
@@ -60,8 +62,25 @@
     target = (PFUser *)[target fetchIfNeeded];
 
     // Set the view controller to display the current user and target.
-    self.targetDisplay.text = [NSString stringWithFormat:@"You are: %@\n and your target is: %@",
-                          currUser.username, target.username];
+    self.targetDisplay.text = [NSString stringWithFormat:
+                                    @"You are: %@\n and your target is: %@",
+                                    currUser.username,
+                                    target.username];
+    
+    // Show the buttons selectively.
+    // If we're the manager
+    if ([currUser.objectId isEqualToString: (currGame.gameManager).objectId]){
+        [self.leaveButton setTitle:@"Delete Game" forState:UIControlStateNormal];
+        [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
+        
+    }
+    else {
+        // Disable the 'start game' button
+        [self.startButton setEnabled:NO];
+        // Make the text appropriate for the 'Leave Game" button
+        [self.leaveButton setTitle:@"Leave Game" forState:UIControlStateNormal];
+    }
+        
 }
 
 - (void)didReceiveMemoryWarning
