@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		504B7AE018C9A39E00C8D3AB /* COVGameMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504B7ADF18C9A39E00C8D3AB /* COVGameMainViewController.m */; };
+		8904AA8D18E4D2AF00F59BEE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409E918BA7D610066A552 /* Parse.framework */; };
 		DA0A094C18C2525E0011F92A /* COVConfirmJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0A094B18C2525E0011F92A /* COVConfirmJoinGameViewController.m */; };
 		DA16D65B18BABF4700AA604B /* COVCreateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA16D65A18BABF4700AA604B /* COVCreateGameViewController.m */; };
 		DA16D65E18BABF5800AA604B /* COVGame.m in Sources */ = {isa = PBXBuildFile; fileRef = DA16D65D18BABF5800AA604B /* COVGame.m */; };
@@ -35,7 +36,6 @@
 		DAC409FE18BA81350066A552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC409FD18BA81350066A552 /* Main.storyboard */; };
 		DAC40A0118BA8A980066A552 /* COVHomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC40A0018BA8A980066A552 /* COVHomeScreenViewController.m */; };
 		DAE8ADA818C98E0400588C91 /* COVInactiveGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8ADA718C98E0400588C91 /* COVInactiveGameViewController.m */; };
-		DAEA4A6418CB908B006D87BE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409E918BA7D610066A552 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAEA4A6418CB908B006D87BE /* Parse.framework in Frameworks */,
+				8904AA8D18E4D2AF00F59BEE /* Parse.framework in Frameworks */,
 				DAC409FC18BA7E620066A552 /* SystemConfiguration.framework in Frameworks */,
 				DAC409FA18BA7E5B0066A552 /* StoreKit.framework in Frameworks */,
 				DAC409F818BA7E550066A552 /* Security.framework in Frameworks */,
@@ -445,6 +445,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jarthurcs/Documents/cs121rhulett/CycleOfViolence/CycleOfViolence,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CycleOfViolence/CycleOfViolence-Prefix.pch";
@@ -463,6 +464,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/jarthurcs/Documents/cs121rhulett/CycleOfViolence/CycleOfViolence,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CycleOfViolence/CycleOfViolence-Prefix.pch";

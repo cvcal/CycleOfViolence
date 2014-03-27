@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "CoVGame.h"
+#import "COVGame.h"
 
 @interface COVInactiveGameViewController : UIViewController
 
