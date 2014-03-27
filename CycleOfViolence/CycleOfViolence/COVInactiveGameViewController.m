@@ -11,6 +11,7 @@
 @interface COVInactiveGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *targetDisplay;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 
 @end
 
@@ -32,6 +33,10 @@
     
     // Get the current user.
     PFUser *currUser = [PFUser currentUser];
+    
+    // Set the title to show the user.
+    NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
+    [_navBar setTitle:title];
     
     // Get the target from the cycle in the user's current game.
     COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
