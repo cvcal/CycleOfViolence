@@ -118,6 +118,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="navBar" destination="ilW-ik-sbq" id="i2F-rP-Ybh"/>
                         <outlet property="targetDisplay" destination="VgT-Y5-kBc" id="ECh-02-cvl"/>
                     </connections>
                 </viewController>
