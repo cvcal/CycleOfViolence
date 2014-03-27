@@ -54,7 +54,7 @@
     PFUser *currUser = [PFUser currentUser];
     if (currUser[@"currentGameID"] != nil) {
         NSLog(@"The user is in a game.");
-        COVGame * currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+        COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
                                                          objectId:currUser[@"currentGameID"]];
         
         // A game has either started, or it hasn't.
