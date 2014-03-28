@@ -33,5 +33,7 @@
 - (void) removePlayer:(PFUser *)exPlayer;
 // Start the game
 - (void) startGame;
+// Clean up the game to prepare for deleting
+- (void) cleanGameForDelete;
 
 @end

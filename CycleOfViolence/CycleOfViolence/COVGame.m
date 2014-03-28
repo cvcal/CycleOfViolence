@@ -65,24 +65,40 @@
     [newPlayer saveInBackground];
 }
 
-- (void) removePlayer:(PFUser *)exPlayer
-{
-    // Remove the player from the cycle
-    self.playersRemaining = (u_int32_t)[self.cycle count];
-    [self.cycle removeObject:exPlayer];
-
-    // Store the game's ID in the User who joined (pointers don't save properly).
-    exPlayer[@"currentGameID"] = [NSNull null];
-    
-    // Update Parse cloud storage
-    [self saveInBackground];
-    [exPlayer saveInBackground];
-}
-
 - (void) startGame
 {
     [self setGameStarted:true];
     [self saveInBackground];
+}
+
+- (void) removePlayer:(PFUser *)exPlayer
+{
+    // Remove the user from the cycle
+    NSUInteger userIndex = -1;
+    NSUInteger end = [self.cycle count];
+    for (NSUInteger i = 0; i < end; i++) {
+        PFUser *entry = (PFUser *)[self.cycle objectAtIndex:i];
+        if ([exPlayer.objectId isEqualToString:entry.objectId]) {
+            userIndex = i;
+            break;
+        }
+    }
+    [self.cycle removeObjectAtIndex:userIndex];
+    self.playersRemaining = (u_int32_t)[self.cycle count];
+    
+    // Update Parse cloud storage
+    [self saveInBackground];
+}
+
+
+- (void) cleanGameForDelete
+{
+    // Empty out all the users and update them as well, so they don't link to a
+    // non-existant game.
+    while ([self.cycle count] != 0){
+        PFUser *user = [self.cycle objectAtIndex: 0]; 
+        [self removePlayer: user];
+    }
 }
 
 @end
