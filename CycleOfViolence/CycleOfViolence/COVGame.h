@@ -29,11 +29,17 @@
 
 // Adds the specified player to the game.
 - (void) addPlayer:(PFUser *)newPlayer;
+
 // Removes the specified player from the game.
 - (void) removePlayer:(PFUser *)exPlayer;
+
 // Start the game
 - (void) startGame;
+
 // Clean up the game to prepare for deleting
 - (void) cleanGameForDelete;
+
+// Gets the target for the given player
+- (PFUser*) getTarget:(PFUser *)assassin;
 
 @end

@@ -101,4 +101,25 @@
     }
 }
 
+- (PFUser*) getTarget:(PFUser *)assassin
+{
+    // Find the assassin in the cycle.
+    NSUInteger userIndex = -1;
+    for (NSUInteger i = 0; i < [self.cycle count]; i++) {
+        PFUser *entry = (PFUser *)[self.cycle objectAtIndex:i];
+        if ([assassin.objectId isEqualToString:entry.objectId]) {
+            userIndex = i;
+            break;
+        }
+    }
+    
+    // The target is stored one after the current user.
+    NSUInteger targetIndex = (userIndex + 1) % [self.cycle count];
+    PFUser *target = [self.cycle objectAtIndex:targetIndex];
+    
+    // Get the target's data from Parse, since it is not stored in cycle.
+    target = (PFUser *)[target fetchIfNeeded];
+    return target;
+}
+
 @end
