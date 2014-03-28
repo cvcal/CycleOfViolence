@@ -34,7 +34,7 @@
         // set to zero.
         self.cycle = [[NSMutableArray alloc] init];
         self.name = gameName;
-        self.gameStarted = NO;
+        [self setGameStarted:false];
     
         // Add the player who created the game.
         [self save]; // We need to access the objectId in addPlayer; save creates the ID.
@@ -56,13 +56,33 @@
     [self.cycle insertObject:newPlayer atIndex:random];
     ++self.numberOfPlayers;
     ++self.playersRemaining;
-    [self saveInBackground];
     
     // Store the game's ID in the User who joined (pointers don't save properly).
-    PFUser *currUser = [PFUser currentUser];
-    currUser[@"currentGameID"] = self.objectId;
-    [currUser saveInBackground];
+    newPlayer[@"currentGameID"] = self.objectId;
+    
+    // Update Parse cloud storage
+    [self saveInBackground];
+    [newPlayer saveInBackground];
 }
 
+- (void) removePlayer:(PFUser *)exPlayer
+{
+    // Remove the player from the cycle
+    self.playersRemaining = (u_int32_t)[self.cycle count];
+    [self.cycle removeObject:exPlayer];
+
+    // Store the game's ID in the User who joined (pointers don't save properly).
+    exPlayer[@"currentGameID"] = [NSNull null];
+    
+    // Update Parse cloud storage
+    [self saveInBackground];
+    [exPlayer saveInBackground];
+}
+
+- (void) startGame
+{
+    [self setGameStarted:true];
+    [self saveInBackground];
+}
 
 @end

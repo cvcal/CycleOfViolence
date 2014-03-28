@@ -90,15 +90,31 @@
 }
 
 
-- (IBAction)startGame:(id)sender {
+- (IBAction)buttonTapped:(id)sender {
     PFUser *currUser = [PFUser currentUser];
     COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
                                                     objectId:currUser[@"currentGameID"]];
-    // Start the game!
-    [currGame setGameStarted:true];
-    NSLog(@"Started the game via the startButton");
-    [currGame saveInBackground];
     
+    if(sender == self.startButton) {
+        // Start the game!
+        NSLog(@"startButton tapped");
+        [currGame startGame];
+    }
+    else if (sender == self.leaveButton) {
+        NSLog(@"leaveButton tapped");
+        
+        // This button either lets a user leave the game, or it deletes the game if
+        // the user is the manager
+        if ([currUser.objectId isEqualToString: (currGame.gameManager).objectId]) {
+            NSLog(@"Manager deleting game, hopefully.");
+            [currGame removePlayer:currUser];
+            [currGame delete];
+        }
+        else {
+            NSLog(@"User leaving game, hopefully.");
+            [currGame removePlayer:currUser];
+        }
+    }
 }
 
 @end

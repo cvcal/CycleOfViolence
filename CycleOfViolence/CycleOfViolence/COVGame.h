@@ -29,5 +29,9 @@
 
 // Adds the specified player to the game.
 - (void) addPlayer:(PFUser *)newPlayer;
+// Removes the specified player from the game.
+- (void) removePlayer:(PFUser *)exPlayer;
+// Start the game
+- (void) startGame;
 
 @end

@@ -15,6 +15,6 @@
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
-- (IBAction)startGame:(id)sender;
+- (IBAction)buttonTapped:(id)sender;
 
 @end

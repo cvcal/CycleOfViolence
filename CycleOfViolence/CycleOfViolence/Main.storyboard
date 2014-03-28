@@ -113,6 +113,10 @@
                                 <state key="normal" title="Leave Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="eGU-AY-flX" eventType="touchUpInside" id="645-7z-8iS"/>
+                                    <segue destination="JVl-2J-Nhm" kind="unwind" unwindAction="unwindToMain:" id="KsU-9Z-uMx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6W-ZC-idX">
                                 <rect key="frame" x="49" y="456" width="222" height="30"/>
@@ -121,7 +125,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startGame:" destination="eGU-AY-flX" eventType="touchUpInside" id="7gy-Fk-7sk"/>
+                                    <action selector="buttonTapped:" destination="eGU-AY-flX" eventType="touchUpInside" id="eB3-JR-Aby"/>
                                     <segue destination="JVl-2J-Nhm" kind="unwind" unwindAction="unwindToMain:" id="cMA-nX-jgU"/>
                                 </connections>
                             </button>

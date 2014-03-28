@@ -52,7 +52,7 @@
 - (void)checkForGameStateSegue
 {
     PFUser *currUser = [PFUser currentUser];
-    if (currUser[@"currentGameID"] != nil) {
+    if (currUser[@"currentGameID"] != [NSNull null]) {
         NSLog(@"The user is in a game.");
         COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
                                                          objectId:currUser[@"currentGameID"]];
