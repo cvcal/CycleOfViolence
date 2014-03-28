@@ -98,6 +98,7 @@
     [currGame setGameStarted:true];
     NSLog(@"Started the game via the startButton");
     [currGame saveInBackground];
+    
 }
 
 @end

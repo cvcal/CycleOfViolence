@@ -122,6 +122,7 @@
                                 </state>
                                 <connections>
                                     <action selector="startGame:" destination="eGU-AY-flX" eventType="touchUpInside" id="7gy-Fk-7sk"/>
+                                    <segue destination="JVl-2J-Nhm" kind="unwind" unwindAction="unwindToMain:" id="cMA-nX-jgU"/>
                                 </connections>
                             </button>
                         </subviews>
