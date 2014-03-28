@@ -51,7 +51,6 @@
 
 - (void)checkForGameStateSegue
 {
-    
     PFUser *currUser = [PFUser currentUser];
     [currUser refresh];
     if (currUser[@"currentGameID"] != [NSNull null] && currUser[@"currentGameID"] != nil) {

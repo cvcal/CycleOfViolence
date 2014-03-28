@@ -73,10 +73,12 @@
 
 - (void) removePlayer:(PFUser *)exPlayer
 {
+    NSLog(@"Removing player %@", exPlayer.username);
     // Remove the user from the cycle
     NSUInteger userIndex = -1;
     NSUInteger end = [self.cycle count];
     for (NSUInteger i = 0; i < end; i++) {
+        NSLog(@"At index %lu", i);
         PFUser *entry = (PFUser *)[self.cycle objectAtIndex:i];
         if ([exPlayer.objectId isEqualToString:entry.objectId]) {
             userIndex = i;
@@ -85,9 +87,6 @@
     }
     [self.cycle removeObjectAtIndex:userIndex];
     self.playersRemaining = (u_int32_t)[self.cycle count];
-    
-    // Update Parse cloud storage
-    [self saveInBackground];
 }
 
 

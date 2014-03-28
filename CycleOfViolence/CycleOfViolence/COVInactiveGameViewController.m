@@ -33,23 +33,19 @@
 {
     [super viewDidLoad];
     
-    // Get the current user.
+    // Get the current user and game.
     PFUser *currUser = [PFUser currentUser];
+    COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+                                                    objectId:currUser[@"currentGameID"]];
     
     // Set the title to show the user.
     NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
     [_navBar setTitle:title];
-    
-    // Get the target from the cycle in the user's current game.
-    COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
-                                                    objectId:currUser[@"currentGameID"]];
-    PFUser* target = [currGame getTarget:currUser];
-    
-    // Set the view controller to display the current user and target.
+
+    // Set the view controller to display the current game.
     self.targetDisplay.text = [NSString stringWithFormat:
-                               @"You are: %@\n and your target is: %@",
-                               currUser.username,
-                               target.username];
+                               @"You are in the game \"%@,\" which hasn't started yet.",
+                               currGame.name];
     
     // Show the buttons selectively.
     // If we're the manager
@@ -92,12 +88,13 @@
         if ([currUser.objectId isEqualToString: (currGame.gameManager).objectId]) {
             NSLog(@"Manager deleting game, hopefully.");
             [currGame cleanGameForDelete];
-            [currGame refresh];
             [currGame delete];
         }
         else {
             NSLog(@"User leaving game, hopefully.");
             [currGame removePlayer:currUser];
+            // Update Parse cloud storage
+            [currGame saveInBackground];
         }
         
         // Update the currentGameID in the User who left, or the manager who deleted the game.
