@@ -7,6 +7,7 @@
 //
 
 #import "COVGameMainViewController.h"
+
 @interface COVGameMainViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *targetDisplay;
@@ -69,8 +70,7 @@
     if (sender == self.suicideButton || sender == self.murderButton) {
         NSLog(@"leaveButton tapped");
         
-        // This button either lets a user leave the game, or it deletes the game if
-        // the user is the manager
+        // This button removes a user from the game.
         if (currGame.playersRemaining <= 1) {
             NSLog(@"Game end, deleting game, hopefully.");
             [currGame cleanGameForDelete];
@@ -79,13 +79,24 @@
         else {
             NSLog(@"User leaving game, hopefully.");
             [currGame removePlayer:currUser];
+            
             // Update Parse cloud storage
             [currGame saveInBackground];
         }
         
         // Update the currentGameID in the User who left, or the manager who deleted the game.
         currUser[@"currentGameID"] = [NSNull null];
-        [currUser saveInBackground];
+        [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Sucessfully saved in background.");
+                
+                // Since user is no longer in the game, return them to the home screen.
+                [self performSegueWithIdentifier:@"toHomeScreenFromMain" sender:self];
+                
+            } else {
+                NSLog(@"Failed to save in background.");
+            }
+        }];
     }
 }
 

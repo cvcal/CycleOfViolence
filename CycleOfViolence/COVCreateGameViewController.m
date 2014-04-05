@@ -53,7 +53,7 @@
         newGame = [newGame init:self.name.text]; // Use the name from the UITextField.
         NSLog(@"Initialized COVGame");
         
-        // Include debugging output.
+        // Save the game.
         [newGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Sucessfully saved in background.");

@@ -48,7 +48,7 @@
                                currGame.name];
     
     // Show the buttons selectively.
-    // If we're the manager
+    // If we're the manager...
     if ([currUser.objectId isEqualToString: (currGame.gameManager).objectId]){
         [self.leaveButton setTitle:@"Delete Game" forState:UIControlStateNormal];
         [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
@@ -93,13 +93,27 @@
         else {
             NSLog(@"User leaving game, hopefully.");
             [currGame removePlayer:currUser];
-            // Update Parse cloud storage
+            
+            // Game not yet started, so decrease total number of players.
+            --currGame.numberOfPlayers;
+            
+            // Update Parse cloud storage.
             [currGame saveInBackground];
         }
         
         // Update the currentGameID in the User who left, or the manager who deleted the game.
         currUser[@"currentGameID"] = [NSNull null];
-        [currUser saveInBackground];
+        [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Sucessfully saved in background.");
+                
+                // Since user is no longer in the game, return them to the home screen.
+                [self performSegueWithIdentifier:@"toHomeScreenFromInactive" sender:self];
+                
+            } else {
+                NSLog(@"Failed to save in background.");
+            }
+        }];
     }
 }
 

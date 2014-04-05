@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6l9-qo-ycg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6l9-qo-ycg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -117,7 +117,6 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="eGU-AY-flX" eventType="touchUpInside" id="645-7z-8iS"/>
-                                    <segue destination="JVl-2J-Nhm" kind="unwind" unwindAction="unwindToMain:" id="KsU-9Z-uMx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6W-ZC-idX">
@@ -128,7 +127,6 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="eGU-AY-flX" eventType="touchUpInside" id="eB3-JR-Aby"/>
-                                    <segue destination="JVl-2J-Nhm" kind="unwind" unwindAction="unwindToMain:" id="cMA-nX-jgU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -157,6 +155,7 @@
                         <outlet property="navBar" destination="ilW-ik-sbq" id="i2F-rP-Ybh"/>
                         <outlet property="startButton" destination="o6W-ZC-idX" id="IDY-46-Dps"/>
                         <outlet property="targetDisplay" destination="VgT-Y5-kBc" id="ECh-02-cvl"/>
+                        <segue destination="JVl-2J-Nhm" kind="unwind" identifier="toHomeScreenFromInactive" unwindAction="unwindToMain:" id="8VJ-ek-R1O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2IY-xN-4f5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -320,44 +319,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="WhY-EM-pdG">
-                                <rect key="frame" x="20" y="299" width="280" height="53"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="229" translatesAutoresizingMaskIntoConstraints="NO" id="WhY-EM-pdG">
+                                <rect key="frame" x="47" y="373" width="229" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="167-AM-WMS"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRh-pT-Bbq">
-                                <rect key="frame" x="46" y="499" width="229" height="49"/>
+                                <rect key="frame" x="117" y="518" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="NTX-TX-bC9"/>
-                                </constraints>
                                 <state key="normal" title="Leave Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="mug-yP-JMz" kind="unwind" unwindAction="unwindToMain:" id="R8Q-oP-cRi"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-os-Cbd">
-                                <rect key="frame" x="46" y="360" width="229" height="30"/>
+                                <rect key="frame" x="79" y="441" width="164" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="a0l-8b-lZa"/>
-                                </constraints>
                                 <state key="normal" title="I've been killed! Murder!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonTapped:" destination="nC7-Ma-fzX" eventType="touchUpInside" id="PNF-HK-fs2"/>
-                                    <segue destination="mug-yP-JMz" kind="unwind" unwindAction="unwindToMain:" id="npu-6b-SEr"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="229" translatesAutoresizingMaskIntoConstraints="NO" id="t25-WC-3SG">
-                                <rect key="frame" x="46" y="102" width="229" height="169"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="229" translatesAutoresizingMaskIntoConstraints="NO" id="t25-WC-3SG">
+                                <rect key="frame" x="47" y="72" width="229" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">You are in a game. To progress, attempt to stay alive while eliminating your targets! To kill your target, please get them to press their "I've be killed!" button, and refresh to get your new target.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -367,23 +353,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hDv-os-Cbd" firstAttribute="leading" secondItem="t25-WC-3SG" secondAttribute="leading" id="18x-WM-SVA"/>
-                            <constraint firstAttribute="bottom" secondItem="PRh-pT-Bbq" secondAttribute="bottom" constant="20" symbolic="YES" id="8RC-IK-PmD"/>
-                            <constraint firstItem="hDv-os-Cbd" firstAttribute="top" secondItem="WhY-EM-pdG" secondAttribute="bottom" constant="8" symbolic="YES" id="CAo-x4-iG0"/>
-                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="leading" secondItem="sXL-y3-di9" secondAttribute="leading" constant="46" id="DeZ-n8-yD2"/>
-                            <constraint firstItem="WhY-EM-pdG" firstAttribute="leading" secondItem="sXL-y3-di9" secondAttribute="leading" constant="20" symbolic="YES" id="FD5-Gf-2T5"/>
-                            <constraint firstItem="WhY-EM-pdG" firstAttribute="top" secondItem="t25-WC-3SG" secondAttribute="bottom" constant="28" id="cey-9d-h9j"/>
-                            <constraint firstItem="hDv-os-Cbd" firstAttribute="leading" secondItem="PRh-pT-Bbq" secondAttribute="leading" id="fC4-3V-oK5"/>
-                            <constraint firstAttribute="bottom" secondItem="hDv-os-Cbd" secondAttribute="bottom" constant="178" id="fr4-Ks-qMs"/>
-                            <constraint firstAttribute="trailing" secondItem="PRh-pT-Bbq" secondAttribute="trailing" constant="45" id="lxP-U0-vsi"/>
-                            <constraint firstItem="WhY-EM-pdG" firstAttribute="centerX" secondItem="hDv-os-Cbd" secondAttribute="centerX" id="mpj-Dy-06v"/>
-                            <constraint firstItem="hDv-os-Cbd" firstAttribute="trailing" secondItem="PRh-pT-Bbq" secondAttribute="trailing" id="skC-k4-Mh0"/>
+                            <constraint firstAttribute="centerX" secondItem="t25-WC-3SG" secondAttribute="centerX" constant="-1.5" id="8Rb-JL-6cW"/>
+                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="top" secondItem="hDv-os-Cbd" secondAttribute="bottom" constant="47" id="CCK-uw-FHJ"/>
+                            <constraint firstItem="Abw-eN-3HK" firstAttribute="top" secondItem="WhY-EM-pdG" secondAttribute="bottom" constant="174" id="KnW-cL-a1b"/>
+                            <constraint firstItem="Abw-eN-3HK" firstAttribute="top" secondItem="PRh-pT-Bbq" secondAttribute="bottom" constant="20" id="M9S-Ub-UtK"/>
+                            <constraint firstItem="t25-WC-3SG" firstAttribute="top" secondItem="dNa-iW-bqS" secondAttribute="bottom" constant="8" id="Nx5-Z3-Mb3"/>
+                            <constraint firstAttribute="centerX" secondItem="WhY-EM-pdG" secondAttribute="centerX" constant="-1.5" id="ZNg-Zd-Ij3"/>
+                            <constraint firstAttribute="centerX" secondItem="PRh-pT-Bbq" secondAttribute="centerX" id="ZSU-l8-E2s"/>
+                            <constraint firstAttribute="trailing" secondItem="WhY-EM-pdG" secondAttribute="trailing" constant="44" id="aUv-NV-0dp"/>
+                            <constraint firstItem="WhY-EM-pdG" firstAttribute="leading" secondItem="sXL-y3-di9" secondAttribute="leading" constant="47" id="fli-SQ-zk8"/>
+                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="top" secondItem="WhY-EM-pdG" secondAttribute="bottom" constant="124" id="gIh-LA-7eL"/>
+                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="centerX" secondItem="WhY-EM-pdG" secondAttribute="centerX" constant="-1.5" id="wRj-iX-NGb"/>
+                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="centerX" secondItem="hDv-os-Cbd" secondAttribute="centerX" constant="-0.5" id="xU6-4o-MjD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KRa-53-bbc">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="xYv-cf-G4l">
                             <connections>
-                                <segue destination="mug-yP-JMz" kind="unwind" unwindAction="unwindAndLogOut:" id="Zzx-Bb-TBp"/>
+                                <segue destination="mug-yP-JMz" kind="unwind" identifier="toHomeScreen" unwindAction="unwindAndLogOut:" id="Zzx-Bb-TBp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -392,6 +379,7 @@
                         <outlet property="navBar" destination="KRa-53-bbc" id="bKR-34-Pj1"/>
                         <outlet property="suicideButton" destination="PRh-pT-Bbq" id="Jil-Ga-f1f"/>
                         <outlet property="targetDisplay" destination="WhY-EM-pdG" id="9eE-bi-Moj"/>
+                        <segue destination="mug-yP-JMz" kind="unwind" identifier="toHomeScreenFromMain" unwindAction="unwindToMain:" id="J2J-1x-eOR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LN0-ud-6GF" userLabel="First Responder" sceneMemberID="firstResponder"/>

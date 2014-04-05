@@ -53,12 +53,13 @@
 {
     PFUser *currUser = [PFUser currentUser];
     [currUser refresh];
+    
     if (currUser[@"currentGameID"] != [NSNull null] && currUser[@"currentGameID"] != nil) {
         NSLog(@"The user is in a game.");
         COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
                                                          objectId:currUser[@"currentGameID"]];
         
-        // A game has either started, or it hasn't.
+        // A game has either started, or it hasn't, and they should go to different views.
         if (currGame.gameStarted) {
             [self performSegueWithIdentifier:@"ToActiveGame" sender:self];
         } else {
