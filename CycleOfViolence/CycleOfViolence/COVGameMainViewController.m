@@ -38,7 +38,7 @@
                                                     objectId:currUser[@"currentGameID"]];
     // Set the title to show the user.
     NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
-    [_navBar setTitle:title];
+    [self.navBar setTitle:title];
     
     [currGame refresh];
     if (currGame.playersRemaining > 1) {

@@ -15,7 +15,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+- (IBAction)buttonTapped:(id)sender;
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender;
 
 @end

@@ -40,7 +40,7 @@
     
     // Set the title to show the user.
     NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
-    [_navBar setTitle:title];
+    [self.navBar setTitle:title];
 
     // Set the view controller to display the current game.
     self.targetDisplay.text = [NSString stringWithFormat:

@@ -12,6 +12,7 @@
 
 // These are private properties, the objects on the storyboard for this view controller.
 @property (weak, nonatomic) IBOutlet UITextField *name;
+@property (weak, nonatomic) IBOutlet UITextView *rules;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
@@ -41,34 +42,40 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+- (IBAction)buttonTapped:(id)sender
+{
     // If the segue was iniated by the create button, make a new game.
     if (sender == self.createButton) {
         // Let us know how we got here.
-        NSLog(@"Called prepareForSegue via createButton");
+        NSLog(@"Called buttonTapped via createButton");
         
         COVGame *newGame = [COVGame alloc];
         NSLog(@"Allocated COVGame");
         newGame = [newGame init:self.name.text]; // Use the name from the UITextField.
+        
+        NSString *defaultRules = @"Basic Rules: When the game starts, you will receive the name of one other player, your target. Your goal is to assassinate them by meeting the kill criterion, below. Meanwhile, someone else will be trying to assassinate you; if they succeed, you will report it and be removed from the game. You win by being the last one alive.\n\n";
+        newGame.rules = [defaultRules stringByAppendingString:self.rules.text];
+        
         NSLog(@"Initialized COVGame");
         
         // Save the game.
         [newGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Sucessfully saved in background.");
+                
+                PFUser *currUser = [PFUser currentUser];
+                [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    // Now can proceed to home screen.
+                    [self performSegueWithIdentifier:@"toHomeScreenFromCreate" sender:self];
+                }];
+                
             } else {
                 NSLog(@"Failed to save in background.");
             }
         }];
-        
-    } else if (sender == self.cancelButton) {
-        // Let us know how we got here.
-        NSLog(@"Called prepareForSegue via cancelButton");
-
     } else {
         // This shouldn't happen.
-        NSLog(@"Called prepareForSegue via someOtherMeans");
+        NSLog(@"Called buttonTapped via some other means");
     }
 }
 

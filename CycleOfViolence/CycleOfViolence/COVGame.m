@@ -18,6 +18,7 @@
 @dynamic playersRemaining;
 @dynamic gameManager;
 @dynamic gameStarted;
+@dynamic rules;
 
 + (NSString *)parseClassName
 {
