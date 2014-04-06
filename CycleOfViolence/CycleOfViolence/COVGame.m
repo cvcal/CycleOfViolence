@@ -19,6 +19,7 @@
 @dynamic gameManager;
 @dynamic gameStarted;
 @dynamic rules;
+@dynamic startTime;
 
 + (NSString *)parseClassName
 {
