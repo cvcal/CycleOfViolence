@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6l9-qo-ycg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6l9-qo-ycg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -345,7 +345,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="WWd-sI-XGu">
-                                <rect key="frame" x="20" y="296" width="280" height="125"/>
+                                <rect key="frame" x="20" y="138" width="280" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Basic Rules (non-customizable): When the game starts, you will receive the name of one other player, your target. Your goal is to assassinate them by meeting the kill criterion, below. Meanwhile, someone else will be trying to assassinate you; if they succeed, you will report it and be removed from the game. You win by being the last one alive.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -353,13 +353,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customizable Rules:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofr-hC-4sx">
-                                <rect key="frame" x="20" y="127" width="280" height="21"/>
+                                <rect key="frame" x="20" y="287" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-LS-Bi6">
-                                <rect key="frame" x="20" y="156" width="280" height="111"/>
+                                <rect key="frame" x="20" y="309" width="280" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -377,26 +377,26 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Rkq-by-Cbt" secondAttribute="trailing" constant="20" id="4Ec-5v-ebw"/>
-                            <constraint firstItem="Ofr-hC-4sx" firstAttribute="top" secondItem="WWd-sI-XGu" secondAttribute="bottom" constant="-294" id="4Rh-PM-EbC"/>
+                            <constraint firstItem="Ofr-hC-4sx" firstAttribute="top" secondItem="WWd-sI-XGu" secondAttribute="bottom" constant="24" id="4Rh-PM-EbC"/>
                             <constraint firstAttribute="trailing" secondItem="FSe-tK-WY8" secondAttribute="trailing" constant="62" id="9ex-Mb-pLM"/>
                             <constraint firstItem="FSe-tK-WY8" firstAttribute="leading" secondItem="ZPd-Pt-RhG" secondAttribute="trailing" constant="105" id="9n0-IV-MXs"/>
-                            <constraint firstItem="FSe-tK-WY8" firstAttribute="top" secondItem="WWd-sI-XGu" secondAttribute="bottom" constant="31" id="ABP-pe-qSS"/>
+                            <constraint firstItem="FSe-tK-WY8" firstAttribute="top" secondItem="WWd-sI-XGu" secondAttribute="bottom" constant="189" id="ABP-pe-qSS"/>
                             <constraint firstItem="Ofr-hC-4sx" firstAttribute="leading" secondItem="hWF-mV-BMa" secondAttribute="leading" constant="20" id="Dyt-KT-LwH"/>
-                            <constraint firstItem="FSe-tK-WY8" firstAttribute="top" secondItem="6nY-LS-Bi6" secondAttribute="bottom" constant="185" id="F7m-Rb-BWb"/>
+                            <constraint firstItem="FSe-tK-WY8" firstAttribute="top" secondItem="6nY-LS-Bi6" secondAttribute="bottom" constant="32" id="F7m-Rb-BWb"/>
                             <constraint firstItem="WWd-sI-XGu" firstAttribute="leading" secondItem="hWF-mV-BMa" secondAttribute="leading" constant="20" id="GV1-5o-vsx"/>
-                            <constraint firstItem="ZPd-Pt-RhG" firstAttribute="top" secondItem="WWd-sI-XGu" secondAttribute="bottom" constant="31" id="Hyr-nf-WtL"/>
+                            <constraint firstItem="ZPd-Pt-RhG" firstAttribute="top" secondItem="WWd-sI-XGu" secondAttribute="bottom" constant="189" id="Hyr-nf-WtL"/>
                             <constraint firstItem="ZPd-Pt-RhG" firstAttribute="leading" secondItem="hWF-mV-BMa" secondAttribute="leading" constant="59" id="MKF-3H-BBu"/>
                             <constraint firstItem="Rkq-by-Cbt" firstAttribute="leading" secondItem="hWF-mV-BMa" secondAttribute="leading" constant="20" id="QeA-Q3-TY4"/>
                             <constraint firstAttribute="centerX" secondItem="Ofr-hC-4sx" secondAttribute="centerX" id="Waf-qm-bpU"/>
-                            <constraint firstItem="ZPd-Pt-RhG" firstAttribute="top" secondItem="6nY-LS-Bi6" secondAttribute="bottom" constant="185" id="WwC-Ho-8nV"/>
+                            <constraint firstItem="ZPd-Pt-RhG" firstAttribute="top" secondItem="6nY-LS-Bi6" secondAttribute="bottom" constant="32" id="WwC-Ho-8nV"/>
                             <constraint firstItem="6nY-LS-Bi6" firstAttribute="trailing" secondItem="Ofr-hC-4sx" secondAttribute="trailing" id="YSU-wH-83G"/>
                             <constraint firstAttribute="centerX" secondItem="Rkq-by-Cbt" secondAttribute="centerX" id="aMe-Pt-01u"/>
                             <constraint firstAttribute="trailing" secondItem="Ofr-hC-4sx" secondAttribute="trailing" constant="20" id="cO4-Om-jqf"/>
-                            <constraint firstItem="6nY-LS-Bi6" firstAttribute="top" secondItem="Ofr-hC-4sx" secondAttribute="bottom" constant="8" id="eg8-SS-DQa"/>
+                            <constraint firstItem="6nY-LS-Bi6" firstAttribute="top" secondItem="Ofr-hC-4sx" secondAttribute="bottom" constant="1" id="eg8-SS-DQa"/>
                             <constraint firstAttribute="centerX" secondItem="WWd-sI-XGu" secondAttribute="centerX" id="eks-8H-Fii"/>
                             <constraint firstItem="Rkq-by-Cbt" firstAttribute="top" secondItem="6ef-YX-NA7" secondAttribute="bottom" constant="25" id="gPf-hv-ixB"/>
                             <constraint firstItem="6nY-LS-Bi6" firstAttribute="leading" secondItem="Ofr-hC-4sx" secondAttribute="leading" id="qaI-nZ-1Ng"/>
-                            <constraint firstItem="WWd-sI-XGu" firstAttribute="top" secondItem="Rkq-by-Cbt" secondAttribute="bottom" constant="177" id="vOs-F6-tkX"/>
+                            <constraint firstItem="WWd-sI-XGu" firstAttribute="top" secondItem="Rkq-by-Cbt" secondAttribute="bottom" constant="19" id="vOs-F6-tkX"/>
                             <constraint firstAttribute="trailing" secondItem="WWd-sI-XGu" secondAttribute="trailing" constant="20" id="vpX-pU-IIb"/>
                         </constraints>
                     </view>
