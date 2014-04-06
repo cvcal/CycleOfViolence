@@ -64,6 +64,11 @@
                                              block:^(PFObject* returnObj, NSError *error) {
             if (returnObj == nil) {
                 NSLog(@"Game has been deleted.");
+                [[[UIAlertView alloc] initWithTitle:@"Game Deleted"
+                                            message:@"The game you were in has been removed."
+                                           delegate:nil
+                                  cancelButtonTitle:@"ok"
+                                  otherButtonTitles:nil] show];
                 currUser[@"currentGameID"] = [NSNull null];
                 [currUser saveInBackground];
             } else {
@@ -131,29 +136,11 @@
     [user saveInBackground];
 }
 
-// Verify hmc email address. Otherwise, display an alert.
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
-           shouldBeginSignUp:(NSDictionary *)info
+            shouldBeginSignUp:(NSDictionary *)info
 {
-    NSString *email = info[@"email"];
-    NSString *requiredEnding = @"@hmc.edu";
-    BOOL returnVal;
-    if ([email length] > [requiredEnding length]) {
-        NSString *ending = [email substringFromIndex:[email length] - [requiredEnding length]];
-        returnVal = [ending isEqual: @"@hmc.edu"]; // prevent sign up if not HMC email
-    } else {
-        returnVal = NO;
-    }
-    
-    // Invalid email, so display alert.
-    if (!returnVal) {
-        [[[UIAlertView alloc] initWithTitle:@"Invalid Email Address"
-                                    message:@"Make sure you use a Harvey Mudd account!"
-                                   delegate:nil
-                          cancelButtonTitle:@"ok"
-                          otherButtonTitles:nil] show];
-    }
-    return returnVal;
+    // We currently do not require a specific email address type
+    return true;
 }
 
 // Allow COVHomeScreenViewController to be unwound to.

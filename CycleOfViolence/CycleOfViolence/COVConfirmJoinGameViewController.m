@@ -42,8 +42,8 @@
     } else {
         NSInteger days = (int) ( timeToStart / (3600*24) );
         NSInteger hours = ( (int) timeToStart % (3600*24) ) / 3600;
-        self.countdown.text = [NSString stringWithFormat:@"Starting in %d days, %d hours.",
-                               days, hours];
+        self.countdown.text = [NSString stringWithFormat:@"Starting in %ld days, %ld hours.",
+                               (long)days, (long)hours];
     }
     
     self.rules.text = self.currentGame.rules;
