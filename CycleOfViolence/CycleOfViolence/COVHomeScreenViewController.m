@@ -51,21 +51,32 @@
 
 - (void)checkForGameStateSegue
 {
-    
     PFUser *currUser = [PFUser currentUser];
     [currUser refresh];
+    
     if (currUser[@"currentGameID"] != [NSNull null] && currUser[@"currentGameID"] != nil) {
         NSLog(@"The user is in a game.");
-        COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
-                                                         objectId:currUser[@"currentGameID"]];
         
-        // A game has either started, or it hasn't.
-        if (currGame.gameStarted) {
-            [self performSegueWithIdentifier:@"ToActiveGame" sender:self];
-        } else {
-            [self performSegueWithIdentifier:@"ToInactiveGame" sender:self];
-        }
-        
+        // Since games can be deleted without notifying the users in the game, we need
+        // to check if the game that currentGameID identifies still exists.
+        PFQuery *gameExistence = [PFQuery queryWithClassName: @"COVGame"];
+        [gameExistence getObjectInBackgroundWithId:currUser[@"currentGameID"]
+                                             block:^(PFObject* returnObj, NSError *error) {
+            if (returnObj == nil) {
+                NSLog(@"Game has been deleted.");
+                currUser[@"currentGameID"] = [NSNull null];
+                [currUser saveInBackground];
+            } else {
+                NSLog(@"User is STILL in a game!");
+                COVGame * currGame = (COVGame *)returnObj;
+                // A game has either started, or it hasn't, and they should go to different views.
+                if (currGame.gameStarted) {
+                    [self performSegueWithIdentifier:@"ToActiveGame" sender:self];
+                } else {
+                    [self performSegueWithIdentifier:@"ToInactiveGame" sender:self];
+                }
+            }
+        }];
     } else {
         NSLog(@"The user is not in a game yet.");
     }

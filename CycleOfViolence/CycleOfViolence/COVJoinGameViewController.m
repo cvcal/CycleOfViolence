@@ -103,6 +103,7 @@
     }
     
     [query orderByDescending:@"numberOfPlayers"];
+    [query whereKey:@"gameStarted"equalTo:[NSNumber numberWithBool:NO]];
 
     return query;
 }

@@ -20,12 +20,13 @@
 @property u_int32_t playersRemaining; // Number not yet assassinated.
 @property PFUser *gameManager; // The player who can start the game.
 @property BOOL gameStarted; // Whether game play has begun.
+@property NSString *rules;
 
 // Required to make a proper subclass of PFObject.
 + (NSString *)parseClassName;
 
 // Initializes the game with name gameName and no players.
-- (id) init:(NSString *)gameName;
+- (id) initWithName:(NSString *)gameName;
 
 // Adds the specified player to the game.
 - (void) addPlayer:(PFUser *)newPlayer;

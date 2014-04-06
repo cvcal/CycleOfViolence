@@ -7,10 +7,13 @@
 //
 
 #import "COVGameMainViewController.h"
+
 @interface COVGameMainViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *targetDisplay;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
+@property (weak, nonatomic) IBOutlet UIButton *suicideButton;
+@property (weak, nonatomic) IBOutlet UIButton *murderButton;
 
 @end
 
@@ -29,27 +32,69 @@
 {
     [super viewDidLoad];
     
-    // Get the current user.
+    // Get the current user and game.
     PFUser *currUser = [PFUser currentUser];
-    
+    self.currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+                                                    objectId:currUser[@"currentGameID"]];
     // Set the title to show the user.
     NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
-    [_navBar setTitle:title];
+    [self.navBar setTitle:title];
     
-    // Get the target from the cycle in the user's current game.
-    COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
-                                                    objectId:currUser[@"currentGameID"]];
-    PFUser *target = [currGame getTarget:currUser];
+    [self.currGame refresh];
+    if (self.currGame.playersRemaining > 1) {
+        // Get the target from the cycle in the user's current game.
+        PFUser *target = [self.currGame getTarget:currUser];
+        
+        // Set the view controller to display the current user and target.
+        self.targetDisplay.text = [NSString stringWithFormat:@"Your target is: %@",
+                                   target.username];
+    }
+    else {
+        self.targetDisplay.text = @"You're the last one alive. Congrats on winning!";
+        // Disable the 'I've been killed' button
+        [self.murderButton setEnabled:NO];
+    }
     
-    // Set the view controller to display the current user and target.
-    self.targetDisplay.text = [NSString stringWithFormat:@"You are: %@\n and your target is: %@",
-                               currUser.username, target.username];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)buttonTapped:(id)sender {    PFUser *currUser = [PFUser currentUser];    
+    if (sender == self.suicideButton || sender == self.murderButton) {
+        NSLog(@"leaveButton tapped");
+        
+        // This button removes a user from the game.
+        if (self.currGame.playersRemaining <= 1) {
+            NSLog(@"Game end, deleting game, hopefully.");
+            [self.currGame cleanGameForDelete];
+            [self.currGame deleteInBackground];
+        }
+        else {
+            NSLog(@"User leaving game, hopefully.");
+            [self.currGame removePlayer:currUser];
+            
+            // Update Parse cloud storage
+            [self.currGame saveInBackground];
+        }
+        
+        // Update the currentGameID in the User who left, or the manager who deleted the game.
+        currUser[@"currentGameID"] = [NSNull null];
+        [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Sucessfully saved in background.");
+                
+                // Since user is no longer in the game, return them to the home screen.
+                [self performSegueWithIdentifier:@"toHomeScreenFromMain" sender:self];
+                
+            } else {
+                NSLog(@"Failed to save in background.");
+            }
+        }];
+    }
 }
 
 @end

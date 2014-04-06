@@ -18,6 +18,7 @@
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 
+- (IBAction)buttonTapped:(id)sender;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 
 @end

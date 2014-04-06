@@ -18,13 +18,14 @@
 @dynamic playersRemaining;
 @dynamic gameManager;
 @dynamic gameStarted;
+@dynamic rules;
 
 + (NSString *)parseClassName
 {
     return @"COVGame";
 }
 
-- (id)init:(NSString *)gameName
+- (id)initWithName:(NSString *)gameName
 {
     self = [super init];
     
@@ -35,21 +36,30 @@
         self.cycle = [[NSMutableArray alloc] init];
         self.name = gameName;
         [self setGameStarted:false];
-    
-        // Add the player who created the game.
-        [self save]; // We need to access the objectId in addPlayer; save creates the ID.
-    
+        
+        //The current user must have created the game and is the game manager by default.
         PFUser *creator = [PFUser currentUser];
-        [self addPlayer:creator];
-    
-        // The creator is the game manager by default.
         self.gameManager = creator;
+
+    
+        // Add the player who created the game. We need to access the objectId in addPlayer;
+        // saving creates the ID.
+        [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Sucessfully saved in background.");
+                
+                // Add the player who created the game.
+                [self addPlayer:creator];
+            } else {
+                NSLog(@"Failed to save in background.");
+            }
+        }];
     }
     
     return self;
 }
 
-- (void) addPlayer:(PFUser *)newPlayer
+- (void)addPlayer:(PFUser *)newPlayer
 {
     // Generate a random position for the new player and insert them.
     int random = arc4random_uniform(self.numberOfPlayers);
@@ -65,43 +75,46 @@
     [newPlayer saveInBackground];
 }
 
-- (void) startGame
+- (void)startGame
 {
     [self setGameStarted:true];
     [self saveInBackground];
 }
 
-- (void) removePlayer:(PFUser *)exPlayer
+- (void)removePlayer:(PFUser *)exPlayer
 {
+    NSLog(@"Removing player %@", exPlayer.username);
     // Remove the user from the cycle
     NSUInteger userIndex = -1;
     NSUInteger end = [self.cycle count];
     for (NSUInteger i = 0; i < end; i++) {
+        NSLog(@"At index %lu", (unsigned long)i);
         PFUser *entry = (PFUser *)[self.cycle objectAtIndex:i];
         if ([exPlayer.objectId isEqualToString:entry.objectId]) {
             userIndex = i;
             break;
         }
     }
+    
     [self.cycle removeObjectAtIndex:userIndex];
     self.playersRemaining = (u_int32_t)[self.cycle count];
     
-    // Update Parse cloud storage
     [self saveInBackground];
 }
 
 
-- (void) cleanGameForDelete
+- (void)cleanGameForDelete
 {
     // Empty out all the users and update them as well, so they don't link to a
     // non-existant game.
     while ([self.cycle count] != 0){
-        PFUser *user = [self.cycle objectAtIndex: 0]; 
-        [self removePlayer: user];
+        PFUser *user = [self.cycle objectAtIndex:0];
+        user = (PFUser *)[user fetchIfNeeded];
+        [self removePlayer:user];
     }
 }
 
-- (PFUser*) getTarget:(PFUser *)assassin
+- (PFUser*)getTarget:(PFUser *)assassin
 {
     // Find the assassin in the cycle.
     NSUInteger userIndex = -1;
