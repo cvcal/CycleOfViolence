@@ -13,6 +13,7 @@
 // These are private properties, the objects on the storyboard for this view controller.
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextView *rules;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
@@ -33,7 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+	// You can't start a game in the past with current technology.
+    NSDate *current = [[NSDate alloc] init];
+    self.datePicker.minimumDate = current;
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +59,7 @@
         
         NSString *defaultRules = @"Basic Rules: When the game starts, you will receive the name of one other player, your target. Your goal is to assassinate them by meeting the kill criterion, below. Meanwhile, someone else will be trying to assassinate you; if they succeed, you will report it and be removed from the game. You win by being the last one alive.\n\n";
         newGame.rules = [defaultRules stringByAppendingString:self.rules.text];
+        newGame.startTime = self.datePicker.date;
         
         NSLog(@"Initialized COVGame");
         

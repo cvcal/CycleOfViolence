@@ -21,6 +21,7 @@
 @property PFUser *gameManager; // The player who can start the game.
 @property BOOL gameStarted; // Whether game play has begun.
 @property NSString *rules;
+@property NSDate *startTime;
 
 // Required to make a proper subclass of PFObject.
 + (NSString *)parseClassName;
