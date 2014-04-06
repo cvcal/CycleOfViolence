@@ -63,7 +63,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)buttonTapped:(id)sender {    PFUser *currUser = [PFUser currentUser];    
+- (IBAction)buttonTapped:(id)sender {    PFUser *currUser = [PFUser currentUser];
     if (sender == self.suicideButton || sender == self.murderButton) {
         NSLog(@"leaveButton tapped");
         
