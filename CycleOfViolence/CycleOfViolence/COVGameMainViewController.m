@@ -34,16 +34,16 @@
     
     // Get the current user and game.
     PFUser *currUser = [PFUser currentUser];
-    COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+    self.currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
                                                     objectId:currUser[@"currentGameID"]];
     // Set the title to show the user.
     NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
     [self.navBar setTitle:title];
     
-    [currGame refresh];
-    if (currGame.playersRemaining > 1) {
+    [self.currGame refresh];
+    if (self.currGame.playersRemaining > 1) {
         // Get the target from the cycle in the user's current game.
-        PFUser *target = [currGame getTarget:currUser];
+        PFUser *target = [self.currGame getTarget:currUser];
         
         // Set the view controller to display the current user and target.
         self.targetDisplay.text = [NSString stringWithFormat:@"Your target is: %@",
@@ -62,26 +62,26 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)buttonTapped:(id)sender {
-    PFUser *currUser = [PFUser currentUser];
-    COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+
+- (IBAction)buttonTapped:(id)sender {    PFUser *currUser = [PFUser currentUser];
+    self.currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
                                                     objectId:currUser[@"currentGameID"]];
     
     if (sender == self.suicideButton || sender == self.murderButton) {
         NSLog(@"leaveButton tapped");
         
         // This button removes a user from the game.
-        if (currGame.playersRemaining <= 1) {
+        if (self.currGame.playersRemaining <= 1) {
             NSLog(@"Game end, deleting game, hopefully.");
-            [currGame cleanGameForDelete];
-            [currGame deleteInBackground];
+            [self.currGame cleanGameForDelete];
+            [self.currGame deleteInBackground];
         }
         else {
             NSLog(@"User leaving game, hopefully.");
-            [currGame removePlayer:currUser];
+            [self.currGame removePlayer:currUser];
             
             // Update Parse cloud storage
-            [currGame saveInBackground];
+            [self.currGame saveInBackground];
         }
         
         // Update the currentGameID in the User who left, or the manager who deleted the game.

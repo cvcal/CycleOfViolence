@@ -103,18 +103,18 @@
         
         // Update the currentGameID in the User who left, or the manager who deleted the game.
         currUser[@"currentGameID"] = [NSNull null];
-        [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                NSLog(@"Sucessfully saved in background.");
-                
-                // Since user is no longer in the game, return them to the home screen.
-                [self performSegueWithIdentifier:@"toHomeScreenFromInactive" sender:self];
-                
-            } else {
-                NSLog(@"Failed to save in background.");
-            }
-        }];
     }
+    [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Sucessfully saved in background.");
+            
+            // Since user is no longer in the game, return them to the home screen.
+            [self performSegueWithIdentifier:@"toHomeScreenFromInactive" sender:self];
+            
+        } else {
+            NSLog(@"Failed to save in background.");
+        }
+    }];
 }
 
 @end

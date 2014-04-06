@@ -438,8 +438,11 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                                 <state key="normal" title="Leave Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="nC7-Ma-fzX" eventType="touchUpInside" id="j4x-d2-o6m"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-os-Cbd">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-os-Cbd">
                                 <rect key="frame" x="79" y="441" width="164" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="I've been killed! Murder!">
@@ -450,8 +453,11 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="229" translatesAutoresizingMaskIntoConstraints="NO" id="t25-WC-3SG">
-                                <rect key="frame" x="47" y="72" width="229" height="163"/>
+                                <rect key="frame" x="47" y="100" width="229" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="7g0-uj-kvA"/>
+                                </constraints>
                                 <string key="text">You are in a game. To progress, attempt to stay alive while eliminating your targets! To kill your target, please get them to press their "I've be killed!" button, and refresh to get your new target.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -470,21 +476,17 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Evn-Wt-ToY" firstAttribute="top" secondItem="hDv-os-Cbd" secondAttribute="bottom" constant="8" id="3OM-r1-dNc"/>
-                            <constraint firstAttribute="centerX" secondItem="t25-WC-3SG" secondAttribute="centerX" constant="-1.5" id="8Rb-JL-6cW"/>
-                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="top" secondItem="hDv-os-Cbd" secondAttribute="bottom" constant="47" id="CCK-uw-FHJ"/>
+                            <constraint firstItem="Evn-Wt-ToY" firstAttribute="top" secondItem="hDv-os-Cbd" secondAttribute="bottom" constant="8" symbolic="YES" id="2wN-hS-EYN"/>
                             <constraint firstItem="Abw-eN-3HK" firstAttribute="top" secondItem="WhY-EM-pdG" secondAttribute="bottom" constant="174" id="KnW-cL-a1b"/>
-                            <constraint firstItem="Abw-eN-3HK" firstAttribute="top" secondItem="PRh-pT-Bbq" secondAttribute="bottom" constant="20" id="M9S-Ub-UtK"/>
-                            <constraint firstItem="t25-WC-3SG" firstAttribute="top" secondItem="dNa-iW-bqS" secondAttribute="bottom" constant="8" id="Nx5-Z3-Mb3"/>
-                            <constraint firstAttribute="centerX" secondItem="WhY-EM-pdG" secondAttribute="centerX" constant="-1.5" id="ZNg-Zd-Ij3"/>
-                            <constraint firstAttribute="centerX" secondItem="PRh-pT-Bbq" secondAttribute="centerX" id="ZSU-l8-E2s"/>
-                            <constraint firstAttribute="trailing" secondItem="WhY-EM-pdG" secondAttribute="trailing" constant="44" id="aUv-NV-0dp"/>
-                            <constraint firstItem="Evn-Wt-ToY" firstAttribute="centerX" secondItem="hDv-os-Cbd" secondAttribute="centerX" id="dwj-Gz-qJs"/>
-                            <constraint firstItem="WhY-EM-pdG" firstAttribute="leading" secondItem="sXL-y3-di9" secondAttribute="leading" constant="48" id="fli-SQ-zk8"/>
-                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="top" secondItem="WhY-EM-pdG" secondAttribute="bottom" constant="124" id="gIh-LA-7eL"/>
-                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="centerX" secondItem="WhY-EM-pdG" secondAttribute="centerX" constant="-1.5" id="wRj-iX-NGb"/>
-                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="centerX" secondItem="hDv-os-Cbd" secondAttribute="centerX" constant="-0.5" id="xU6-4o-MjD"/>
-                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="top" secondItem="Evn-Wt-ToY" secondAttribute="bottom" constant="9" id="xbs-6R-YpR"/>
+                            <constraint firstAttribute="bottom" secondItem="PRh-pT-Bbq" secondAttribute="bottom" constant="20" symbolic="YES" id="NEn-tV-aiM"/>
+                            <constraint firstItem="WhY-EM-pdG" firstAttribute="leading" secondItem="sXL-y3-di9" secondAttribute="leading" constant="48" id="OTF-Ri-nOd"/>
+                            <constraint firstItem="t25-WC-3SG" firstAttribute="top" secondItem="dNa-iW-bqS" secondAttribute="bottom" constant="36" id="TAf-QV-PiG"/>
+                            <constraint firstAttribute="trailing" secondItem="WhY-EM-pdG" secondAttribute="trailing" constant="44" id="XPY-dM-Be6"/>
+                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="top" secondItem="Evn-Wt-ToY" secondAttribute="bottom" constant="9" id="jwp-AI-Dh5"/>
+                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="centerX" secondItem="Evn-Wt-ToY" secondAttribute="centerX" id="qde-hm-0pN"/>
+                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="centerX" secondItem="sXL-y3-di9" secondAttribute="centerX" id="tPr-hr-T5z"/>
+                            <constraint firstItem="t25-WC-3SG" firstAttribute="trailing" secondItem="WhY-EM-pdG" secondAttribute="trailing" id="uNz-B3-Thb"/>
+                            <constraint firstItem="hDv-os-Cbd" firstAttribute="centerX" secondItem="t25-WC-3SG" secondAttribute="centerX" id="xYM-qm-jAX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KRa-53-bbc">

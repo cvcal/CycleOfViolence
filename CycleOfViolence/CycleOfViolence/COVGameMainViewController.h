@@ -16,4 +16,7 @@
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 
+// Track the game locally
+@property COVGame *currGame;
+
 @end
