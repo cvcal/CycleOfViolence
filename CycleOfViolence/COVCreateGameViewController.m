@@ -34,7 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+	// You can't start a game in the past with current technology.
+    NSDate *current = [[NSDate alloc] init];
+    self.datePicker.minimumDate = current;
 }
 
 - (void)didReceiveMemoryWarning
