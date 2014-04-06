@@ -54,7 +54,7 @@
     PFUser *currUser = [PFUser currentUser];
     [currUser refresh];
     
-    if (currUser[@"currentGameID"] != [NSNull null] && currUser[@"currentGameID"] != nil) {
+    if (currUser[@"currentGameID"] != [NSNull null]) {
         NSLog(@"The user is in a game.");
         
         // Since games can be deleted without notifying the users in the game, we need
@@ -127,6 +127,8 @@
                didSignUpUser:(PFUser *)user
 {
     [self dismissViewControllerAnimated:YES completion:NULL]; // Dismiss the PFSignUpViewController
+    user[@"currentGameID"] = [NSNull null];
+    [user saveInBackground];
 }
 
 // Verify hmc email address. Otherwise, display an alert.
