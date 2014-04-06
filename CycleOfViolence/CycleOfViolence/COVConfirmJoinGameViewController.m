@@ -11,6 +11,7 @@
 @interface COVConfirmJoinGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *gameInfo;
+@property (weak, nonatomic) IBOutlet UILabel *countdown;
 @property (weak, nonatomic) IBOutlet UITextView *rules;
 @property (weak, nonatomic) IBOutlet UIButton *joinGameButton;
 
@@ -34,6 +35,17 @@
     // Set the view controller to display information about its current game.
     self.gameInfo.text = [NSString stringWithFormat:@"Game name: %@\n",
                           self.currentGame.name];
+    
+    NSTimeInterval timeToStart = [self.currentGame.startTime timeIntervalSinceNow];
+    if (timeToStart <= 0) {
+        self.countdown.text = @"Starting soon...";
+    } else {
+        NSInteger days = (int) ( timeToStart / (3600*24) );
+        NSInteger hours = ( (int) timeToStart % (3600*24) ) / 3600;
+        self.countdown.text = [NSString stringWithFormat:@"Starting in %d days, %d hours.",
+                               days, hours];
+    }
+    
     self.rules.text = self.currentGame.rules;
 }
 

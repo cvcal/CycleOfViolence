@@ -11,6 +11,7 @@
 @interface COVInactiveGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *targetDisplay;
+@property (weak, nonatomic) IBOutlet UILabel *countdown;
 @property (weak, nonatomic) IBOutlet UIButton *leaveButton;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
@@ -46,6 +47,17 @@
     self.targetDisplay.text = [NSString stringWithFormat:
                                @"You are in the game \"%@,\" which hasn't started yet.",
                                currGame.name];
+    
+    // Show the countdown until the game starts.
+    NSTimeInterval timeToStart = [currGame.startTime timeIntervalSinceNow];
+    if (timeToStart <= 0) {
+        self.countdown.text = @"Starting soon...";
+    } else {
+        NSInteger days = (int) ( timeToStart / (3600*24) );
+        NSInteger hours = ( (int) timeToStart % (3600*24) ) / 3600;
+        self.countdown.text = [NSString stringWithFormat:@"Starting in %d days, %d hours.",
+                               days, hours];
+    }
     
     // Show the buttons selectively.
     // If we're the manager...
