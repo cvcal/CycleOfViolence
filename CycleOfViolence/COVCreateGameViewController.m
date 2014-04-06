@@ -51,7 +51,7 @@
         
         COVGame *newGame = [COVGame alloc];
         NSLog(@"Allocated COVGame");
-        newGame = [newGame init:self.name.text]; // Use the name from the UITextField.
+        newGame = [newGame initWithName:self.name.text]; // Use the name from the UITextField.
         
         NSString *defaultRules = @"Basic Rules: When the game starts, you will receive the name of one other player, your target. Your goal is to assassinate them by meeting the kill criterion, below. Meanwhile, someone else will be trying to assassinate you; if they succeed, you will report it and be removed from the game. You win by being the last one alive.\n\n";
         newGame.rules = [defaultRules stringByAppendingString:self.rules.text];

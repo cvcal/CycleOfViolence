@@ -26,7 +26,7 @@
 + (NSString *)parseClassName;
 
 // Initializes the game with name gameName and no players.
-- (id) init:(NSString *)gameName;
+- (id) initWithName:(NSString *)gameName;
 
 // Adds the specified player to the game.
 - (void) addPlayer:(PFUser *)newPlayer;

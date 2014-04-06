@@ -25,7 +25,7 @@
     return @"COVGame";
 }
 
-- (id)init:(NSString *)gameName
+- (id)initWithName:(NSString *)gameName
 {
     self = [super init];
     
@@ -36,6 +36,11 @@
         self.cycle = [[NSMutableArray alloc] init];
         self.name = gameName;
         [self setGameStarted:false];
+        
+        //The current user must have created the game and is the game manager by default.
+        PFUser *creator = [PFUser currentUser];
+        self.gameManager = creator;
+
     
         // Add the player who created the game. We need to access the objectId in addPlayer;
         // saving creates the ID.
@@ -44,12 +49,7 @@
                 NSLog(@"Sucessfully saved in background.");
                 
                 // Add the player who created the game.
-                PFUser *creator = [PFUser currentUser];
                 [self addPlayer:creator];
-                
-                // The creator is the game manager by default.
-                self.gameManager = creator;
-                
             } else {
                 NSLog(@"Failed to save in background.");
             }
