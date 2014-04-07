@@ -47,12 +47,9 @@
         // saving creates the ID.
         [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
-                NSLog(@"Sucessfully saved in background.");
-                
-                // Add the player who created the game.
-                [self addPlayer:creator];
+                NSLog(@"Sucessfully saved in background from init game.");
             } else {
-                NSLog(@"Failed to save in background.");
+                NSLog(@"Failed to save in background from init game.");
             }
         }];
     }

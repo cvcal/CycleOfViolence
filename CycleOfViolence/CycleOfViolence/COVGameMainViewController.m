@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (weak, nonatomic) IBOutlet UIButton *suicideButton;
 @property (weak, nonatomic) IBOutlet UIButton *murderButton;
+@property (weak, nonatomic) IBOutlet UIButton *refreshButton;
 
 @end
 
@@ -63,7 +64,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)buttonTapped:(id)sender {    PFUser *currUser = [PFUser currentUser];
+- (IBAction)buttonTapped:(id)sender {
+    PFUser *currUser = [PFUser currentUser];
     if (sender == self.suicideButton || sender == self.murderButton) {
         NSLog(@"leaveButton tapped");
         
@@ -94,6 +96,9 @@
                 NSLog(@"Failed to save in background.");
             }
         }];
+    }
+    else if (sender == self.refreshButton) {
+        [self viewDidLoad];
     }
 }
 

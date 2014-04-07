@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6l9-qo-ycg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="6l9-qo-ycg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -109,7 +109,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3g-80-Yoh" userLabel="Leave Game">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3g-80-Yoh" userLabel="Leave Game">
                                 <rect key="frame" x="49" y="389" width="222" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Leave Game">
@@ -119,7 +119,7 @@
                                     <action selector="buttonTapped:" destination="eGU-AY-flX" eventType="touchUpInside" id="645-7z-8iS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6W-ZC-idX">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6W-ZC-idX">
                                 <rect key="frame" x="49" y="435" width="222" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start Game">
@@ -360,7 +360,7 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                                             <!--2014-04-06 14:35:47 +0000-->
                                         </date>
                                         <timeZone key="timeZone" name="America/Los_Angeles">
-                                            <mutableData key="data">
+                                            <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -378,7 +378,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                         </timeZone>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-Pt-RhG">
@@ -475,7 +475,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="228" translatesAutoresizingMaskIntoConstraints="NO" id="WhY-EM-pdG">
-                                <rect key="frame" x="48" y="373" width="228" height="21"/>
+                                <rect key="frame" x="46" y="319" width="228" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -490,8 +490,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <action selector="buttonTapped:" destination="nC7-Ma-fzX" eventType="touchUpInside" id="j4x-d2-o6m"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-os-Cbd">
-                                <rect key="frame" x="79" y="441" width="164" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDv-os-Cbd">
+                                <rect key="frame" x="78" y="480" width="164" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="I've been killed! Murder!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -512,7 +512,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evn-Wt-ToY">
-                                <rect key="frame" x="141" y="479" width="39" height="30"/>
+                                <rect key="frame" x="141" y="269" width="39" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Rules">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -521,20 +521,33 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <segue destination="RyT-sb-oyL" kind="push" id="3SC-at-Vb7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdU-Ls-N4V">
+                                <rect key="frame" x="83" y="348" width="156" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Refresh my target.">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="nC7-Ma-fzX" eventType="touchUpInside" id="xn2-M0-0oy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Evn-Wt-ToY" firstAttribute="top" secondItem="hDv-os-Cbd" secondAttribute="bottom" constant="8" symbolic="YES" id="2wN-hS-EYN"/>
-                            <constraint firstItem="Abw-eN-3HK" firstAttribute="top" secondItem="WhY-EM-pdG" secondAttribute="bottom" constant="174" id="KnW-cL-a1b"/>
-                            <constraint firstAttribute="bottom" secondItem="PRh-pT-Bbq" secondAttribute="bottom" constant="20" symbolic="YES" id="NEn-tV-aiM"/>
-                            <constraint firstItem="WhY-EM-pdG" firstAttribute="leading" secondItem="sXL-y3-di9" secondAttribute="leading" constant="48" id="OTF-Ri-nOd"/>
+                            <constraint firstItem="Evn-Wt-ToY" firstAttribute="centerX" secondItem="PRh-pT-Bbq" secondAttribute="centerX" id="4AE-Mo-Eq1"/>
+                            <constraint firstAttribute="trailing" secondItem="OdU-Ls-N4V" secondAttribute="trailing" constant="81" id="EO5-JR-tl4"/>
+                            <constraint firstItem="OdU-Ls-N4V" firstAttribute="top" secondItem="WhY-EM-pdG" secondAttribute="bottom" constant="8" symbolic="YES" id="NRm-Q6-CFW"/>
+                            <constraint firstItem="Evn-Wt-ToY" firstAttribute="centerX" secondItem="WhY-EM-pdG" secondAttribute="centerX" id="Ptk-Ce-qTy"/>
                             <constraint firstItem="t25-WC-3SG" firstAttribute="top" secondItem="dNa-iW-bqS" secondAttribute="bottom" constant="36" id="TAf-QV-PiG"/>
-                            <constraint firstAttribute="trailing" secondItem="WhY-EM-pdG" secondAttribute="trailing" constant="44" id="XPY-dM-Be6"/>
-                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="top" secondItem="Evn-Wt-ToY" secondAttribute="bottom" constant="9" id="jwp-AI-Dh5"/>
-                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="centerX" secondItem="Evn-Wt-ToY" secondAttribute="centerX" id="qde-hm-0pN"/>
-                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="centerX" secondItem="sXL-y3-di9" secondAttribute="centerX" id="tPr-hr-T5z"/>
-                            <constraint firstItem="t25-WC-3SG" firstAttribute="trailing" secondItem="WhY-EM-pdG" secondAttribute="trailing" id="uNz-B3-Thb"/>
-                            <constraint firstItem="hDv-os-Cbd" firstAttribute="centerX" secondItem="t25-WC-3SG" secondAttribute="centerX" id="xYM-qm-jAX"/>
+                            <constraint firstItem="WhY-EM-pdG" firstAttribute="centerX" secondItem="sXL-y3-di9" secondAttribute="centerX" id="ayt-mW-dBY"/>
+                            <constraint firstItem="Evn-Wt-ToY" firstAttribute="centerY" secondItem="sXL-y3-di9" secondAttribute="centerY" id="bro-HE-ryN"/>
+                            <constraint firstItem="OdU-Ls-N4V" firstAttribute="leading" secondItem="sXL-y3-di9" secondAttribute="leading" constant="83" id="eUc-ue-DTm"/>
+                            <constraint firstItem="OdU-Ls-N4V" firstAttribute="centerX" secondItem="t25-WC-3SG" secondAttribute="centerX" id="fdN-KE-JhB"/>
+                            <constraint firstAttribute="bottom" secondItem="WhY-EM-pdG" secondAttribute="bottom" constant="228" id="kYf-si-ZAf"/>
+                            <constraint firstItem="PRh-pT-Bbq" firstAttribute="top" secondItem="hDv-os-Cbd" secondAttribute="bottom" constant="8" symbolic="YES" id="nbJ-bi-Vbn"/>
+                            <constraint firstAttribute="bottom" secondItem="hDv-os-Cbd" secondAttribute="bottom" constant="58" id="wnP-mp-AZk"/>
+                            <constraint firstItem="hDv-os-Cbd" firstAttribute="centerX" secondItem="PRh-pT-Bbq" secondAttribute="centerX" id="wzG-KS-XVQ"/>
+                            <constraint firstItem="WhY-EM-pdG" firstAttribute="leading" secondItem="sXL-y3-di9" secondAttribute="leading" constant="46" id="z0d-pA-cd4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KRa-53-bbc">
@@ -547,6 +560,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <connections>
                         <outlet property="murderButton" destination="hDv-os-Cbd" id="PKT-FI-Yxs"/>
                         <outlet property="navBar" destination="KRa-53-bbc" id="bKR-34-Pj1"/>
+                        <outlet property="refreshButton" destination="OdU-Ls-N4V" id="AvX-vf-pQq"/>
                         <outlet property="suicideButton" destination="PRh-pT-Bbq" id="Jil-Ga-f1f"/>
                         <outlet property="targetDisplay" destination="WhY-EM-pdG" id="9eE-bi-Moj"/>
                         <segue destination="mug-yP-JMz" kind="unwind" identifier="toHomeScreenFromMain" unwindAction="unwindToMain:" id="J2J-1x-eOR"/>
@@ -583,6 +597,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3mx-bi-LW5"/>
+        <segue reference="3SC-at-Vb7"/>
     </inferredMetricsTieBreakers>
 </document>

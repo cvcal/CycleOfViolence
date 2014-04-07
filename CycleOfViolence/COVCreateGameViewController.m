@@ -71,12 +71,14 @@
             
             NSLog(@"Initialized COVGame");
             
+            
             // Save the game.
             [newGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
                     NSLog(@"Sucessfully saved in background.");
-                    
                     PFUser *currUser = [PFUser currentUser];
+                    [newGame addPlayer:currUser];
+                    [newGame saveInBackground];
                     
                     [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                         // Now can proceed to home screen.
