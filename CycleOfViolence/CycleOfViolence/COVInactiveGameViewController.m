@@ -75,12 +75,6 @@
         
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 - (IBAction)buttonTapped:(id)sender {
     PFUser *currUser = [PFUser currentUser];

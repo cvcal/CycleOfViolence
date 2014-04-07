@@ -18,15 +18,6 @@
 
 @implementation COVHomeScreenViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,15 +34,10 @@
     [self checkForGameStateSegue];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)checkForGameStateSegue
 {
     PFUser *currUser = [PFUser currentUser];
+    
     [currUser refresh];
     
     if (currUser[@"currentGameID"] != [NSNull null]) {

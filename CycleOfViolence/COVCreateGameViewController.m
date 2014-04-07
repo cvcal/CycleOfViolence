@@ -78,6 +78,7 @@
                 NSLog(@"Failed to save in background.");
             }
         }];
+        
     } else {
         // This shouldn't happen.
         NSLog(@"Called buttonTapped via some other means");

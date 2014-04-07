@@ -14,7 +14,6 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
 - (IBAction)buttonTapped:(id)sender;
 
 @end
