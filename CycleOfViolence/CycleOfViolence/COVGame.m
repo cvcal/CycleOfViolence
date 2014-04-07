@@ -71,7 +71,7 @@
     // Store the game's ID in the User who joined (pointers don't save properly).
     newPlayer[@"currentGameID"] = self.objectId;
     
-    // Update Parse cloud storage
+    // The calling function should update Parse cloud storage
 }
 
 - (void)startGame
