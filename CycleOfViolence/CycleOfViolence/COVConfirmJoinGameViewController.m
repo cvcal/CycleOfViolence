@@ -66,6 +66,7 @@
         [self.currentGame addPlayer:currUser]; // This method also saves the game.
         
         // Save the game and manually return to the home screen when finished.
+        [self.currentGame saveInBackground];
         [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Sucessfully saved in background.");

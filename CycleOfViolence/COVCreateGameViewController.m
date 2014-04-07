@@ -53,32 +53,41 @@
         // Let us know how we got here.
         NSLog(@"Called buttonTapped via createButton");
         
-        COVGame *newGame = [COVGame alloc];
-        NSLog(@"Allocated COVGame");
-        newGame = [newGame initWithName:self.name.text]; // Use the name from the UITextField.
-        
-        NSString *defaultRules = @"Basic Rules: When the game starts, you will receive the name of one other player, your target. Your goal is to assassinate them by meeting the kill criterion, below. Meanwhile, someone else will be trying to assassinate you; if they succeed, you will report it and be removed from the game. You win by being the last one alive.\n\n";
-        newGame.rules = [defaultRules stringByAppendingString:self.rules.text];
-        newGame.startTime = self.datePicker.date;
-        
-        NSLog(@"Initialized COVGame");
-        
-        // Save the game.
-        [newGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                NSLog(@"Sucessfully saved in background.");
-                
-                PFUser *currUser = [PFUser currentUser];
-                [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    // Now can proceed to home screen.
-                    [self performSegueWithIdentifier:@"toHomeScreenFromCreate" sender:self];
-                }];
-                
-            } else {
-                NSLog(@"Failed to save in background.");
-            }
-        }];
-        
+        if ([self.name.text isEqualToString: @""]) {
+            [[[UIAlertView alloc] initWithTitle:@"Missing Game Name"
+                                        message:@"Please include a name for your game."
+                                       delegate:nil
+                              cancelButtonTitle:@"ok"
+                              otherButtonTitles:nil] show];
+        } else {
+            
+            COVGame *newGame = [COVGame alloc];
+            NSLog(@"Allocated COVGame");
+            newGame = [newGame initWithName:self.name.text]; // Use the name from the UITextField.
+            
+            NSString *defaultRules = @"Basic Rules: When the game starts, you will receive the name of one other player, your target. Your goal is to assassinate them by meeting the kill criterion, below. Meanwhile, someone else will be trying to assassinate you; if they succeed, you will report it and be removed from the game. You win by being the last one alive.\n\n";
+            newGame.rules = [defaultRules stringByAppendingString:self.rules.text];
+            newGame.startTime = self.datePicker.date;
+            
+            NSLog(@"Initialized COVGame");
+            
+            // Save the game.
+            [newGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    NSLog(@"Sucessfully saved in background.");
+                    
+                    PFUser *currUser = [PFUser currentUser];
+                    
+                    [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        // Now can proceed to home screen.
+                        [self performSegueWithIdentifier:@"toHomeScreenFromCreate" sender:self];
+                    }];
+                    
+                } else {
+                    NSLog(@"Failed to save in background.");
+                }
+            }];
+        }
     } else {
         // This shouldn't happen.
         NSLog(@"Called buttonTapped via some other means");

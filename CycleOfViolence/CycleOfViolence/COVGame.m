@@ -72,14 +72,11 @@
     newPlayer[@"currentGameID"] = self.objectId;
     
     // Update Parse cloud storage
-    [self saveInBackground];
-    [newPlayer saveInBackground];
 }
 
 - (void)startGame
 {
     [self setGameStarted:true];
-    [self saveInBackground];
 }
 
 - (void)removePlayer:(PFUser *)exPlayer
@@ -99,8 +96,6 @@
     
     [self.cycle removeObjectAtIndex:userIndex];
     self.playersRemaining = (u_int32_t)[self.cycle count];
-    
-    [self saveInBackground];
 }
 
 

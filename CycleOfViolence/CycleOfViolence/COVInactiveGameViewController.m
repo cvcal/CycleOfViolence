@@ -63,7 +63,15 @@
     // If we're the manager...
     if ([currUser.objectId isEqualToString: (currGame.gameManager).objectId]){
         [self.leaveButton setTitle:@"Delete Game" forState:UIControlStateNormal];
-        [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
+        self.countdown.text = @"Hey manager! Please start the game";
+        // We cannot start the game until it's time.
+        if (timeToStart > 0) {
+            [self.startButton setTitle:@"Start Game (Later)" forState:UIControlStateNormal];
+            [self.startButton setEnabled:NO];
+        } else {
+            [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
+            [self.startButton setEnabled:YES];
+        }
         
     }
     else {
@@ -85,6 +93,17 @@
         // Start the game!
         NSLog(@"startButton tapped");
         [currGame startGame];
+        [currGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Sucessfully saved in background.");
+                
+                // Since user is no longer in the game, return them to the home screen.
+                [self performSegueWithIdentifier:@"toHomeScreenFromInactive" sender:self];
+                
+            } else {
+                NSLog(@"Failed to save game in background.");
+            }
+        }];
     }
     else if (sender == self.leaveButton) {
         NSLog(@"leaveButton tapped");
@@ -92,12 +111,10 @@
         // This button either lets a user leave the game, or it deletes the game if
         // the user is the manager
         if ([currUser.objectId isEqualToString: (currGame.gameManager).objectId]) {
-            NSLog(@"Manager deleting game, hopefully.");
             [currGame cleanGameForDelete];
-            [currGame delete];
+            [currGame deleteInBackground];
         }
         else {
-            NSLog(@"User leaving game, hopefully.");
             [currGame removePlayer:currUser];
             
             // Game not yet started, so decrease total number of players.
@@ -109,18 +126,18 @@
         
         // Update the currentGameID in the User who left, or the manager who deleted the game.
         currUser[@"currentGameID"] = [NSNull null];
+        [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"Sucessfully saved in background.");
+                
+                // Since user is no longer in the game, return them to the home screen.
+                [self performSegueWithIdentifier:@"toHomeScreenFromInactive" sender:self];
+                
+            } else {
+                NSLog(@"Failed to save in background.");
+            }
+        }];
     }
-    [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"Sucessfully saved in background.");
-            
-            // Since user is no longer in the game, return them to the home screen.
-            [self performSegueWithIdentifier:@"toHomeScreenFromInactive" sender:self];
-            
-        } else {
-            NSLog(@"Failed to save in background.");
-        }
-    }];
 }
 
 @end

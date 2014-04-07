@@ -40,7 +40,7 @@
     
     [currUser refresh];
     
-    if (currUser[@"currentGameID"] != [NSNull null]) {
+    if (currUser[@"currentGameID"] != [NSNull null] && currUser[@"currentGameID"] != nil) {
         NSLog(@"The user is in a game.");
         
         // Since games can be deleted without notifying the users in the game, we need
