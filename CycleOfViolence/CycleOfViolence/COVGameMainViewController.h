@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "COVViewController.h"
 #import "COVGame.h"
 
-@interface COVGameMainViewController : UIViewController
+@interface COVGameMainViewController : COVViewController
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;

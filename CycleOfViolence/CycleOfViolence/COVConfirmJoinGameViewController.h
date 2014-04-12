@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "COVViewController.h"
 #import "COVGame.h"
 
-@interface COVConfirmJoinGameViewController : UIViewController
+@interface COVConfirmJoinGameViewController : COVViewController
 
 @property COVGame *currentGame;
 

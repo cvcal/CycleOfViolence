@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "COVViewController.h"
 #import "COVGame.h"
 
-@interface COVRulesViewController : UIViewController
+@interface COVRulesViewController : COVViewController
 
 @end
