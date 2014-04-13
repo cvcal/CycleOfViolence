@@ -11,6 +11,13 @@
 #import <Parse/PFObject.h>
 #import <Parse/PFObject+Subclass.h>
 
+typedef NS_ENUM(NSInteger, gameState) {
+    waitingToStart, // Game has been created, but play has not begun. Players can join.
+    inProgress, // Play has begun but game has not ended.
+    completed, // Game ends with one player winning.
+    aborted // Game is canceled before play begins.
+};
+
 // Boilerplate to subclass PFObject.
 @interface COVGame : PFObject < PFSubclassing >
 
@@ -20,6 +27,7 @@
 @property u_int32_t playersRemaining; // Number not yet assassinated.
 @property PFUser *gameManager; // The player who can start the game.
 @property BOOL gameStarted; // Whether game play has begun.
+@property gameState *state;
 @property NSString *rules;
 @property NSDate *startTime;
 
