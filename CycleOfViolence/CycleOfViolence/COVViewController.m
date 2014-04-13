@@ -28,6 +28,23 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
+    //[self.view setBackgroundColor:[UIColor whiteColor]];
+    //UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bloodsplatterSmaller.png"]];
+    //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"whiteSplattered.png"]];
+    //
+    //    UIGraphicsBeginImageContext(self.view.frame.size);
+    //    [[UIImage imageNamed:@"whiteSplattered.png"] drawInRect:self.view.bounds];
+    //    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    //    UIGraphicsEndImageContext();
+    //
+    //    [self.view setBackgroundColor:[UIColor colorWithPatternImage:image]];
+    
+    //add background
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"whiteSplattered.png"]];
+    [self.view addSubview:background];
+    [self.view sendSubviewToBack:background];
+    self.view.contentMode = UIViewContentModeScaleAspectFit;
+
 }
 
 - (void)didReceiveMemoryWarning
