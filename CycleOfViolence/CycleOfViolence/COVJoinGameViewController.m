@@ -56,7 +56,8 @@
     }
     
     [query orderByDescending:@"numberOfPlayers"];
-    [query whereKey:@"gameStarted"equalTo:[NSNumber numberWithBool:NO]];
+    // We represent the "waitingToStart" state with 0.
+    [query whereKey:@"state"equalTo:@0];
 
     return query;
 }

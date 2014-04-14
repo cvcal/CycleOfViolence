@@ -111,11 +111,13 @@
         // This button either lets a user leave the game, or it deletes the game if
         // the user is the manager
         if ([currUser.objectId isEqualToString: (currGame.gameManager).objectId]) {
-            [currGame cleanGameForDelete];
-            [currGame deleteInBackground];
+            [currGame abortGame];
         }
         else {
             [currGame removePlayer:currUser];
+            // If we abandon a game before it begins, we don't want it to show up
+            // in our history.
+            [currUser[@"gameHistory"] removeObjectAtIndex:0];
             
             // Game not yet started, so decrease total number of players.
             --currGame.numberOfPlayers;

@@ -26,8 +26,7 @@ typedef NS_ENUM(NSInteger, gameState) {
 @property u_int32_t numberOfPlayers; // Number of total participants.
 @property u_int32_t playersRemaining; // Number not yet assassinated.
 @property PFUser *gameManager; // The player who can start the game.
-@property BOOL gameStarted; // Whether game play has begun.
-@property gameState *state;
+@property gameState state; // Records where the game is in its lifecycle.
 @property NSString *rules;
 @property NSDate *startTime;
 
@@ -46,8 +45,14 @@ typedef NS_ENUM(NSInteger, gameState) {
 // Start the game
 - (void) startGame;
 
-// Clean up the game to prepare for deleting
-- (void) cleanGameForDelete;
+// Abort the game
+- (void) abortGame;
+
+// Mark the game as completed
+- (void) completeGame;
+
+// Clean up the game to prepare to end it
+- (void) prepareToEndGame;
 
 // Gets the target for the given player
 - (PFUser*) getTarget:(PFUser *)assassin;

@@ -17,7 +17,6 @@
 @dynamic numberOfPlayers;
 @dynamic playersRemaining;
 @dynamic gameManager;
-@dynamic gameStarted;
 @dynamic state;
 @dynamic rules;
 @dynamic startTime;
@@ -37,7 +36,7 @@
         // set to zero.
         self.cycle = [[NSMutableArray alloc] init];
         self.name = gameName;
-        [self setGameStarted:false];
+        self.state = waitingToStart;
         
         //The current user must have created the game and is the game manager by default.
         PFUser *creator = [PFUser currentUser];
@@ -68,13 +67,41 @@
     
     // Store the game's ID in the User who joined (pointers don't save properly).
     newPlayer[@"currentGameID"] = self.objectId;
+    // Make the game the latest in the player's history.
+    [newPlayer[@"gameHistory"] insertObject:self.objectId atIndex:0];
     
     // The calling function should update Parse cloud storage
 }
 
 - (void)startGame
 {
-    [self setGameStarted:true];
+    self.state = inProgress;
+}
+
+- (void)abortGame
+{
+    [self prepareToEndGame];
+    self.state = aborted;
+    [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Sucessfully saved in background from init game.");
+        } else {
+            NSLog(@"Failed to save in background from init game.");
+        }
+    }];
+}
+
+- (void)completeGame
+{
+    [self prepareToEndGame];
+    self.state = completed;
+    [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Sucessfully saved in background from init game.");
+        } else {
+            NSLog(@"Failed to save in background from init game.");
+        }
+    }];
 }
 
 - (void)removePlayer:(PFUser *)exPlayer
@@ -96,8 +123,7 @@
     self.playersRemaining = (u_int32_t)[self.cycle count];
 }
 
-
-- (void)cleanGameForDelete
+- (void)prepareToEndGame
 {
     // Empty out all the users and update them as well, so they don't link to a
     // non-existant game.

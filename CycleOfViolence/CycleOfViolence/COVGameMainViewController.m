@@ -72,8 +72,7 @@
         // This button removes a user from the game.
         if (self.currGame.playersRemaining <= 1) {
             NSLog(@"Game end, deleting game, hopefully.");
-            [self.currGame cleanGameForDelete];
-            [self.currGame deleteInBackground];
+            [self.currGame completeGame];
         }
         else {
             NSLog(@"User leaving game, hopefully.");

@@ -43,12 +43,14 @@
     if (currUser[@"currentGameID"] != [NSNull null] && currUser[@"currentGameID"] != nil) {
         NSLog(@"The user is in a game.");
         
-        // Since games can be deleted without notifying the users in the game, we need
-        // to check if the game that currentGameID identifies still exists.
-        PFQuery *gameExistence = [PFQuery queryWithClassName: @"COVGame"];
-        [gameExistence getObjectInBackgroundWithId:currUser[@"currentGameID"]
+        // Retrieve the game.
+        PFQuery *game = [PFQuery queryWithClassName: @"COVGame"];
+        [game getObjectInBackgroundWithId:currUser[@"currentGameID"]
                                              block:^(PFObject* returnObj, NSError *error) {
-            if (returnObj == nil) {
+            COVGame *currGame = (COVGame *)returnObj;
+            // Since we don't notify users if their game is aborted, we need to check that
+            // now.
+            if (currGame.state == aborted) {
                 NSLog(@"Game has been deleted.");
                 [[[UIAlertView alloc] initWithTitle:@"Game Deleted"
                                             message:@"The game you were in has been removed."
@@ -59,9 +61,8 @@
                 [currUser saveInBackground];
             } else {
                 NSLog(@"User is STILL in a game!");
-                COVGame * currGame = (COVGame *)returnObj;
                 // A game has either started, or it hasn't, and they should go to different views.
-                if (currGame.gameStarted) {
+                if (currGame.state == inProgress) {
                     [self performSegueWithIdentifier:@"ToActiveGame" sender:self];
                 } else {
                     [self performSegueWithIdentifier:@"ToInactiveGame" sender:self];
@@ -119,6 +120,7 @@
 {
     [self dismissViewControllerAnimated:YES completion:NULL]; // Dismiss the PFSignUpViewController
     user[@"currentGameID"] = [NSNull null];
+    user[@"gameHistory"] = [[NSMutableArray alloc] init];
     [user saveInBackground];
 }
 
