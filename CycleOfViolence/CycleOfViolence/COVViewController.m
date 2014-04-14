@@ -27,21 +27,19 @@
 {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
-    //[self.view setBackgroundColor:[UIColor whiteColor]];
-    //UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"bloodsplatterSmaller.png"]];
-    //self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"whiteSplattered.png"]];
-    
-    //add background
+    //add background blood splatter
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:
                                    [UIImage imageNamed:
                                 @"blood_splatter_transparency_by_sagacious-d3h1yw6.png"]];
     [self.view addSubview:backgroundView];
     
-
-//    [self.view sendSubviewToBack:backgroundView];
-//    self.view.contentMode = UIViewContentModeScaleAspectFit;
-
+    // send image behind the text/storyboard stuff.
+    [self.view sendSubviewToBack:backgroundView];
+    
+    // add the name to the navigation bar
+    PFUser *currUser = [PFUser currentUser];
+    NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
+    [self.navigationItem setTitle:title];
 }
 
 - (void)didReceiveMemoryWarning
