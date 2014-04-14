@@ -38,7 +38,7 @@
         self.name = gameName;
         self.state = waitingToStart;
         
-        //The current user must have created the game and is the game manager by default.
+        // The current user must have created the game and is the game manager by default.
         PFUser *creator = [PFUser currentUser];
         self.gameManager = creator;
 
