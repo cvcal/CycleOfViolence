@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *countdown;
 @property (weak, nonatomic) IBOutlet UIButton *leaveButton;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
-@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 
 @end
 
