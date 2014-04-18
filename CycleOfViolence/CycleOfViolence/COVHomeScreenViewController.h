@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "COVViewController.h"
 #import "COVGame.h"
+#import "COVLogInViewController.h"
 
 @interface COVHomeScreenViewController : COVViewController
 
@@ -22,7 +23,7 @@
 - (void)buttonTapped:(UIButton *)sender;
 
 - (void)bringUpLogIn;
-- (void)logInViewController:(PFLogInViewController *)controller
+- (void)logInViewController:(COVLogInViewController *)controller
                didLogInUser:(PFUser *)user;
 - (void)signUpViewController:(PFSignUpViewController *)signUpController
                didSignUpUser:(PFUser *)user;

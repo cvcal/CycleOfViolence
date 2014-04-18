@@ -88,7 +88,7 @@
 - (void)bringUpLogIn
 {
     // Create the log in view controller.
-    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+    COVLogInViewController *logInViewController = [[COVLogInViewController alloc] init];
     logInViewController.fields = PFLogInFieldsUsernameAndPassword
     | PFLogInFieldsLogInButton
     | PFLogInFieldsSignUpButton
@@ -108,7 +108,7 @@
 }
 
 // Dismiss the modal login after successful login.
-- (void)logInViewController:(PFLogInViewController *)controller
+- (void)logInViewController:(COVLogInViewController *)controller
                didLogInUser:(PFUser *)user
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
