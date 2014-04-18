@@ -28,11 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.logInView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"BlackBackground.png"]]];
+    [self.logInView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"blood_splatter_transparency_by_sagacious-d3h1yw6.png"]]];
     [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Placeholder.png"]]];
     
     [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"Signup.png"] forState:UIControlStateNormal];
-    [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"BlackBackgroundpng"] forState:UIControlStateHighlighted];
+    [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"BlackBackground.png"] forState:UIControlStateHighlighted];
     [self.logInView.signUpButton setTitle:@"" forState:UIControlStateNormal];
     [self.logInView.signUpButton setTitle:@"" forState:UIControlStateHighlighted];
     
