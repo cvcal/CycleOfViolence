@@ -6,7 +6,6 @@
 //
 //
 
-#import <UIKit/UIKit.h>
 #import "COVViewController.h"
 #import "COVGame.h"
 

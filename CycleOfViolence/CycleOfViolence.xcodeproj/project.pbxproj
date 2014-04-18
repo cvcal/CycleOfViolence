@@ -54,6 +54,7 @@
 /* Begin PBXFileReference section */
 		504B7ADE18C9A39E00C8D3AB /* COVGameMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVGameMainViewController.h; sourceTree = "<group>"; };
 		504B7ADF18C9A39E00C8D3AB /* COVGameMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVGameMainViewController.m; sourceTree = "<group>"; };
+		50E4406718FB52FE00BD47CB /* blood_splatter_transparency_by_sagacious-d3h1yw6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blood_splatter_transparency_by_sagacious-d3h1yw6.png"; sourceTree = SOURCE_ROOT; };
 		89D8116C18F9C0F000930796 /* COVCreateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVCreateGameViewController.h; sourceTree = "<group>"; };
 		89D8116D18F9C0F000930796 /* COVCreateGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVCreateGameViewController.m; sourceTree = "<group>"; };
 		89D8117218F9C19C00930796 /* COVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVViewController.h; sourceTree = "<group>"; };
@@ -179,6 +180,7 @@
 			children = (
 				89D8117218F9C19C00930796 /* COVViewController.h */,
 				89D8117318F9C19D00930796 /* COVViewController.m */,
+				50E4406718FB52FE00BD47CB /* blood_splatter_transparency_by_sagacious-d3h1yw6.png */,
 				89D8116C18F9C0F000930796 /* COVCreateGameViewController.h */,
 				89D8116D18F9C0F000930796 /* COVCreateGameViewController.m */,
 				DAC409C918BA7C8C0066A552 /* COVAppDelegate.h */,
@@ -311,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC409FE18BA81350066A552 /* Main.storyboard in Resources */,
+				50E4406818FB52FE00BD47CB /* blood_splatter_transparency_by_sagacious-d3h1yw6.png in Resources */,
 				DAC409C518BA7C8C0066A552 /* InfoPlist.strings in Resources */,
 				DAC409CD18BA7C8D0066A552 /* Images.xcassets in Resources */,
 			);

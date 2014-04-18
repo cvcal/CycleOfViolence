@@ -39,10 +39,6 @@
     COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
                                                     objectId:currUser[@"currentGameID"]];
     
-    // Set the title to show the user.
-    NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
-    [self.navBar setTitle:title];
-
     // Set the view controller to display the current game.
     self.targetDisplay.text = [NSString stringWithFormat:
                                @"You are in the game \"%@,\" which hasn't started yet.",
@@ -80,7 +76,7 @@
         // Make the text appropriate for the 'Leave Game" button
         [self.leaveButton setTitle:@"Leave Game" forState:UIControlStateNormal];
     }
-        
+    
 }
 
 
