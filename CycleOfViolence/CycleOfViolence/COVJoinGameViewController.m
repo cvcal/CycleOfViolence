@@ -57,7 +57,7 @@
     
     [query orderByDescending:@"numberOfPlayers"];
     // We represent the "waitingToStart" state with 0.
-    [query whereKey:@"state"equalTo:@0];
+    [query whereKey:@"state" equalTo:@(waitingToStart)];
 
     return query;
 }
