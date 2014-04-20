@@ -2,7 +2,7 @@
 //  COVLogInViewController.h
 //  CycleOfViolence
 //
-//  Created by Laptop 16 on 4/17/14.
+//  Created by John Phillpot on 4/17/14.
 //
 //
 

@@ -9,6 +9,7 @@
 #import "COVViewController.h"
 #import "COVGame.h"
 #import "COVLogInViewController.h"
+#import "COVSignUpViewController.h"
 
 @interface COVHomeScreenViewController : COVViewController
 

@@ -98,34 +98,34 @@
     [logInViewController setDelegate:(id)self]; // Set ourselves as the delegate
     
     // Create the sign up view controller
-    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+    COVSignUpViewController *signUpViewController = [[COVSignUpViewController alloc] init];
     [signUpViewController setDelegate:(id)self]; // Set ourselves as the delegate
     
     // Assign our sign up controller to be displayed from the login controller
     [logInViewController setSignUpController:signUpViewController];
     
     // Present the log in view controller
-    [self presentViewController:logInViewController animated:YES completion:NULL];
+    [self presentViewController:logInViewController animated:NO completion:NULL];
 }
 
 // Dismiss the modal login after successful login.
 - (void)logInViewController:(COVLogInViewController *)controller
                didLogInUser:(PFUser *)user
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:NO completion:NULL];
 }
 
 // Sent to the delegate when a PFUser is signed up.
-- (void)signUpViewController:(PFSignUpViewController *)signUpController
+- (void)signUpViewController:(COVSignUpViewController *)signUpController
                didSignUpUser:(PFUser *)user
 {
-    [self dismissViewControllerAnimated:YES completion:NULL]; // Dismiss the PFSignUpViewController
+    [self dismissViewControllerAnimated:NO completion:NULL]; // Dismiss the COVSignUpViewController
     user[@"currentGameID"] = [NSNull null];
     user[@"gameHistory"] = [[NSMutableArray alloc] init];
     [user saveInBackground];
 }
 
-- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
+- (BOOL)signUpViewController:(COVSignUpViewController *)signUpController
             shouldBeginSignUp:(NSDictionary *)info
 {
     // We currently do not require a specific email address type

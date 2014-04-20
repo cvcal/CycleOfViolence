@@ -15,6 +15,7 @@
 		DA16D65E18BABF5800AA604B /* COVGame.m in Sources */ = {isa = PBXBuildFile; fileRef = DA16D65D18BABF5800AA604B /* COVGame.m */; };
 		DA64C55918F0BB3100E5FF4B /* COVRulesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA64C55818F0BB3100E5FF4B /* COVRulesViewController.m */; };
 		DA912B4D18C067AB002EC131 /* COVJoinGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA912B4C18C067AB002EC131 /* COVJoinGameViewController.m */; };
+		DA961F9919044C93000C8DCB /* COVSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA961F9819044C93000C8DCB /* COVSignUpViewController.m */; };
 		DA9DD1271900DE9D0088960A /* COVLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9DD1261900DE9D0088960A /* COVLogInViewController.m */; };
 		DAC409BD18BA7C8C0066A552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409BC18BA7C8C0066A552 /* CoreGraphics.framework */; };
 		DAC409BF18BA7C8C0066A552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC409BE18BA7C8C0066A552 /* UIKit.framework */; };
@@ -66,6 +67,8 @@
 		DA64C55818F0BB3100E5FF4B /* COVRulesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVRulesViewController.m; sourceTree = "<group>"; };
 		DA912B4B18C067AB002EC131 /* COVJoinGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVJoinGameViewController.h; sourceTree = "<group>"; };
 		DA912B4C18C067AB002EC131 /* COVJoinGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVJoinGameViewController.m; sourceTree = "<group>"; };
+		DA961F9719044C93000C8DCB /* COVSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVSignUpViewController.h; sourceTree = "<group>"; };
+		DA961F9819044C93000C8DCB /* COVSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVSignUpViewController.m; sourceTree = "<group>"; };
 		DA9DD1251900DE9D0088960A /* COVLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVLogInViewController.h; sourceTree = "<group>"; };
 		DA9DD1261900DE9D0088960A /* COVLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVLogInViewController.m; sourceTree = "<group>"; };
 		DAC409B718BA7C8C0066A552 /* CycleOfViolence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CycleOfViolence.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +199,8 @@
 				DAC40A0018BA8A980066A552 /* COVHomeScreenViewController.m */,
 				DA9DD1251900DE9D0088960A /* COVLogInViewController.h */,
 				DA9DD1261900DE9D0088960A /* COVLogInViewController.m */,
+				DA961F9719044C93000C8DCB /* COVSignUpViewController.h */,
+				DA961F9819044C93000C8DCB /* COVSignUpViewController.m */,
 				DA912B4B18C067AB002EC131 /* COVJoinGameViewController.h */,
 				DA912B4C18C067AB002EC131 /* COVJoinGameViewController.m */,
 				DA0A094A18C2525E0011F92A /* COVConfirmJoinGameViewController.h */,
@@ -342,6 +347,7 @@
 				DA0A094C18C2525E0011F92A /* COVConfirmJoinGameViewController.m in Sources */,
 				DAE8ADA818C98E0400588C91 /* COVInactiveGameViewController.m in Sources */,
 				DAC409CB18BA7C8C0066A552 /* COVAppDelegate.m in Sources */,
+				DA961F9919044C93000C8DCB /* COVSignUpViewController.m in Sources */,
 				DA64C55918F0BB3100E5FF4B /* COVRulesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
