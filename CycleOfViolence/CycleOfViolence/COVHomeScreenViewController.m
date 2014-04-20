@@ -30,6 +30,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     // Make sure this is the right screen to be displaying.
     [self checkForGameStateSegue];
 }
