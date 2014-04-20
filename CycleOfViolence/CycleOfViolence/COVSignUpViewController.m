@@ -42,7 +42,7 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    // Set frame for elements.
+    // Set frame for elements. 
     [self.signUpView.logo setFrame:CGRectMake(66.5f, 45.0f, 187.0f, 58.5f)];
     
 }
