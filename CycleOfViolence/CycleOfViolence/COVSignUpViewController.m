@@ -32,7 +32,7 @@
     [self.signUpView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"blood_splatter_transparency_by_sagacious-d3h1yw6.png"]]];
     
     // Add the logo
-    [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Placeholder.png"]]];
+    [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"COVTitle.png"]]];
     
     // Set the backgrounds for the signUp button. The latter background appears when the button is pressed.
     [self.signUpView.signUpButton setBackgroundImage:[UIImage imageNamed:@"BlackBackground.png"] forState:UIControlStateNormal];
@@ -43,7 +43,7 @@
     [super viewDidLayoutSubviews];
     
     // Set frame for elements. 
-    [self.signUpView.logo setFrame:CGRectMake(66.5f, 45.0f, 187.0f, 58.5f)];
+    [self.signUpView.logo setFrame:CGRectMake(66.5f, 45.0f, 200.0f, 80.5f)];
     
 }
 
