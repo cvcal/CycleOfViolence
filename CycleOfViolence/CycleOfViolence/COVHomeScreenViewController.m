@@ -49,8 +49,8 @@
         [game getObjectInBackgroundWithId:currUser[@"currentGameID"]
                                              block:^(PFObject* returnObj, NSError *error) {
             COVGame *currGame = (COVGame *)returnObj;
-            // Since we don't notify users if their game is aborted, we need to check that
-            // now.
+            // Since we don't notify users if their game is aborted, we need to check
+            // that now.
             if (currGame.state == aborted) {
                 NSLog(@"Game has been deleted.");
                 [[[UIAlertView alloc] initWithTitle:@"Game Deleted"
@@ -63,7 +63,7 @@
             } else {
                 NSLog(@"User is STILL in a game!");
                 // A game has either started, or it hasn't, and they should go to different views.
-                if (currGame.state == inProgress) {
+                if (currGame.state == inProgress || currGame.state == completed) {
                     [self performSegueWithIdentifier:@"ToActiveGame" sender:self];
                 } else {
                     [self performSegueWithIdentifier:@"ToInactiveGame" sender:self];

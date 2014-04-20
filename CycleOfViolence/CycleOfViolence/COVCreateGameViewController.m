@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIView *datePickerBackground;
 
 @end
 
@@ -35,6 +36,15 @@
 {
     [super viewDidLoad];
     
+    
+    self.datePickerBackground.backgroundColor = [UIColor clearColor];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:
+                                   [UIImage imageNamed:
+                                    @"DatePickerBackgroundImage.png"]];
+    [self.datePickerBackground addSubview:backgroundView];
+    
+    // send image behind the date picker stuff.
+    [self.datePickerBackground sendSubviewToBack:backgroundView];
     
 	// You can't start a game in the past with current technology.
     NSDate *current = [[NSDate alloc] init];
