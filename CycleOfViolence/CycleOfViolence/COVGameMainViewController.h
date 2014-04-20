@@ -11,9 +11,13 @@
 
 @interface COVGameMainViewController : COVViewController
 
+// Method overrides from COVViewController and UIViewController
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
+
+// Own methods
+- (IBAction)buttonTapped:(id)sender;
 
 // Track the game locally
 @property COVGame *currGame;

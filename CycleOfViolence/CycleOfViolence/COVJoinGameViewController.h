@@ -12,8 +12,8 @@
 
 @interface COVJoinGameViewController : PFQueryTableViewController
 
+// Method overrides from PFQueryTableViewController and UITableViewController
 - (id)initWithCoder:(NSCoder *)aDecoder;
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 
 - (PFQuery *)queryForTable;
@@ -23,6 +23,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+
+// Unwind Methods
 - (IBAction)unwindToJoinGame:(UIStoryboardSegue *)segue;
 
 @end

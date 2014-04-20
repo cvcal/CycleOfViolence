@@ -11,8 +11,11 @@
 
 @interface COVInactiveGameViewController : COVViewController
 
+// Method overrides from COVViewController and UIViewController
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
+
+// Own methods
 - (IBAction)buttonTapped:(id)sender;
 
 @end

@@ -12,9 +12,9 @@
 
 @interface COVHomeScreenViewController : COVViewController
 
+// Method overrides from COVViewController and UIViewController
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
-
 - (void)checkForGameStateSegue;
 
 // Used to handle response to Log Out button.
@@ -28,6 +28,8 @@
 - (BOOL)signUpViewController:(PFSignUpViewController *)signUpController
            shouldBeginSignUp:(NSDictionary *)info;
 
+
+// Unwind methods
 - (IBAction)unwindToMain:(UIStoryboardSegue *)segue;
 - (IBAction)unwindAndLogOut:(UIStoryboardSegue *)segue;
 

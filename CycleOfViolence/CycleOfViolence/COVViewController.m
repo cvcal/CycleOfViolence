@@ -28,7 +28,7 @@
     [super viewDidLoad];
     
     //add background blood splatter, with a black background
-    self.view.backgroundColor = [UIColor whiteColor]; // wrong color for now, to make text readable
+    self.view.backgroundColor = [UIColor blackColor]; 
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:
                                    [UIImage imageNamed:
                                     @"blood_splatter_transparency_by_sagacious-d3h1yw6.png"]];
@@ -53,16 +53,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
