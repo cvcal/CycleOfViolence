@@ -220,12 +220,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="m7X-U4-o3R"/>
+                    <navigationItem key="navigationItem" id="m7X-U4-o3R">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="U84-8J-Eua">
+                            <connections>
+                                <segue destination="Kzw-9M-zoO" kind="unwind" unwindAction="unwindAndLogOut:" id="aEU-lw-8WC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="rules" destination="408-nv-QOf" id="zLF-kE-Xii"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9P-aX-pru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Kzw-9M-zoO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2374" y="-1395"/>
         </scene>
@@ -252,12 +259,19 @@
                             <outlet property="delegate" destination="DDi-Nc-c5w" id="hbp-n9-29g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xeq-Cs-aUj"/>
+                    <navigationItem key="navigationItem" id="xeq-Cs-aUj">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="p0R-mj-T9a">
+                            <connections>
+                                <segue destination="VZ5-9T-Ypk" kind="unwind" unwindAction="unwindAndLogOut:" id="gMY-d9-wVa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="bdp-So-SBM" kind="push" identifier="ConfirmationSegue" id="rvL-0l-gsr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyF-4g-06D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VZ5-9T-Ypk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1292" y="770"/>
         </scene>
@@ -336,7 +350,13 @@
                             <constraint firstAttribute="trailing" secondItem="rOq-hK-BLP" secondAttribute="trailing" constant="20" symbolic="YES" id="sRV-bH-v39"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9S6-k9-8bS"/>
+                    <navigationItem key="navigationItem" id="9S6-k9-8bS">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="aLY-BD-oCy">
+                            <connections>
+                                <segue destination="kqB-BU-ryU" kind="unwind" unwindAction="unwindAndLogOut:" id="nwQ-4Q-osc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="countdown" destination="x9G-LF-pmb" id="wvD-ck-0i6"/>
                         <outlet property="gameInfo" destination="rOq-hK-BLP" id="1yC-GW-hco"/>
@@ -488,7 +508,13 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                             <constraint firstItem="s5D-QB-VkC" firstAttribute="centerX" secondItem="hWF-mV-BMa" secondAttribute="centerX" id="hkj-No-NZZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZuN-J4-qs8"/>
+                    <navigationItem key="navigationItem" id="ZuN-J4-qs8">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="o3h-9d-LOW">
+                            <connections>
+                                <segue destination="PHK-3Q-4y7" kind="unwind" unwindAction="unwindAndLogOut:" id="RG0-fd-4nh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="ZPd-Pt-RhG" id="PSo-Th-ksp"/>
                         <outlet property="createButton" destination="FSe-tK-WY8" id="PDL-xC-Si9"/>
@@ -641,6 +667,6 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3mx-bi-LW5"/>
+        <segue reference="3SC-at-Vb7"/>
     </inferredMetricsTieBreakers>
 </document>
