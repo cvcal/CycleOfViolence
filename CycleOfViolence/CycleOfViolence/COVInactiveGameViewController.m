@@ -62,7 +62,7 @@
         self.countdown.text = @"Hey manager! Please start the game";
         // We cannot start the game until it's time.
         if (timeToStart > 0) {
-            [self.startButton setTitle:@"Start Game (Later)" forState:UIControlStateNormal];
+            [self.startButton setTitle:@"Can't start game yet" forState:UIControlStateNormal];
             [self.startButton setEnabled:NO];
         } else {
             [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
