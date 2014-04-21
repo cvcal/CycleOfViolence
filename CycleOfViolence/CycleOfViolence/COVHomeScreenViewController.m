@@ -104,14 +104,14 @@
     [logInViewController setSignUpController:signUpViewController];
     
     // Present the log in view controller
-    [self presentViewController:logInViewController animated:NO completion:NULL];
+    [self presentViewController:logInViewController animated:YES completion:NULL];
 }
 
 // Dismiss the modal login after successful login.
 - (void)logInViewController:(COVLogInViewController *)controller
                didLogInUser:(PFUser *)user
 {
-    [self dismissViewControllerAnimated:NO completion:NULL];
+    [self dismissViewControllerAnimated:YES completion:NULL];
     [self viewDidLoad];
 }
 
@@ -119,16 +119,18 @@
 - (void)signUpViewController:(COVSignUpViewController *)signUpController
                didSignUpUser:(PFUser *)user
 {
-    [self dismissViewControllerAnimated:NO completion:NULL]; // Dismiss the COVSignUpViewController
+    [self dismissViewControllerAnimated:YES completion:NULL]; // Dismiss the COVSignUpViewController
     user[@"currentGameID"] = [NSNull null];
     user[@"gameHistory"] = [[NSMutableArray alloc] init];
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            NSLog(@"Sucessfully saved user in background after dismissing sign up game.");
+            NSLog(@"Sucessfully saved user in background after dismissing sign up");
         } else {
             NSLog(@"Failed to save in background after dismissing sign up.");
         }
     }];
+    
+    [self viewDidLoad];
 }
 
 - (BOOL)signUpViewController:(COVSignUpViewController *)signUpController
