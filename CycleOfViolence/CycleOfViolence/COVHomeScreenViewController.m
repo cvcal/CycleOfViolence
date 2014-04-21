@@ -98,6 +98,10 @@
     
     // Create the sign up view controller
     COVSignUpViewController *signUpViewController = [[COVSignUpViewController alloc] init];
+    signUpViewController.fields = PFSignUpFieldsUsernameAndPassword
+    | PFSignUpFieldsSignUpButton
+    | PFSignUpFieldsAdditional
+    | PFSignUpFieldsDismissButton;
     [signUpViewController setDelegate:(id)self]; // Set ourselves as the delegate
     
     // Assign our sign up controller to be displayed from the login controller
@@ -122,6 +126,10 @@
     [self dismissViewControllerAnimated:YES completion:NULL]; // Dismiss the COVSignUpViewController
     user[@"currentGameID"] = [NSNull null];
     user[@"gameHistory"] = [[NSMutableArray alloc] init];
+    // Since we use the email as the username, we only need to request it once
+    // as a username and then set the two equal here.
+    user[@"email"] = [user username];
+    user[@"fullName"] = signUpController.signUpView.additionalField.text;
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Sucessfully saved user in background after dismissing sign up");
