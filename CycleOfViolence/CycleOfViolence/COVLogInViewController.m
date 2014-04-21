@@ -37,16 +37,19 @@
     [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"COVTitle.png"]]];
     
     // Set the backgrounds for the signUp button. The latter background appears when the button is pressed.
-    [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"BlackBackground.png"] forState:UIControlStateNormal];
-    [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"BlackBackground.png"] forState:UIControlStateHighlighted];
+    [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"gray.png"] forState:UIControlStateNormal];
+    [self.logInView.signUpButton setBackgroundImage:[UIImage imageNamed:@"red.png"] forState:UIControlStateHighlighted];
     
     // Set the backgrounds for the logIn button. The latter background appears when the button is pressed.
-    [self.logInView.logInButton setBackgroundImage:[UIImage imageNamed:@"BlackBackground.png"] forState:UIControlStateNormal];
-    [self.logInView.logInButton setBackgroundImage:[UIImage imageNamed:@"BlackBackground.png"] forState:UIControlStateHighlighted];
+    [self.logInView.logInButton setBackgroundImage:[UIImage imageNamed:@"gray.png"] forState:UIControlStateNormal];
+    [self.logInView.logInButton setBackgroundImage:[UIImage imageNamed:@"red.png"] forState:UIControlStateHighlighted];
     
     // Rename the textfields and and change the text color to white.
     self.logInView.usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.logInView.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.logInView.usernameField.backgroundColor = [UIColor blackColor];
+    self.logInView.passwordField.backgroundColor = [UIColor blackColor];
+    
 }
 
 - (void)viewDidLayoutSubviews {
