@@ -10,7 +10,7 @@
 
 @interface COVHomeScreenViewController ()
 
-// These is a private propertie, the button on the storyboard we need to interact with.
+// This is a private property, the button on the storyboard we need to interact with.
 @property (weak, nonatomic) IBOutlet UIButton *logOut;
 
 @end
@@ -31,7 +31,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     // Make sure this is the right screen to be displaying.
-    [self checkForGameStateSegue];
+    if ([PFUser currentUser]) {
+        [self checkForGameStateSegue];
+    } else {
+        [self bringUpLogIn];
+    }
 }
 
 - (void)checkForGameStateSegue
@@ -108,14 +112,14 @@
     [logInViewController setSignUpController:signUpViewController];
     
     // Present the log in view controller
-    [self presentViewController:logInViewController animated:YES completion:NULL];
+    [self presentViewController:logInViewController animated:NO completion:NULL];
 }
 
 // Dismiss the modal login after successful login.
 - (void)logInViewController:(COVLogInViewController *)controller
                didLogInUser:(PFUser *)user
 {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:NO completion:NULL];
     [self viewDidLoad];
 }
 
@@ -123,7 +127,7 @@
 - (void)signUpViewController:(COVSignUpViewController *)signUpController
                didSignUpUser:(PFUser *)user
 {
-    [self dismissViewControllerAnimated:YES completion:NULL]; // Dismiss the COVSignUpViewController
+    [self dismissViewControllerAnimated:NO completion:NULL]; // Dismiss the COVSignUpViewController
     user[@"currentGameID"] = [NSNull null];
     user[@"gameHistory"] = [[NSMutableArray alloc] init];
     // Since we use the email as the username, we only need to request it once
@@ -157,7 +161,6 @@
 - (IBAction)unwindAndLogOut:(UIStoryboardSegue *)segue
 {
     [PFUser logOut];
-    [self bringUpLogIn];
 }
 
 @end
