@@ -49,11 +49,13 @@
     if (timeToStart <= 0) {
         self.countdown.text = @"Starting soon...";
     } else {
-        NSInteger days = (int) ( timeToStart / (3600*24) );
-        NSInteger hours = ( (int) timeToStart % (3600*24) ) / 3600;
-        self.countdown.text = [NSString stringWithFormat:@"Starting in %ld days, %ld hours.",
-                               (long)days, (long)hours];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+        NSString *date = [dateFormatter stringFromDate:currGame.startTime];
+        self.countdown.text = [NSString stringWithFormat:@"Game starts %@",
+                               date];
     }
+    
     
     // Show the buttons selectively.
     // If we're the manager...
