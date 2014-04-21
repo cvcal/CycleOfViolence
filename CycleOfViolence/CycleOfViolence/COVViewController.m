@@ -38,7 +38,7 @@
     
     // add the name to the navigation bar
     PFUser *currUser = [PFUser currentUser];
-    NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
+    NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser[@"fullName"]];
     [self.navigationItem setTitle:title];
 }
 
