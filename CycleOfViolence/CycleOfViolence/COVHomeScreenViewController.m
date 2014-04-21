@@ -112,6 +112,7 @@
                didLogInUser:(PFUser *)user
 {
     [self dismissViewControllerAnimated:NO completion:NULL];
+    [self viewDidLoad];
 }
 
 // Sent to the delegate when a PFUser is signed up.
@@ -121,7 +122,13 @@
     [self dismissViewControllerAnimated:NO completion:NULL]; // Dismiss the COVSignUpViewController
     user[@"currentGameID"] = [NSNull null];
     user[@"gameHistory"] = [[NSMutableArray alloc] init];
-    [user saveInBackground];
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Sucessfully saved user in background after dismissing sign up game.");
+        } else {
+            NSLog(@"Failed to save in background after dismissing sign up.");
+        }
+    }];
 }
 
 - (BOOL)signUpViewController:(COVSignUpViewController *)signUpController
