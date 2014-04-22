@@ -30,6 +30,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:NO];
     // Make sure this is the right screen to be displaying.
     if ([PFUser currentUser]) {
         [self checkForGameStateSegue];
@@ -120,7 +121,6 @@
                didLogInUser:(PFUser *)user
 {
     [self dismissViewControllerAnimated:NO completion:NULL];
-    [self viewDidLoad];
 }
 
 // Sent to the delegate when a PFUser is signed up.
@@ -141,8 +141,6 @@
             NSLog(@"Failed to save in background after dismissing sign up.");
         }
     }];
-    
-    [self viewDidLoad];
 }
 
 - (BOOL)signUpViewController:(COVSignUpViewController *)signUpController
