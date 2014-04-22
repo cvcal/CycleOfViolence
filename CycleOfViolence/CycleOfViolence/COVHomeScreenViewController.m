@@ -127,7 +127,6 @@
 - (void)signUpViewController:(COVSignUpViewController *)signUpController
                didSignUpUser:(PFUser *)user
 {
-    [self dismissViewControllerAnimated:NO completion:NULL]; // Dismiss the COVSignUpViewController
     user[@"currentGameID"] = [NSNull null];
     user[@"gameHistory"] = [[NSMutableArray alloc] init];
     // Since we use the email as the username, we only need to request it once
@@ -137,6 +136,9 @@
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Sucessfully saved user in background after dismissing sign up");
+            // Dismiss the COVSignUpViewController. We do this last so that
+            // viewDidAppear is called after we've saved our new user.
+            [self dismissViewControllerAnimated:NO completion:NULL];
         } else {
             NSLog(@"Failed to save in background after dismissing sign up.");
         }
