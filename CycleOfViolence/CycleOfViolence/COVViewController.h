@@ -12,9 +12,7 @@
 @interface COVViewController : UIViewController
 
 // Method overrides from UIViewController
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(BOOL)animated;
-- (void)didReceiveMemoryWarning;
 
 @end

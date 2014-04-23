@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502543721907867100DCFA66 /* COVQueryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502543711907867100DCFA66 /* COVQueryTableViewController.m */; };
 		504B7AE018C9A39E00C8D3AB /* COVGameMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 504B7ADF18C9A39E00C8D3AB /* COVGameMainViewController.m */; };
 		89D8116E18F9C0F000930796 /* COVCreateGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D8116D18F9C0F000930796 /* COVCreateGameViewController.m */; };
 		89D8117418F9C19D00930796 /* COVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D8117318F9C19D00930796 /* COVViewController.m */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		502543701907867100DCFA66 /* COVQueryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVQueryTableViewController.h; sourceTree = "<group>"; };
+		502543711907867100DCFA66 /* COVQueryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVQueryTableViewController.m; sourceTree = "<group>"; };
 		504B7ADE18C9A39E00C8D3AB /* COVGameMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVGameMainViewController.h; sourceTree = "<group>"; };
 		504B7ADF18C9A39E00C8D3AB /* COVGameMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COVGameMainViewController.m; sourceTree = "<group>"; };
 		89D8116C18F9C0F000930796 /* COVCreateGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COVCreateGameViewController.h; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 				DA961F9819044C93000C8DCB /* COVSignUpViewController.m */,
 				DA912B4B18C067AB002EC131 /* COVJoinGameViewController.h */,
 				DA912B4C18C067AB002EC131 /* COVJoinGameViewController.m */,
+				502543701907867100DCFA66 /* COVQueryTableViewController.h */,
+				502543711907867100DCFA66 /* COVQueryTableViewController.m */,
 				DA0A094A18C2525E0011F92A /* COVConfirmJoinGameViewController.h */,
 				DA0A094B18C2525E0011F92A /* COVConfirmJoinGameViewController.m */,
 				DAC409CC18BA7C8D0066A552 /* Images.xcassets */,
@@ -349,6 +354,7 @@
 				DAC409CB18BA7C8C0066A552 /* COVAppDelegate.m in Sources */,
 				DA961F9919044C93000C8DCB /* COVSignUpViewController.m in Sources */,
 				DA64C55918F0BB3100E5FF4B /* COVRulesViewController.m in Sources */,
+				502543721907867100DCFA66 /* COVQueryTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

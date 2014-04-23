@@ -35,8 +35,6 @@
 
 #pragma mark - View lifecycle
 
-
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations

@@ -6,13 +6,13 @@
 //  Adapted by John Phillpot and Reyna Hulett 2/27/2014.
 //
 
-#import <Parse/Parse.h>
 #import "COVGame.h"
+#import "COVQueryTableViewController.h"
 #import "COVConfirmJoinGameViewController.h"
 
-@interface COVJoinGameViewController : PFQueryTableViewController
+@interface COVJoinGameViewController : COVQueryTableViewController
 
-// Method overrides from PFQueryTableViewController and UITableViewController
+// Method overrides from COVQueryTableViewController and UITableViewController
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 - (PFQuery *)queryForTable;
