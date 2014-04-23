@@ -30,4 +30,11 @@
     
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
+                                           forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // set cells as semi-transparent.
+    cell.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
+}
+
 @end
