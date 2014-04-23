@@ -23,6 +23,7 @@
                                     <constraint firstAttribute="width" constant="94" id="oZj-r2-vPf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CYCLE OF VIOLENCE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="256" translatesAutoresizingMaskIntoConstraints="NO" id="C8d-eK-hBh">
@@ -32,7 +33,7 @@
                                     <constraint firstAttribute="height" constant="90" id="BW7-fb-xMt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="36"/>
-                                <color key="textColor" red="0.084622765727051616" green="0.1671209593814833" blue="0.50885275135869568" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.1564256858587304" green="0.26422988326985131" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.13603735710000001" green="0.051470352679999998" blue="0.57360309099999995" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRW-ln-Cni">
@@ -66,7 +67,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="C8d-eK-hBh" firstAttribute="centerX" secondItem="jfF-Gq-nub" secondAttribute="centerX" id="5N6-sT-9nE"/>
                             <constraint firstItem="vXs-Vg-fjB" firstAttribute="centerX" secondItem="CRW-ln-Cni" secondAttribute="centerX" id="Gwc-LW-G8h"/>
@@ -108,6 +109,7 @@
                                 <rect key="frame" x="20" y="92" width="280" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3g-80-Yoh" userLabel="Leave Game">
@@ -144,10 +146,11 @@
                                 <rect key="frame" x="20" y="131" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ilW-ik-sbq">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="xwx-dH-RZZ">
@@ -184,12 +187,12 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Placeholder rules" translatesAutoresizingMaskIntoConstraints="NO" id="408-nv-QOf">
                                 <rect key="frame" x="20" y="84" width="280" height="358"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="m7X-U4-o3R"/>
                     <connections>
@@ -208,6 +211,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="prototype" id="5vJ-Tx-Z4s">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
@@ -271,13 +276,13 @@
                                 <rect key="frame" x="20" y="82" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Rules Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Utf-1N-gvj">
                                 <rect key="frame" x="20" y="193" width="280" height="331"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.70000000000000007" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -285,10 +290,11 @@
                                 <rect key="frame" x="20" y="130" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HCc-WV-PH3" firstAttribute="leading" secondItem="htx-a5-4ZV" secondAttribute="trailing" constant="67" id="0vp-UZ-jM5"/>
                             <constraint firstItem="Utf-1N-gvj" firstAttribute="top" secondItem="x9G-LF-pmb" secondAttribute="bottom" constant="42" id="2r3-NT-70h"/>
@@ -340,15 +346,13 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="WWd-sI-XGu">
                                         <rect key="frame" x="24" y="107" width="280" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="92" id="ued-t4-7Hw"/>
                                         </constraints>
                                         <string key="text">Basic Rules (non-customizable): When the game starts, you will receive the name of one other player, your target. Your goal is to assassinate them by meeting the kill criterion, below. Meanwhile, someone else will be trying to assassinate you; if they succeed, you will report it and be removed from the game. You win by being the last one alive.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.99035708146204515" green="0.98080626657602776" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPd-Pt-RhG">
                                         <rect key="frame" x="53" y="524" width="48" height="30"/>
@@ -383,6 +387,7 @@
                                             <constraint firstAttribute="width" constant="590" id="tcf-Rr-Uxb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="T9I-YA-O7I">
@@ -416,7 +421,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-LS-Bi6">
                                         <rect key="frame" x="24" y="239" width="280" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="95" id="BGx-hg-pc2"/>
                                         </constraints>
@@ -425,6 +429,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
 Safe zones: Players are safe from assassination when inside classrooms during class and the passing periods directly before and after.
 
 Miscellanious: Non-players may not assist players in tracking down targets.</string>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -435,7 +440,7 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                                             <constraint firstAttribute="height" constant="21" id="SOH-x3-sBb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -503,6 +508,7 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                                 <rect key="frame" x="45" y="304" width="230" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRh-pT-Bbq">
@@ -531,10 +537,9 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="257" placeholderIntrinsicHeight="157" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="257" translatesAutoresizingMaskIntoConstraints="NO" id="t25-WC-3SG">
                                 <rect key="frame" x="32" y="86" width="257" height="157"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                 <string key="text">You are in a game. To progress, attempt to stay alive while eliminating your targets! To kill your target, please get them to press their "I've be killed!" button, and refresh to get your new target.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Evn-Wt-ToY">
@@ -559,7 +564,7 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="t25-WC-3SG" firstAttribute="leading" secondItem="sXL-y3-di9" secondAttribute="leading" constant="32" id="0EJ-Iz-x2H"/>
                             <constraint firstItem="Abw-eN-3HK" firstAttribute="top" secondItem="hDv-os-Cbd" secondAttribute="bottom" constant="49" id="1Aw-oy-Swu"/>
@@ -625,6 +630,6 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3mx-bi-LW5"/>
+        <segue reference="3SC-at-Vb7"/>
     </inferredMetricsTieBreakers>
 </document>
