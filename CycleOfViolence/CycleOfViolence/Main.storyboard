@@ -516,6 +516,7 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                         <outlet property="datePicker" destination="T9I-YA-O7I" id="AWV-MO-r8W"/>
                         <outlet property="name" destination="Rkq-by-Cbt" id="MRd-ET-NWP"/>
                         <outlet property="rules" destination="6nY-LS-Bi6" id="gPG-4G-Foh"/>
+                        <outlet property="scrollView" destination="s5D-QB-VkC" id="HrT-QH-1N3"/>
                         <segue destination="PHK-3Q-4y7" kind="unwind" identifier="toHomeScreenFromCreate" unwindAction="unwindToMain:" id="lDH-G8-kna"/>
                     </connections>
                 </viewController>

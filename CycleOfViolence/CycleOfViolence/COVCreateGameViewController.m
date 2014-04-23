@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -39,6 +40,14 @@
     NSDate *current = [[NSDate alloc] init];
     self.datePicker.minimumDate = current;
 }
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    // This is useful so that the scroll view actually scrolls to the bottom.
+    [self.scrollView setContentSize:CGSizeMake(320, 808)];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
