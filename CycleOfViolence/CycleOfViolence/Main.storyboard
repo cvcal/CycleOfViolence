@@ -187,7 +187,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Placeholder rules" translatesAutoresizingMaskIntoConstraints="NO" id="408-nv-QOf">
                                 <rect key="frame" x="20" y="84" width="280" height="358"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.26000000000000001" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -281,9 +282,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Rules Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Utf-1N-gvj">
-                                <rect key="frame" x="20" y="193" width="280" height="331"/>
+                                <rect key="frame" x="20" y="193" width="280" height="317"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.26000000000000001" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -305,7 +307,7 @@
                             <constraint firstItem="x9G-LF-pmb" firstAttribute="trailing" secondItem="Utf-1N-gvj" secondAttribute="trailing" id="M1Q-AY-2cX"/>
                             <constraint firstItem="Utf-1N-gvj" firstAttribute="leading" secondItem="x9G-LF-pmb" secondAttribute="leading" id="MOK-bS-UIw"/>
                             <constraint firstItem="rOq-hK-BLP" firstAttribute="top" secondItem="Vu6-vk-cEG" secondAttribute="bottom" constant="18" id="Pzf-dJ-dz0"/>
-                            <constraint firstItem="kzS-ZP-ro9" firstAttribute="top" secondItem="Utf-1N-gvj" secondAttribute="bottom" constant="44" id="Rbq-T6-YSV"/>
+                            <constraint firstItem="kzS-ZP-ro9" firstAttribute="top" secondItem="Utf-1N-gvj" secondAttribute="bottom" constant="58" id="Rbq-T6-YSV"/>
                             <constraint firstItem="x9G-LF-pmb" firstAttribute="top" secondItem="rOq-hK-BLP" secondAttribute="bottom" constant="27" id="Tkt-oc-pY6"/>
                             <constraint firstItem="htx-a5-4ZV" firstAttribute="leading" secondItem="kLe-wv-fit" secondAttribute="leading" constant="56" id="Wou-N6-inf"/>
                             <constraint firstAttribute="bottom" secondItem="htx-a5-4ZV" secondAttribute="bottom" constant="20" symbolic="YES" id="a7C-60-ti6"/>
@@ -437,8 +439,8 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose a start time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vk-NC-cSr">
-                                        <rect key="frame" x="89" y="389" width="151" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a start time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vk-NC-cSr">
+                                        <rect key="frame" x="89" y="389" width="150" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="IZE-b4-HZL"/>
