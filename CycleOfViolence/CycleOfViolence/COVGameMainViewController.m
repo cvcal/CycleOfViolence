@@ -35,16 +35,16 @@
     
     // Get the current user and game.
     PFUser *currUser = [PFUser currentUser];
-    self.currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+    self.currentGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
                                                     objectId:currUser[@"currentGameID"]];
     // Set the title to show the user.
     NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
     [self.navBar setTitle:title];
     
-    [self.currGame refresh];
-    if (self.currGame.playersRemaining > 1) {
+    [self.currentGame refresh];
+    if (self.currentGame.playersRemaining > 1) {
         // Get the target from the cycle in the user's current game.
-        PFUser *target = [self.currGame getTarget:currUser];
+        PFUser *target = [self.currentGame getTarget:currUser];
         
         // Set the view controller to display the current user and target.
         self.targetDisplay.text = [NSString stringWithFormat:@"Your target is: %@",
@@ -70,16 +70,16 @@
         NSLog(@"leaveButton tapped");
         
         // This button removes a user from the game.
-        if (self.currGame.playersRemaining <= 1) {
+        if (self.currentGame.playersRemaining <= 1) {
             NSLog(@"Game end, deleting game, hopefully.");
-            [self.currGame completeGame];
+            [self.currentGame completeGame];
         }
         else {
             NSLog(@"User leaving game, hopefully.");
-            [self.currGame removePlayer:currUser];
+            [self.currentGame removePlayer:currUser];
             
             // Update Parse cloud storage
-            [self.currGame saveInBackground];
+            [self.currentGame saveInBackground];
         }
         
         // Update the currentGameID in the User who left, or the manager who deleted the game.

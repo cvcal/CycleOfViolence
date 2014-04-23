@@ -11,14 +11,16 @@
 
 @interface COVConfirmJoinGameViewController : COVViewController
 
+// Store game locally for convenience
 @property COVGame *currentGame;
 
+// Method overrides from COVViewController and UIViewController
 - (id)initWithCoder:(NSCoder *)aDecoder;
-
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
-
-- (IBAction)buttonTapped:(id)sender;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+
+// Own methods
+- (IBAction)buttonTapped:(id)sender;
 
 @end
