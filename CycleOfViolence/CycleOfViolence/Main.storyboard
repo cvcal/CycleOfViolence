@@ -195,12 +195,19 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="m7X-U4-o3R"/>
+                    <navigationItem key="navigationItem" id="m7X-U4-o3R">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="XLx-Hb-zdD">
+                            <connections>
+                                <segue destination="FEO-dY-oKV" kind="unwind" unwindAction="unwindAndLogOut:" id="11z-7N-1jX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="rules" destination="408-nv-QOf" id="zLF-kE-Xii"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9P-aX-pru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FEO-dY-oKV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2374" y="-1395"/>
         </scene>
@@ -230,12 +237,19 @@
                             <outlet property="delegate" destination="DDi-Nc-c5w" id="hbp-n9-29g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xeq-Cs-aUj"/>
+                    <navigationItem key="navigationItem" id="xeq-Cs-aUj">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="Ddg-Of-YZv">
+                            <connections>
+                                <segue destination="Myj-qK-POt" kind="unwind" unwindAction="unwindAndLogOut:" id="Mnq-xL-E3j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="bdp-So-SBM" kind="push" identifier="ConfirmationSegue" id="rvL-0l-gsr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyF-4g-06D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Myj-qK-POt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1292" y="770"/>
         </scene>
@@ -316,7 +330,13 @@
                             <constraint firstAttribute="trailing" secondItem="rOq-hK-BLP" secondAttribute="trailing" constant="20" symbolic="YES" id="sRV-bH-v39"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9S6-k9-8bS"/>
+                    <navigationItem key="navigationItem" id="9S6-k9-8bS">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="t8t-N5-duA">
+                            <connections>
+                                <segue destination="kqB-BU-ryU" kind="unwind" unwindAction="unwindAndLogOut:" id="KT0-54-1z5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="countdown" destination="x9G-LF-pmb" id="wvD-ck-0i6"/>
                         <outlet property="gameInfo" destination="rOq-hK-BLP" id="1yC-GW-hco"/>
@@ -483,7 +503,13 @@ Miscellanious: Non-players may not assist players in tracking down targets.</str
                             <constraint firstAttribute="bottom" secondItem="s5D-QB-VkC" secondAttribute="bottom" constant="-82" id="dxA-9F-M2W"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ZuN-J4-qs8"/>
+                    <navigationItem key="navigationItem" id="ZuN-J4-qs8">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="qoO-ap-fVe">
+                            <connections>
+                                <segue destination="PHK-3Q-4y7" kind="unwind" unwindAction="unwindAndLogOut:" id="Rx0-xI-lmv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="ZPd-Pt-RhG" id="PSo-Th-ksp"/>
                         <outlet property="createButton" destination="FSe-tK-WY8" id="PDL-xC-Si9"/>
