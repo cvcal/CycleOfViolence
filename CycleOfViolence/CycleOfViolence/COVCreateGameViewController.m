@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
-@property (weak, nonatomic) IBOutlet UIView *datePickerBackground;
 
 @end
 
@@ -36,16 +35,6 @@
 {
     [super viewDidLoad];
     
-    
-    self.datePickerBackground.backgroundColor = [UIColor clearColor];
-    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:
-                                   [UIImage imageNamed:
-                                    @"DatePickerBackgroundImage.png"]];
-    [self.datePickerBackground addSubview:backgroundView];
-    
-    // send image behind the date picker stuff.
-    [self.datePickerBackground sendSubviewToBack:backgroundView];
-    
 	// You can't start a game in the past with current technology.
     NSDate *current = [[NSDate alloc] init];
     self.datePicker.minimumDate = current;
@@ -53,39 +42,8 @@
 
 - (void)didReceiveMemoryWarning
 {
-    // Dispose of any resources that can be recreated.
     [super didReceiveMemoryWarning];
-}
-
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
-{
-    // If the segue was iniated by the create button, verify that the game name is unique.
-    if (sender == self.createButton) {
-        // Let us know how we got here.
-        NSLog(@"Called shouldPerformSegueWithIdentifier via createButton");
-        
-        // Verify that the game name is not taken.
-        PFQuery *query = [PFQuery queryWithClassName:@"COVGame"];
-        [query whereKey:@"name" equalTo:self.name.text];
-        NSInteger numberGamesWithSameName = [query countObjects];
-        
-        if (numberGamesWithSameName != 0) {
-            // Display an alert.
-            [[[UIAlertView alloc] initWithTitle:@"Duplicate Game Name"
-                                        message:@"That name is already in use!"
-                                       delegate:nil
-                              cancelButtonTitle:@"ok"
-                              otherButtonTitles:nil] show];
-            return NO;
-        } else {
-            // Game name is okay; proceed with segue.
-            return YES;
-        }
-        
-    } else {
-        // Nothing to check if sender is not createButton.
-        return YES;
-    }
+    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)buttonTapped:(id)sender
@@ -138,6 +96,36 @@
     }
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    // If the segue was iniated by the create button, verify that the game name is unique.
+    if (sender == self.createButton) {
+        // Let us know how we got here.
+        NSLog(@"Called shouldPerformSegueWithIdentifier via createButton");
+        
+        // Verify that the game name is not taken.
+        PFQuery *query = [PFQuery queryWithClassName:@"COVGame"];
+        [query whereKey:@"name" equalTo:self.name.text];
+        NSInteger numberGamesWithSameName = [query countObjects];
+        
+        if (numberGamesWithSameName != 0) {
+            // Display an alert.
+            [[[UIAlertView alloc] initWithTitle:@"Duplicate Game Name"
+                                        message:@"That name is already in use!"
+                                       delegate:nil
+                              cancelButtonTitle:@"ok"
+                              otherButtonTitles:nil] show];
+            return NO;
+        } else {
+            // Game name is okay; proceed with segue.
+            return YES;
+        }
+        
+    } else {
+        // Nothing to check if sender is not createButton.
+        return YES;
+    }
+}
 
 
 @end
