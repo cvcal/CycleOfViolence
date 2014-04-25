@@ -160,7 +160,7 @@
     // Nothing else to do. Actions handled in prepareForSegue.
 }
 
-- (IBAction)unwindAndlogOutButtonButton:(UIStoryboardSegue *)segue
+- (IBAction)unwindAndLogOut:(UIStoryboardSegue *)segue
 {
     [PFUser logOut];
 }
