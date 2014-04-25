@@ -14,8 +14,6 @@
 // Method overrides from COVViewController and UIViewController
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender;
 
 // Own methods
 - (IBAction)buttonTapped:(id)sender;
