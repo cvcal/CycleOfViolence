@@ -67,7 +67,10 @@
 - (IBAction)buttonTapped:(id)sender {
     PFUser *currUser = [PFUser currentUser];
     if (sender == self.suicideButton || sender == self.murderButton) {
-        NSLog(@"leaveButton tapped");
+        NSLog(@"leaveButton/murderButton tapped");
+        // Disable buttons during operation
+        [self.suicideButton setEnabled:NO];
+        [self.murderButton setEnabled:NO];
         
         // This button removes a user from the game.
         if (self.currentGame.playersRemaining <= 1) {
@@ -95,6 +98,11 @@
                 NSLog(@"Failed to save in background.");
             }
         }];
+        
+        // Re-enable buttons during operation, this shouldn't be called if operation succeeds
+        // and segues out.
+        [self.suicideButton setEnabled:YES];
+        [self.murderButton setEnabled:YES];
     }
     else if (sender == self.refreshButton) {
         [self viewDidLoad];

@@ -62,6 +62,9 @@
 {
     if (sender == self.joinGameButton) {
         NSLog(@"Called prepareForSegue from Join Game button.");
+        // Disable button during operation
+        [self.joinGameButton setEnabled:NO];
+        
         PFUser *currUser = [PFUser currentUser];
         [self.currentGame addPlayer:currUser]; // This method also saves the game.
         
@@ -78,6 +81,9 @@
                 NSLog(@"Failed to save in background.");
             }
         }];
+        
+        // Re-enable button if save failed.
+        [self.joinGameButton setEnabled:NO];
     } else {
         return;
     }

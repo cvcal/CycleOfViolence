@@ -90,6 +90,12 @@
     if(sender == self.startButton) {
         // Start the game!
         NSLog(@"startButton tapped");
+        
+        // Disable buttons during operation
+        [self.startButton setEnabled:NO];
+        [self.leaveButton setEnabled:NO];
+        
+        
         [currGame startGame];
         [currGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
@@ -102,9 +108,17 @@
                 NSLog(@"Failed to save game in background.");
             }
         }];
+        
+        // ReEnable button if operation failed
+        [self.startButton setEnabled:YES];
+        [self.leaveButton setEnabled:YES];
     }
     else if (sender == self.leaveButton) {
         NSLog(@"leaveButton tapped");
+        
+        
+        // Disable button during operation
+        [self.leaveButton setEnabled:NO];
         
         // This button either lets a user leave the game, or it deletes the game if
         // the user is the manager
@@ -137,6 +151,10 @@
                 NSLog(@"Failed to save in background.");
             }
         }];
+        
+        
+        // Re-enable button during operation
+        [self.leaveButton setEnabled:YES];
     }
 }
 

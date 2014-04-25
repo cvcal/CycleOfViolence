@@ -92,7 +92,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="i6b-Z9-f2G"/>
                     <connections>
-                        <outlet property="logOut" destination="CRW-ln-Cni" id="WYx-8W-0KY"/>
+                        <outlet property="createGameButton" destination="KDQ-2E-mii" id="M5e-Gx-l5b"/>
+                        <outlet property="joinGameButton" destination="vXs-Vg-fjB" id="oxI-Kw-IQK"/>
+                        <outlet property="logOutButton" destination="CRW-ln-Cni" id="A34-F4-e66"/>
                         <segue destination="eGU-AY-flX" kind="push" identifier="ToInactiveGame" customClass="COVUnanimatedSegue" id="oLY-wd-06p"/>
                         <segue destination="nC7-Ma-fzX" kind="push" identifier="ToActiveGame" id="jWX-x7-T2b"/>
                     </connections>
@@ -114,10 +116,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="VgT-Y5-kBc">
-                                <rect key="frame" x="20" y="92" width="280" height="25"/>
+                                <rect key="frame" x="20" y="92" width="280" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="fyQ-L0-Ctn"/>
+                                    <constraint firstAttribute="height" constant="64" id="f6x-hZ-WKC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -127,7 +129,7 @@
                                 <rect key="frame" x="99" y="260" width="122" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="122" id="yGm-lN-X2J"/>
+                                    <constraint firstAttribute="height" constant="30" id="Bef-c7-egH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Leave Game">
@@ -138,10 +140,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o6W-ZC-idX">
-                                <rect key="frame" x="74" y="298" width="173" height="30"/>
+                                <rect key="frame" x="74" y="298" width="172" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="173" id="z0N-1m-2Wu"/>
+                                    <constraint firstAttribute="height" constant="30" id="caa-6i-Zam"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Start Game">
@@ -155,8 +157,8 @@
                                 <rect key="frame" x="135" y="224" width="50" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="4mH-vP-PUy"/>
-                                    <constraint firstAttribute="height" constant="28" id="mxH-XK-hLj"/>
+                                    <constraint firstAttribute="height" constant="28" id="3XO-Mg-ghX"/>
+                                    <constraint firstAttribute="width" constant="50" id="5Yf-YU-GW7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Rules">
@@ -167,10 +169,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time Placeholder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vM-Aw-i2Y">
-                                <rect key="frame" x="20" y="131" width="280" height="25"/>
+                                <rect key="frame" x="20" y="164" width="280" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="SwP-Qp-zhc"/>
+                                    <constraint firstAttribute="height" constant="25" id="x5r-6a-Fj8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
@@ -179,18 +181,20 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="T3g-80-Yoh" firstAttribute="top" secondItem="sH7-ZJ-oEw" secondAttribute="bottom" constant="8" symbolic="YES" id="3dw-Su-Or6"/>
-                            <constraint firstItem="5vM-Aw-i2Y" firstAttribute="centerX" secondItem="sH7-ZJ-oEw" secondAttribute="centerX" id="KXB-sn-n3d"/>
-                            <constraint firstItem="5vM-Aw-i2Y" firstAttribute="leading" secondItem="VgT-Y5-kBc" secondAttribute="leading" id="YZt-m5-eni"/>
-                            <constraint firstItem="5vM-Aw-i2Y" firstAttribute="top" secondItem="VgT-Y5-kBc" secondAttribute="bottom" constant="14" id="YgL-pb-DZW"/>
-                            <constraint firstItem="VgT-Y5-kBc" firstAttribute="top" secondItem="oTM-ov-fBX" secondAttribute="bottom" constant="28" id="d1x-nP-js7"/>
-                            <constraint firstItem="VgT-Y5-kBc" firstAttribute="leading" secondItem="Rmp-Ko-bNn" secondAttribute="leading" constant="20" symbolic="YES" id="dGa-oo-UYz"/>
-                            <constraint firstItem="T3g-80-Yoh" firstAttribute="centerX" secondItem="o6W-ZC-idX" secondAttribute="centerX" id="iPT-Wn-nDE"/>
-                            <constraint firstItem="sH7-ZJ-oEw" firstAttribute="top" secondItem="5vM-Aw-i2Y" secondAttribute="bottom" constant="68" id="mab-x1-M2J"/>
-                            <constraint firstItem="o6W-ZC-idX" firstAttribute="top" secondItem="T3g-80-Yoh" secondAttribute="bottom" constant="8" symbolic="YES" id="ov5-sR-Rg8"/>
-                            <constraint firstAttribute="trailing" secondItem="VgT-Y5-kBc" secondAttribute="trailing" constant="20" symbolic="YES" id="ryL-Ic-sbi"/>
-                            <constraint firstItem="VgT-Y5-kBc" firstAttribute="trailing" secondItem="5vM-Aw-i2Y" secondAttribute="trailing" id="tt3-aB-aYG"/>
-                            <constraint firstItem="sH7-ZJ-oEw" firstAttribute="centerX" secondItem="T3g-80-Yoh" secondAttribute="centerX" id="uKN-66-XjE"/>
+                            <constraint firstAttribute="trailing" secondItem="VgT-Y5-kBc" secondAttribute="trailing" constant="20" symbolic="YES" id="9FF-xR-XmL"/>
+                            <constraint firstItem="o6W-ZC-idX" firstAttribute="centerX" secondItem="T3g-80-Yoh" secondAttribute="centerX" id="Dn4-tR-jmV"/>
+                            <constraint firstItem="sH7-ZJ-oEw" firstAttribute="centerX" secondItem="T3g-80-Yoh" secondAttribute="centerX" id="EPe-U5-DAq"/>
+                            <constraint firstItem="VgT-Y5-kBc" firstAttribute="trailing" secondItem="5vM-Aw-i2Y" secondAttribute="trailing" id="FOU-J6-81L"/>
+                            <constraint firstItem="T3g-80-Yoh" firstAttribute="top" secondItem="sH7-ZJ-oEw" secondAttribute="bottom" constant="8" symbolic="YES" id="JgI-RA-s74"/>
+                            <constraint firstItem="VgT-Y5-kBc" firstAttribute="top" secondItem="oTM-ov-fBX" secondAttribute="bottom" constant="28" id="LF1-1q-PW1"/>
+                            <constraint firstItem="VgT-Y5-kBc" firstAttribute="leading" secondItem="Rmp-Ko-bNn" secondAttribute="leading" constant="20" symbolic="YES" id="W2g-NY-9M1"/>
+                            <constraint firstItem="sH7-ZJ-oEw" firstAttribute="top" secondItem="5vM-Aw-i2Y" secondAttribute="bottom" constant="35" id="XUU-Dm-dut"/>
+                            <constraint firstItem="5vM-Aw-i2Y" firstAttribute="centerX" secondItem="sH7-ZJ-oEw" secondAttribute="centerX" id="iNN-GH-VeN"/>
+                            <constraint firstItem="o6W-ZC-idX" firstAttribute="leading" secondItem="Rmp-Ko-bNn" secondAttribute="leading" constant="74" id="jR8-Aw-bIi"/>
+                            <constraint firstItem="T3g-80-Yoh" firstAttribute="leading" secondItem="Rmp-Ko-bNn" secondAttribute="leading" constant="99" id="oX1-9a-4bN"/>
+                            <constraint firstItem="o6W-ZC-idX" firstAttribute="top" secondItem="T3g-80-Yoh" secondAttribute="bottom" constant="8" symbolic="YES" id="qY9-Ka-stn"/>
+                            <constraint firstItem="VgT-Y5-kBc" firstAttribute="leading" secondItem="5vM-Aw-i2Y" secondAttribute="leading" id="t9o-sD-Lut"/>
+                            <constraint firstItem="5vM-Aw-i2Y" firstAttribute="top" secondItem="VgT-Y5-kBc" secondAttribute="bottom" constant="8" symbolic="YES" id="yvb-kg-Jd7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ilW-ik-sbq">

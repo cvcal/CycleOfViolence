@@ -55,6 +55,8 @@
     if (sender == self.createButton) {
         // Let us know how we got here.
         NSLog(@"Called buttonTapped via createButton");
+        // Disable create button during operation
+        [self.createButton setEnabled:NO];
         
         // Check
         if ([self.name.text isEqualToString: @""]) {
@@ -115,6 +117,9 @@
         // This shouldn't happen.
         NSLog(@"Called buttonTapped via some other means");
     }
+    
+    // re-enable create button during operation
+    [self.createButton setEnabled:YES];
 }
 
 
