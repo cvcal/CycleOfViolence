@@ -42,6 +42,9 @@
     self.signUpView.usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.signUpView.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.signUpView.additionalField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Full Name" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    self.signUpView.usernameField.backgroundColor = [UIColor blackColor];
+    self.signUpView.passwordField.backgroundColor = [UIColor blackColor];
+    self.signUpView.additionalField.backgroundColor = [UIColor blackColor];
 }
 
 - (void)viewDidLayoutSubviews {
