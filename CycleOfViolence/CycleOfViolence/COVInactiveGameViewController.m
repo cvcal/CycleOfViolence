@@ -59,7 +59,7 @@
     
     // Show the buttons selectively.
     // If we're the manager...
-    if ([currUser.objectId isEqualToString: (currGame.gameManager).objectId]){
+    if ([currUser.objectId isEqualToString: currGame.gameManagerId]){
         [self.leaveButton setTitle:@"Delete Game" forState:UIControlStateNormal];
         self.countdown.text = @"Hey manager! Please start the game";
         // We cannot start the game until it's time.
@@ -108,7 +108,7 @@
         
         // This button either lets a user leave the game, or it deletes the game if
         // the user is the manager
-        if ([currUser.objectId isEqualToString: (currGame.gameManager).objectId]) {
+        if ([currUser.objectId isEqualToString: currGame.gameManagerId]) {
             [currGame abortGame];
         }
         else {

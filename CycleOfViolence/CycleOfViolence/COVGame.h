@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, gameState) {
 @property NSString *name; // Name of the game.
 @property u_int32_t numberOfPlayers; // Number of total participants.
 @property u_int32_t playersRemaining; // Number not yet assassinated.
-@property PFUser *gameManager; // The player who can start the game.
+@property NSString* gameManagerId; // Stores objectID of the game manager
 @property gameState state; // Records where the game is in its lifecycle.
 @property NSString *rules;
 @property NSDate *startTime;

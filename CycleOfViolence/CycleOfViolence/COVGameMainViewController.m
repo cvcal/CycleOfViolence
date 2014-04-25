@@ -82,7 +82,7 @@
             [self.currentGame saveInBackground];
         }
         
-        // Update the currentGameID in the User who left, or the manager who deleted the game.
+        // Update the currentGameID in the User who left.
         currUser[@"currentGameID"] = [NSNull null];
         [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {

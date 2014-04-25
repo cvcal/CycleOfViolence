@@ -16,7 +16,7 @@
 @dynamic name;
 @dynamic numberOfPlayers;
 @dynamic playersRemaining;
-@dynamic gameManager;
+@dynamic gameManagerId;
 @dynamic state;
 @dynamic rules;
 @dynamic startTime;
@@ -40,7 +40,7 @@
         
         // The current user must have created the game and is the game manager by default.
         PFUser *creator = [PFUser currentUser];
-        self.gameManager = creator;
+        self.gameManagerId = creator.objectId;
 
     
         // Add the player who created the game. We need to access the objectId in addPlayer;
