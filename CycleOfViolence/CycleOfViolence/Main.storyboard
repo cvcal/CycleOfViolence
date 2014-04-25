@@ -92,7 +92,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="i6b-Z9-f2G"/>
                     <connections>
-                        <outlet property="logOut" destination="CRW-ln-Cni" id="WYx-8W-0KY"/>
+                        <outlet property="createGameButton" destination="KDQ-2E-mii" id="M5e-Gx-l5b"/>
+                        <outlet property="joinGameButton" destination="vXs-Vg-fjB" id="oxI-Kw-IQK"/>
+                        <outlet property="logOutButton" destination="CRW-ln-Cni" id="A34-F4-e66"/>
                         <segue destination="eGU-AY-flX" kind="push" identifier="ToInactiveGame" customClass="COVUnanimatedSegue" id="oLY-wd-06p"/>
                         <segue destination="nC7-Ma-fzX" kind="push" identifier="ToActiveGame" id="jWX-x7-T2b"/>
                     </connections>

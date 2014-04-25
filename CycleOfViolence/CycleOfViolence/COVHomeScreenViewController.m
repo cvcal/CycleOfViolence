@@ -11,7 +11,9 @@
 @interface COVHomeScreenViewController ()
 
 // This is a private property, the button on the storyboard we need to interact with.
-@property (weak, nonatomic) IBOutlet UIButton *logOut;
+@property (weak, nonatomic) IBOutlet UIButton *logOutButton;
+@property (weak, nonatomic) IBOutlet UIButton *createGameButton;
+@property (weak, nonatomic) IBOutlet UIButton *joinGameButton;
 
 @end
 
@@ -81,7 +83,7 @@
 
 - (void)buttonTapped:(UIButton *)sender
 {
-    if (sender != self.logOut) {
+    if (sender != self.logOutButton) {
         return;
     } else {
         // Log out the user and return to the log in/sign up modal.
@@ -158,7 +160,7 @@
     // Nothing else to do. Actions handled in prepareForSegue.
 }
 
-- (IBAction)unwindAndLogOut:(UIStoryboardSegue *)segue
+- (IBAction)unwindAndlogOutButtonButton:(UIStoryboardSegue *)segue
 {
     [PFUser logOut];
 }
