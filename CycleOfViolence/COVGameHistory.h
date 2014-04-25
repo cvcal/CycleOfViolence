@@ -6,6 +6,9 @@
 //
 //
 
+#import "COVGame.h"
+#import "COVQueryTableViewController.h"
+
 #import "COVQueryTableViewController.h"
 
 @interface COVGameHistory : COVQueryTableViewController
