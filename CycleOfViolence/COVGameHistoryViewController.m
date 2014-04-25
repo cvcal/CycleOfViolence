@@ -79,8 +79,23 @@
     
     // Configure the cell
     cell.textLabel.text = [object objectForKey:@"name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Number of Players: %@", [object objectForKey:@"numberOfPlayers"]];
     
+    NSString *status = [object objectForKey:@"state"];
+    NSString *winner = [object objectForKey:@"winner"];
+    NSString *manager = @"Placeholder";
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+    
+    //NSString *startTime = [dateFormatter stringFromDate:((COVGame *)object).startTime];
+    NSString *startTime = [dateFormatter stringFromDate:[object objectForKey:@"startTime"]];
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:
+                                 @"Status: %@ \n Winner: %@ \n Game Manager: %@ \n Start Time: %@ ",
+                                 status,
+                                 winner,
+                                 manager,
+                                 startTime];
     return cell;
 }
 

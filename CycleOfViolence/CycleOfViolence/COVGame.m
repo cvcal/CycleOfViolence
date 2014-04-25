@@ -20,6 +20,7 @@
 @dynamic state;
 @dynamic rules;
 @dynamic startTime;
+@dynamic winner;
 
 + (NSString *)parseClassName
 {
@@ -37,6 +38,7 @@
         self.cycle = [[NSMutableArray alloc] init];
         self.name = gameName;
         self.state = waitingToStart;
+        self.winner = @"None";
         
         // The current user must have created the game and is the game manager by default.
         PFUser *creator = [PFUser currentUser];
@@ -93,6 +95,11 @@
 
 - (void)completeGame
 {
+    // When the game ends, the victor is the last player left in the cycle.
+    PFUser *winner =(PFUser *)[self.cycle objectAtIndex:0];
+    [winner fetchIfNeeded];
+    self.winner = winner[@"fullName"];
+    // Clean up the game.
     [self prepareToEndGame];
     self.state = completed;
     [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
