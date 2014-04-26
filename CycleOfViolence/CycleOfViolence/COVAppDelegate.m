@@ -18,6 +18,10 @@
                   clientKey:@"H8WAWNmWVPFKQCfQWwQBtrCQ6kswGOGW5d1HXPef"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    [[UIButton appearance] setTintColor:
+        [UIColor blackColor]];
+    [[UIButton appearance] setBackgroundColor:[UIColor colorWithWhite:0.7 alpha:0.5]];
+    
     // Make Parse recognized COVGame as a real subclass of PFObject.
     [COVGame registerSubclass];
     
