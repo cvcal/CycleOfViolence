@@ -13,7 +13,7 @@
 // These are private properties, the objects on the storyboard for this view controller.
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextView *rules;
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *startDateField;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -36,9 +36,14 @@
 {
     [super viewDidLoad];
     
-	// You can't start a game in the past with current technology.
-    NSDate *current = [[NSDate alloc] init];
-    self.datePicker.minimumDate = current;
+    // Get current time
+    NSDate *today = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM-dd-yyy HH:mm"];
+    NSString *currentTime = [dateFormatter stringFromDate:today];
+    
+    // Default start time to current time.
+    self.startDateField.text = currentTime;
 }
 
 - (void)viewDidLayoutSubviews
@@ -89,30 +94,46 @@
                 
                 NSString *defaultRules = @"Basic Rules: When the game starts, you will receive the name of one other player, your target. Your goal is to assassinate them by meeting the kill criterion, below. Meanwhile, someone else will be trying to assassinate you; if they succeed, you will report it and be removed from the game. You win by being the last one alive.\n\n";
                 newGame.rules = [defaultRules stringByAppendingString:self.rules.text];
-                newGame.startTime = self.datePicker.date;
                 
-                NSLog(@"Initialized COVGame");
+                // Get date from date field
+                NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"MM-dd-yyy HH:mm"];
+                [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
                 
-                // Save the game.
-                [newGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                    if (succeeded) {
-                        NSLog(@"Sucessfully saved in background.");
-                        PFUser *currUser = [PFUser currentUser];
-                        // We have to do this here because the COVGame's
-                        // objectId is null until it has been saved.
-                        newGame[@"uniqueId"] = newGame.objectId;
-                        [newGame addPlayer:currUser];
-                        [newGame saveInBackground];
-                        
-                        [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                            // Now can proceed to home screen.
-                            [self performSegueWithIdentifier:@"toHomeScreenFromCreate" sender:self];
-                        }];
-                        
-                    } else {
-                        NSLog(@"Failed to save in background.");
-                    }
-                }];
+                newGame.startTime = [dateFormatter dateFromString:self.startDateField.text];
+                if (newGame.startTime != nil) {
+                    NSLog(@"Initialized COVGame");
+                    
+                    // Save the game.
+                    [newGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        if (succeeded) {
+                            NSLog(@"Sucessfully saved in background.");
+                            PFUser *currUser = [PFUser currentUser];
+                            // We have to do this here because the COVGame's
+                            // objectId is null until it has been saved.
+                            newGame[@"uniqueId"] = newGame.objectId;
+                            [newGame addPlayer:currUser];
+                            [newGame saveInBackground];
+                            
+                            [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                // Now can proceed to home screen.
+                                [self performSegueWithIdentifier:@"toHomeScreenFromCreate" sender:self];
+                            }];
+                            
+                        } else {
+                            NSLog(@"Failed to save in background.");
+                        }
+                    }];
+                } else {
+                    // Date format failed
+                    [[[UIAlertView alloc] initWithTitle:@"Date Format Incorrect"
+                                                message:@"Please format the start time as MM-dd-yyy HH:mm"
+                                               delegate:nil
+                                      cancelButtonTitle:@"ok"
+                                      otherButtonTitles:nil] show];
+                }
+                
+                
             }
             
         }
