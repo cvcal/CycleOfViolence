@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
     
     //add background blood splatter, with a black background

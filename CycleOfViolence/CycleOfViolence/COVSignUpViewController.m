@@ -47,7 +47,8 @@
     self.signUpView.additionalField.backgroundColor = [UIColor blackColor];
 }
 
-- (void)viewDidLayoutSubviews {
+- (void)viewDidLayoutSubviews
+{
     [super viewDidLayoutSubviews];
     
     // Set frame for elements. 

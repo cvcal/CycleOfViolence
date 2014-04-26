@@ -87,7 +87,8 @@
 }
 
 
-- (IBAction)buttonTapped:(id)sender {
+- (IBAction)buttonTapped:(id)sender
+{
     PFUser *currUser = [PFUser currentUser];
     COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
                                                     objectId:currUser[@"currentGameID"]];

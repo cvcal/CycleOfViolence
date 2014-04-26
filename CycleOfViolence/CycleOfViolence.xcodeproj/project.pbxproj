@@ -187,8 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				DAC409C918BA7C8C0066A552 /* COVAppDelegate.h */,
-				DA9CC3EB190A40A400DEB9F5 /* COVGameHistoryViewController.h */,
-				DA9CC3EC190A40A400DEB9F5 /* COVGameHistoryViewController.m */,
 				DAC409CA18BA7C8C0066A552 /* COVAppDelegate.m */,
 				DA0A094A18C2525E0011F92A /* COVConfirmJoinGameViewController.h */,
 				DA0A094B18C2525E0011F92A /* COVConfirmJoinGameViewController.m */,
@@ -196,6 +194,8 @@
 				89D8116D18F9C0F000930796 /* COVCreateGameViewController.m */,
 				DA16D65C18BABF5800AA604B /* COVGame.h */,
 				DA16D65D18BABF5800AA604B /* COVGame.m */,
+				DA9CC3EB190A40A400DEB9F5 /* COVGameHistoryViewController.h */,
+				DA9CC3EC190A40A400DEB9F5 /* COVGameHistoryViewController.m */,
 				504B7ADE18C9A39E00C8D3AB /* COVGameMainViewController.h */,
 				504B7ADF18C9A39E00C8D3AB /* COVGameMainViewController.m */,
 				DAC409FF18BA8A980066A552 /* COVHomeScreenViewController.h */,
