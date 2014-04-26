@@ -38,7 +38,7 @@
     [self.signUpView.signUpButton setBackgroundImage:[UIImage imageNamed:@"gray.png"] forState:UIControlStateNormal];
     [self.signUpView.signUpButton setBackgroundImage:[UIImage imageNamed:@"red.png"] forState:UIControlStateHighlighted];
     
-    // Rename the textfields and and change the text color to white.
+    // Rename the textfields and and change the text color to white, background color to black
     self.signUpView.usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.signUpView.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.signUpView.additionalField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Full Name" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
