@@ -2,48 +2,128 @@
 //  COVGameHistoryViewController.m
 //  CycleOfViolence
 //
-//  Created by Laptop 16 on 4/25/14.
+//  Created by John Phillpot on 4/25/14.
 //
 //
 
 #import "COVGameHistoryViewController.h"
 
-@interface COVGameHistoryViewController ()
-
-@end
-
 @implementation COVGameHistoryViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        // Custom initialization
+        // Customize the table.
+        
+        // The className to query on.
+        self.parseClassName = @"COVGame";
+        
+        // The key of the PFObject to display in the label of the default cell style.
+        self.textKey = @"name";
+        
+        // The title for this table in the Navigation Controller.
+        self.title = @"Past Games";
+        
+        self.pullToRefreshEnabled = YES;
+        self.paginationEnabled = YES;
+        self.objectsPerPage = 10;
     }
+    
     return self;
 }
 
-- (void)viewDidLoad
+#pragma mark - View lifecycle
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)didReceiveMemoryWarning
+
+// Define the query to use on the class.
+- (PFQuery *)queryForTable
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    
+    // If no objects are loaded in memory, we look to the cache first to fill the table
+    // and then subsequently do a query against the network.
+    if ([self.objects count] == 0) {
+        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    }
+    
+    [query orderByDescending:@"startTime"];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    
+    // Query for all games that have ended - either by aborting or completing.
+    NSArray *endStates = @[@(completed),@(aborted)];
+    [query whereKey:@"state" containedIn:endStates];
+    [query whereKey:@"uniqueId" containedIn:currentUser[@"gameHistory"]];
+    
+    return query;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+
+// Customize the look of a cell representing an object.
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+                        object:(PFObject *)object
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:CellIdentifier];
+    }
+    
+    // Configure the cell
+    cell.textLabel.text = [object objectForKey:@"name"];
+    
+    NSString *status = [((COVGame*) object) getStatusAsString];
+    NSString *winner = [object objectForKey:@"winnerName"];
+    NSString *manager = [object objectForKey:@"managerName"];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+    
+    //NSString *startTime = [dateFormatter stringFromDate:((COVGame *)object).startTime];
+    NSString *startTime = [dateFormatter stringFromDate:[object objectForKey:@"startTime"]];
+    
+    cell.detailTextLabel.numberOfLines = 4;
+    cell.detailTextLabel.text = [NSString stringWithFormat:
+                                 @"Status: %@ \nWinner: %@ \nGame Manager: %@ \nStart Time: %@ \n",
+                                 status,
+                                 winner,
+                                 manager,
+                                 startTime];
+    return cell;
+}
+
+#pragma mark - Table view data source
+
+#pragma mark - Table view delegate
+
+// Segue to the ConfirmJoinGameViewController upon selecting a row.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+}
+
+// Tell the destination view controller what game it should display info for.
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
-*/
+
+// Allow COVJoinGameViewController to be unwound to.
+-(IBAction)unwindToJoinGame:(UIStoryboardSegue *)segue
+{
+    // Nothing to do.
+}
 
 @end
