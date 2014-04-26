@@ -61,4 +61,7 @@ typedef NS_ENUM(NSInteger, gameState) {
 // Gets the target for the given player
 - (PFUser*) getTarget:(PFUser *)assassin;
 
+// Return the status of the game as an easily printable string.
+- (NSString *) getStatusAsString;
+
 @end

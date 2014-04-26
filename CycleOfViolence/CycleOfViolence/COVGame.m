@@ -41,7 +41,6 @@
         self.name = gameName;
         self.state = waitingToStart;
         self.winnerName = @"None";
-        self.uniqueId = self.objectId;
         
         // The current user must have created the game and is the game manager by default.
         PFUser *creator = [PFUser currentUser];
@@ -74,7 +73,7 @@
     // Store the game's ID in the User who joined (pointers don't save properly).
     newPlayer[@"currentGameID"] = self.objectId;
     // Make the game the latest in the player's history.
-    [newPlayer[@"gameHistory"] insertObject:self.uniqueId atIndex:0];
+    [newPlayer[@"gameHistory"] insertObject:self.objectId atIndex:0];
     
     // The calling function should update Parse cloud storage
 }
@@ -164,6 +163,20 @@
     // Get the target's data from Parse, since it is not stored in cycle.
     target = (PFUser *)[target fetchIfNeeded];
     return target;
+}
+
+- (NSString *) getStatusAsString
+{
+    switch(self.state) {
+        case 0:
+            return @"waitingToStart";
+        case 1:
+            return @"inProgress";
+        case 2:
+            return @"completed";
+        case 3:
+            return @"aborted";
+    }
 }
 
 @end
