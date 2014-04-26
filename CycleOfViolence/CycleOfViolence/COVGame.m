@@ -20,7 +20,9 @@
 @dynamic state;
 @dynamic rules;
 @dynamic startTime;
-@dynamic winner;
+@dynamic winnerName;
+@dynamic managerName;
+@dynamic uniqueId;
 
 + (NSString *)parseClassName
 {
@@ -38,11 +40,13 @@
         self.cycle = [[NSMutableArray alloc] init];
         self.name = gameName;
         self.state = waitingToStart;
-        self.winner = @"None";
+        self.winnerName = @"None";
+        self.uniqueId = self.objectId;
         
         // The current user must have created the game and is the game manager by default.
         PFUser *creator = [PFUser currentUser];
         self.gameManagerId = creator.objectId;
+        self.managerName = creator[@"fullName"];
 
     
         // Add the player who created the game. We need to access the objectId in addPlayer;
@@ -70,7 +74,7 @@
     // Store the game's ID in the User who joined (pointers don't save properly).
     newPlayer[@"currentGameID"] = self.objectId;
     // Make the game the latest in the player's history.
-    [newPlayer[@"gameHistory"] insertObject:self.objectId atIndex:0];
+    [newPlayer[@"gameHistory"] insertObject:self.uniqueId atIndex:0];
     
     // The calling function should update Parse cloud storage
 }
@@ -98,7 +102,7 @@
     // When the game ends, the victor is the last player left in the cycle.
     PFUser *winner =(PFUser *)[self.cycle objectAtIndex:0];
     [winner fetchIfNeeded];
-    self.winner = winner[@"fullName"];
+    self.winnerName = winner[@"fullName"];
     // Clean up the game.
     [self prepareToEndGame];
     self.state = completed;

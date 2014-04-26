@@ -29,7 +29,10 @@ typedef NS_ENUM(NSInteger, gameState) {
 @property gameState state; // Records where the game is in its lifecycle.
 @property NSString *rules;
 @property NSDate *startTime;
-@property NSString *winner; // The last person alive. Not valid if game is aborted.
+@property NSString *winnerName; // The last person alive. Not valid if game is aborted.
+@property NSString *managerName; // Record the managers name for easy display later.
+@property NSString *uniqueId; // Store a copy of the game's Parse objectId so that we can query
+                              // for it.
 
 // Required to make a proper subclass of PFObject.
 + (NSString *)parseClassName;
