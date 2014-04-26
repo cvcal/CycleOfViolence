@@ -61,12 +61,17 @@
     // If we're the manager...
     if ([currUser.objectId isEqualToString: currGame.gameManagerId]){
         [self.leaveButton setTitle:@"Delete Game" forState:UIControlStateNormal];
-        self.countdown.text = @"Hey manager! Please start the game";
         // We cannot start the game until it's time.
         if (timeToStart > 0) {
-            [self.startButton setTitle:@"Can't start game yet" forState:UIControlStateNormal];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
+            NSString *date = [dateFormatter stringFromDate:currGame.startTime];
+            self.countdown.text = [NSString stringWithFormat:@"May start %@",
+                                   date];
+            [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
             [self.startButton setEnabled:NO];
         } else {
+            self.countdown.text = @"Hey manager! Please start the game";
             [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
             [self.startButton setEnabled:YES];
         }
