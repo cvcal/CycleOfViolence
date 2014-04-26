@@ -98,6 +98,9 @@
                     if (succeeded) {
                         NSLog(@"Sucessfully saved in background.");
                         PFUser *currUser = [PFUser currentUser];
+                        // We have to do this here because the COVGame's
+                        // objectId is null until it has been saved.
+                        newGame[@"uniqueId"] = newGame.objectId;
                         [newGame addPlayer:currUser];
                         [newGame saveInBackground];
                         
