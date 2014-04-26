@@ -142,7 +142,12 @@
             // viewDidAppear is called after we've saved our new user.
             [self dismissViewControllerAnimated:NO completion:NULL];
         } else {
-            NSLog(@"Failed to save in background after dismissing sign up.");
+            NSLog(@"Failed to save in background after dismissing sigh up.");
+            [[[UIAlertView alloc] initWithTitle:@"Cloud save failed"
+                                        message:@"Which is sad. Your user values weren't initialized properly"
+                                       delegate:nil
+                              cancelButtonTitle:@"ok"
+                              otherButtonTitles:nil] show];
         }
     }];
 }

@@ -79,6 +79,11 @@
                 
             } else {
                 NSLog(@"Failed to save in background.");
+                [[[UIAlertView alloc] initWithTitle:@"Cloud save failed"
+                                            message:@"Please try again some other time."
+                                           delegate:nil
+                                  cancelButtonTitle:@"ok"
+                                  otherButtonTitles:nil] show];
             }
         }];
         
