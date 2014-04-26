@@ -43,7 +43,7 @@
                                            forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // set cells as semi-transparent.
-    cell.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.5];
+    cell.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.3];
     // set text as white
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor lightTextColor];
