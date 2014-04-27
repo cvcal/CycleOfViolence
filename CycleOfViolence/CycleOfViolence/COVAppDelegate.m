@@ -18,10 +18,13 @@
                   clientKey:@"H8WAWNmWVPFKQCfQWwQBtrCQ6kswGOGW5d1HXPef"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    [[UIButton appearance] setTintColor:
-        [UIColor blackColor]];
-    [[UIButton appearance] setBackgroundColor:[UIColor colorWithWhite:0.7 alpha:0.5]];
+    [[UIButton appearance] setTintColor: [UIColor blackColor]];
     
+    // Add image for button appearance.
+    UIImage *defaultButtonImage = [UIImage imageNamed:@"button.png"];
+    defaultButtonImage = [defaultButtonImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20.0, 0, 20.0)];
+    [[UIButton appearance] setBackgroundImage:defaultButtonImage forState:UIControlStateNormal];
+        
     // Make Parse recognized COVGame as a real subclass of PFObject.
     [COVGame registerSubclass];
     
