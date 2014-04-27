@@ -170,13 +170,13 @@
 - (NSString *) getStatusAsString
 {
     switch(self.state) {
-        case 0:
+        case waitingToStart:
             return @"waitingToStart";
-        case 1:
+        case inProgress:
             return @"inProgress";
-        case 2:
+        case completed:
             return @"completed";
-        case 3:
+        case aborted:
             return @"aborted";
     }
 }

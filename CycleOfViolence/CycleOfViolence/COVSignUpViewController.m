@@ -15,23 +15,15 @@
 
 @implementation COVSignUpViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Add the bloody background image
-    [self.signUpView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"blood_splatter_transparency_by_sagacious-d3h1yw6.png"]]];
+    // Add the bloody background image.
+    [self.signUpView setBackgroundColor:[UIColor colorWithPatternImage:
+                                         [UIImage imageNamed:@"blood_splatter_transparency_by_sagacious-d3h1yw6.png"]]];
     
-    // Add the logo
+    // Add the logo.
     [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"COVTitle.png"]]];
     
     // Make image for normal button appearance.
@@ -49,7 +41,7 @@
     [self.signUpView.dismissButton setBackgroundImage:[UIImage imageNamed:@"clearButton.png"]
         forState:UIControlStateNormal];
     
-    // Rename the textfields and and change the text color to white, background color to black
+    // Rename the textfields and and change the text color to white, background color to black.
     self.signUpView.usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.signUpView.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.signUpView.additionalField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Full Name" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
@@ -65,12 +57,6 @@
     // Set frame for elements. 
     [self.signUpView.logo setFrame:CGRectMake(66.5f, 45.0f, 200.0f, 80.5f)];
     
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

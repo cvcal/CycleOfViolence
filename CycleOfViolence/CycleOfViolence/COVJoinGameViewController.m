@@ -82,10 +82,6 @@
     return cell;
 }
 
-#pragma mark - Table view data source
-
-#pragma mark - Table view delegate
-
 // Segue to the ConfirmJoinGameViewController upon selecting a row.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

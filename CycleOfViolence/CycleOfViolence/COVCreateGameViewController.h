@@ -12,7 +12,6 @@
 @interface COVCreateGameViewController : COVViewController
 
 // Method overrides from COVViewController and UIViewController
-- (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
 
 // Own methods

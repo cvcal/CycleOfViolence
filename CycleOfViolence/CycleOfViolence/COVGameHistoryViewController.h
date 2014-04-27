@@ -19,7 +19,5 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
                         object:(PFObject *)object;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
-
 
 @end

@@ -112,12 +112,6 @@
     
 }
 
-// Tell the destination view controller what game it should display info for.
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-}
-
 // Allow COVJoinGameViewController to be unwound to.
 -(IBAction)unwindToJoinGame:(UIStoryboardSegue *)segue
 {

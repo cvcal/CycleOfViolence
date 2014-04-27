@@ -19,15 +19,6 @@
 
 @implementation COVConfirmJoinGameViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -47,13 +38,6 @@
     }
     
     self.rules.text = self.currentGame.rules;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    
-    // Dispose of any resources that can be recreated.
 }
 
 // Handle joining game and unwinding to home screen after saving user
