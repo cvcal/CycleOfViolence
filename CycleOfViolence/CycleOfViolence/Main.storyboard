@@ -33,23 +33,12 @@
                                 <color key="textColor" red="0.1564256858587304" green="0.26422988326985131" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.13603735710000001" green="0.051470352679999998" blue="0.57360309099999995" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRW-ln-Cni">
-                                <rect key="frame" x="120" y="221" width="80" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDQ-2E-mii">
+                                <rect key="frame" x="100" y="235" width="116" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="s4h-3u-H56"/>
+                                    <constraint firstAttribute="width" constant="116" id="pmb-Yc-sHH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="7YX-YH-Ea9" eventType="touchUpInside" id="73O-Wi-rdA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDQ-2E-mii">
-                                <rect key="frame" x="99" y="296" width="116" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Create Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,10 +48,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXs-Vg-fjB">
-                                <rect key="frame" x="111" y="334" width="92" height="30"/>
+                                <rect key="frame" x="112" y="273" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="92" id="gvX-Dc-Dtt"/>
+                                    <constraint firstAttribute="width" constant="92" id="S7p-yk-ceX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Join Game">
@@ -72,11 +61,11 @@
                                     <segue destination="DDi-Nc-c5w" kind="push" identifier="ToJoinGameScreen" id="r5n-xu-GYZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJF-o7-Uxc">
-                                <rect key="frame" x="101" y="399" width="119" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJF-o7-Uxc">
+                                <rect key="frame" x="102" y="338" width="119" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="119" id="1Vk-0f-gXe"/>
+                                    <constraint firstAttribute="width" constant="119" id="gsK-mp-pce"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Game History">
@@ -89,26 +78,29 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="C8d-eK-hBh" firstAttribute="centerX" secondItem="CRW-ln-Cni" secondAttribute="centerX" id="5Fg-rC-J2n"/>
-                            <constraint firstItem="vXs-Vg-fjB" firstAttribute="centerX" secondItem="KDQ-2E-mii" secondAttribute="centerX" id="5Ki-CG-vXH"/>
-                            <constraint firstItem="KDQ-2E-mii" firstAttribute="leading" secondItem="jfF-Gq-nub" secondAttribute="leading" constant="99" id="5lI-Yr-sdI"/>
-                            <constraint firstItem="C8d-eK-hBh" firstAttribute="top" secondItem="2sx-c1-DDt" secondAttribute="bottom" constant="8" symbolic="YES" id="9Xc-0s-JpZ"/>
-                            <constraint firstItem="CRW-ln-Cni" firstAttribute="centerX" secondItem="FJF-o7-Uxc" secondAttribute="centerX" id="Heq-Iy-5uZ"/>
-                            <constraint firstItem="FJF-o7-Uxc" firstAttribute="top" secondItem="vXs-Vg-fjB" secondAttribute="bottom" constant="35" id="MmA-oj-tob"/>
-                            <constraint firstItem="C8d-eK-hBh" firstAttribute="centerX" secondItem="2sx-c1-DDt" secondAttribute="centerX" id="Ocy-AE-8vi"/>
-                            <constraint firstItem="2sx-c1-DDt" firstAttribute="trailing" secondItem="KDQ-2E-mii" secondAttribute="trailing" id="VKF-zm-1dM"/>
+                            <constraint firstAttribute="trailing" secondItem="FJF-o7-Uxc" secondAttribute="trailing" constant="99" id="32Z-JR-a64"/>
+                            <constraint firstItem="FJF-o7-Uxc" firstAttribute="top" secondItem="vXs-Vg-fjB" secondAttribute="bottom" constant="35" id="O3D-PQ-jsG"/>
+                            <constraint firstItem="KDQ-2E-mii" firstAttribute="leading" secondItem="jfF-Gq-nub" secondAttribute="leading" constant="100" id="SRy-iA-OVR"/>
+                            <constraint firstItem="C8d-eK-hBh" firstAttribute="centerX" secondItem="2sx-c1-DDt" secondAttribute="centerX" id="Ytb-zU-AUm"/>
+                            <constraint firstItem="C8d-eK-hBh" firstAttribute="centerX" secondItem="jfF-Gq-nub" secondAttribute="centerX" id="h6L-VF-kRi"/>
                             <constraint firstItem="2sx-c1-DDt" firstAttribute="top" secondItem="PY9-GJ-fqg" secondAttribute="bottom" constant="31" id="hmk-DM-lP1"/>
-                            <constraint firstItem="FJF-o7-Uxc" firstAttribute="centerX" secondItem="jfF-Gq-nub" secondAttribute="centerX" id="jdU-NR-9pe"/>
-                            <constraint firstItem="vXs-Vg-fjB" firstAttribute="top" secondItem="KDQ-2E-mii" secondAttribute="bottom" constant="8" symbolic="YES" id="mYT-aP-FX9"/>
-                            <constraint firstItem="CRW-ln-Cni" firstAttribute="top" secondItem="C8d-eK-hBh" secondAttribute="bottom" constant="25" id="qTf-Db-2cn"/>
-                            <constraint firstItem="KDQ-2E-mii" firstAttribute="top" secondItem="CRW-ln-Cni" secondAttribute="bottom" constant="45" id="x5R-rG-SSt"/>
+                            <constraint firstItem="KDQ-2E-mii" firstAttribute="top" secondItem="C8d-eK-hBh" secondAttribute="bottom" constant="39" id="iVc-aa-f73"/>
+                            <constraint firstItem="vXs-Vg-fjB" firstAttribute="top" secondItem="KDQ-2E-mii" secondAttribute="bottom" constant="8" symbolic="YES" id="r4w-gM-KtD"/>
+                            <constraint firstItem="C8d-eK-hBh" firstAttribute="top" secondItem="2sx-c1-DDt" secondAttribute="bottom" constant="8" symbolic="YES" id="z6p-aa-R4I"/>
+                            <constraint firstItem="KDQ-2E-mii" firstAttribute="centerX" secondItem="vXs-Vg-fjB" secondAttribute="centerX" id="zA4-K0-9U8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="i6b-Z9-f2G"/>
+                    <navigationItem key="navigationItem" id="i6b-Z9-f2G">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="3YO-px-PNa">
+                            <connections>
+                                <action selector="logOutButtonTapped:" destination="7YX-YH-Ea9" id="dk0-X9-obh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="createGameButton" destination="KDQ-2E-mii" id="M5e-Gx-l5b"/>
                         <outlet property="joinGameButton" destination="vXs-Vg-fjB" id="oxI-Kw-IQK"/>
-                        <outlet property="logOutButton" destination="CRW-ln-Cni" id="A34-F4-e66"/>
+                        <outlet property="logOutButton" destination="3YO-px-PNa" id="e5A-Ce-QLx"/>
                         <segue destination="eGU-AY-flX" kind="push" identifier="ToInactiveGame" customClass="COVUnanimatedSegue" id="oLY-wd-06p"/>
                         <segue destination="nC7-Ma-fzX" kind="push" identifier="ToActiveGame" id="jWX-x7-T2b"/>
                     </connections>
