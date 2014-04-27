@@ -25,7 +25,7 @@
                                     @"blood_splatter_transparency_by_sagacious-d3h1yw6.png"]];
     [self.view addSubview:backgroundView];
     
-    // send image behind the text/storyboard stuff.
+    // Send image behind the text/storyboard stuff.
     [self.view sendSubviewToBack:backgroundView];
 }
 
@@ -43,11 +43,15 @@
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
                                            forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // set cells as semi-transparent.
+    // Set cells as semi-transparent.
     cell.backgroundColor = [UIColor colorWithWhite:0.2 alpha:0.3];
-    // set text as white
+    
+    // Set text as white, smaller text as light.
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.textColor = [UIColor lightTextColor];
+    
+    // Don't allow the cells to be highlighted.
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 @end

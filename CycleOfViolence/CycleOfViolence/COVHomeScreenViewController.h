@@ -20,8 +20,7 @@
 
 
 // Used to handle response to Log Out button.
-- (void)buttonTapped:(UIButton *)sender;
-
+- (IBAction)logOutButtonTapped:(id)sender;
 - (void)bringUpLogIn;
 - (void)logInViewController:(COVLogInViewController *)controller
                didLogInUser:(PFUser *)user;

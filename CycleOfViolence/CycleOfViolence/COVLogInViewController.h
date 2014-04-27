@@ -12,4 +12,9 @@
 
 @property (nonatomic, strong) UIImageView *fieldsBackground;
 
+// Method overrides from PFLogInViewController
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+
 @end

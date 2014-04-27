@@ -33,6 +33,7 @@
 {
     [super viewDidLoad];
     
+    // Get current target.
     [self refreshTarget];
     
 }

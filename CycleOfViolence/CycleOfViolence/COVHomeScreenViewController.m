@@ -11,7 +11,7 @@
 @interface COVHomeScreenViewController ()
 
 // This is a private property, the button on the storyboard we need to interact with.
-@property (weak, nonatomic) IBOutlet UIButton *logOutButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *logOutButton;
 @property (weak, nonatomic) IBOutlet UIButton *createGameButton;
 @property (weak, nonatomic) IBOutlet UIButton *joinGameButton;
 
@@ -81,8 +81,7 @@
     }
 }
 
-- (void)buttonTapped:(UIButton *)sender
-{
+- (IBAction)logOutButtonTapped:(id)sender {
     if (sender != self.logOutButton) {
         return;
     } else {

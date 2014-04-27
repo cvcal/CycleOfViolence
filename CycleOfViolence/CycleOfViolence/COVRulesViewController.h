@@ -12,8 +12,6 @@
 @interface COVRulesViewController : COVViewController
 
 // Method overrides from COVViewController and UIViewController
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
 
 @end

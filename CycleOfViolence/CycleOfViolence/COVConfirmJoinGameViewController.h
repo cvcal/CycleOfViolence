@@ -15,9 +15,7 @@
 @property COVGame *currentGame;
 
 // Method overrides from COVViewController and UIViewController
-- (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 
 // Own methods
