@@ -33,28 +33,7 @@
 {
     [super viewDidLoad];
     
-    // Get the current user and game.
-    PFUser *currentUser = [PFUser currentUser];
-    self.currentGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
-                                                    objectId:currentUser[@"currentGameID"]];
-    // Set the title to show the user.
-    NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currentUser.username];
-    [self.navBar setTitle:title];
-    
-    [self.currentGame refresh];
-    if (self.currentGame.playersRemaining > 1) {
-        // Get the target from the cycle in the user's current game.
-        PFUser *target = [self.currentGame getTarget:currentUser];
-        
-        // Set the view controller to display the current user and target.
-        self.targetDisplay.text = [NSString stringWithFormat:@"Your target is: %@",
-                                   target.username];
-    }
-    else {
-        self.targetDisplay.text = @"You're the last one alive. Congrats on winning!";
-        // Disable the 'I've been killed' button
-        [self.murderButton setEnabled:NO];
-    }
+    [self refreshTarget];
     
 }
 
@@ -111,7 +90,30 @@
         [self.murderButton setEnabled:YES];
     }
     else if (sender == self.refreshButton) {
-        [self viewDidLoad];
+        [self refreshTarget];
+    }
+}
+
+- (void)refreshTarget
+{
+    // Get the current user and game.
+    PFUser *currentUser = [PFUser currentUser];
+    self.currentGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+                                                   objectId:currentUser[@"currentGameID"]];
+    
+    [self.currentGame refresh];
+    if (self.currentGame.playersRemaining > 1) {
+        // Get the target from the cycle in the user's current game.
+        PFUser *target = [self.currentGame getTarget:currentUser];
+        
+        // Set the view controller to display the current user and target.
+        self.targetDisplay.text = [NSString stringWithFormat:@"Your target is: %@",
+                                   target[@"fullName"]];
+    }
+    else {
+        self.targetDisplay.text = @"You're the last one alive. Congrats on winning!";
+        // Disable the 'I've been killed' button
+        [self.murderButton setEnabled:NO];
     }
 }
 

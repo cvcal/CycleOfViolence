@@ -21,6 +21,7 @@
 
 // Own methods
 - (IBAction)buttonTapped:(id)sender;
+- (void)refreshTarget;
 
 
 @end
