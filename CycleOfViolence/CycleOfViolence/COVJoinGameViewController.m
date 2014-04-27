@@ -23,7 +23,7 @@
         self.textKey = @"name";
         
         // The title for this table in the Navigation Controller.
-        self.title = @"Games";
+        self.title = @"Available Games";
         
         self.pullToRefreshEnabled = YES;
         self.paginationEnabled = YES;

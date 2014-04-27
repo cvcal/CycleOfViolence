@@ -37,17 +37,6 @@
     [self.view sendSubviewToBack:backgroundView];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    // Add the name to the navigation bar. We need to do this in viewDidAppear
-    // so that we update the user when the modal login view is dismissed.
-    PFUser *currentUser = [PFUser currentUser];
-    NSString *userFirstName = [[currentUser[@"fullName"]
-                                componentsSeparatedByString:@" "] objectAtIndex:0];
-    NSString *title = [NSString stringWithFormat:@"Welcome, %@!", userFirstName];
-    [self.navigationItem setTitle:title];
-}
-
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
                                            forRowAtIndexPath:(NSIndexPath *)indexPath
 {

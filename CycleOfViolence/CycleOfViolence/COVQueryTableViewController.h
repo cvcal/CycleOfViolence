@@ -12,7 +12,6 @@
 
 // Method overrides from PFQueryTableViewController and UITableViewController
 - (void)viewDidLoad;
-- (void)viewDidAppear:(BOOL)animated;
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
         forRowAtIndexPath:(NSIndexPath *)indexPath;
 
