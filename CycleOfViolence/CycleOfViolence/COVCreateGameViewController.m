@@ -150,5 +150,12 @@
     [self.createButton setEnabled:YES];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // Dismiss the keyboard when the user hits return in a text field.
+    [self.view endEditing:YES];
+    return NO;
+}
+
 
 @end
