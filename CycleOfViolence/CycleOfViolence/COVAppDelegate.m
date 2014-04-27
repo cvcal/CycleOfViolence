@@ -18,7 +18,7 @@
                   clientKey:@"H8WAWNmWVPFKQCfQWwQBtrCQ6kswGOGW5d1HXPef"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    [[UIButton appearance] setTintColor: [UIColor blackColor]];
+    [[UIButton appearance] setTintColor: [UIColor lightTextColor]];
     
     // Add image for button appearance.
     UIImage *defaultButtonImage = [UIImage imageNamed:@"button.png"];
