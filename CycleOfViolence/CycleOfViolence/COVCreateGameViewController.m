@@ -39,7 +39,7 @@
     // Get current time
     NSDate *today = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM-dd-yyy HH:mm"];
+    [dateFormatter setDateFormat:@"MM-dd-yyyy HH:mm"];
     NSString *currentTime = [dateFormatter stringFromDate:today];
     
     // Default start time to current time.
@@ -88,21 +88,22 @@
                                   cancelButtonTitle:@"ok"
                                   otherButtonTitles:nil] show];
             } else {
-                COVGame *newGame = [COVGame alloc];
-                NSLog(@"Allocated COVGame");
-                newGame = [newGame initWithName:self.name.text]; // Use the name from the UITextField.
-                
-                NSString *defaultRules = @"Basic Rules: When the game starts, you will receive the name of one other player, your target. Your goal is to assassinate them by meeting the kill criterion, below. Meanwhile, someone else will be trying to assassinate you; if they succeed, you will report it and be removed from the game. You win by being the last one alive.\n\n";
-                newGame.rules = [defaultRules stringByAppendingString:self.rules.text];
-                
-                // Get date from date field
+                // Get date from date field so we can check if the game is valid.
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                 [dateFormatter setDateFormat:@"MM-dd-yyy HH:mm"];
                 [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
                 
-                newGame.startTime = [dateFormatter dateFromString:self.startDateField.text];
-                newGame.actualStartTime = [dateFormatter dateFromString:self.startDateField.text];
-                if (newGame.startTime != nil) {
+                NSDate *startDateFromInput = [dateFormatter dateFromString:self.startDateField.text];
+                
+                if (startDateFromInput != nil) {
+                    COVGame *newGame = [COVGame alloc];
+                    NSLog(@"Allocated COVGame");
+                    newGame = [newGame initWithName:self.name.text]; // Use the name from the UITextField.
+                    
+                    NSString *defaultRules = @"Basic Rules: When the game starts, you will receive the name of one other player, your target. Your goal is to assassinate them by meeting the kill criterion, below. Meanwhile, someone else will be trying to assassinate you; if they succeed, you will report it and be removed from the game. You win by being the last one alive.\n\n";
+                    newGame.rules = [defaultRules stringByAppendingString:self.rules.text];
+                    newGame.startTime = startDateFromInput;
+                    newGame.actualStartTime = startDateFromInput;
                     NSLog(@"Initialized COVGame");
                     
                     // Save the game.
