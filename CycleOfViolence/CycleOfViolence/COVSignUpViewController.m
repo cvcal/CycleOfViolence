@@ -44,7 +44,7 @@
     highlightedButtonImage = [defaultButtonImage
                               resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20.0, 0, 20.0)];
     
-    // Set the backgrounds for the signUp button. The latter background appears when the button is pressed.
+    // Set the backgrounds for the signUp button.
     [self.signUpView.signUpButton setBackgroundImage:defaultButtonImage
                                             forState:UIControlStateNormal];
     [self.signUpView.signUpButton setBackgroundImage:highlightedButtonImage
