@@ -109,14 +109,14 @@
                     [newGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                         if (succeeded) {
                             NSLog(@"Sucessfully saved in background.");
-                            PFUser *currUser = [PFUser currentUser];
+                            PFUser *creator = [PFUser currentUser];
                             // We have to do this here because the COVGame's
                             // objectId is null until it has been saved.
                             newGame[@"uniqueId"] = newGame.objectId;
-                            [newGame addPlayer:currUser];
+                            [newGame addPlayer:creator];
                             [newGame saveInBackground];
                             
-                            [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                            [creator saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                 // Now can proceed to home screen.
                                 [self performSegueWithIdentifier:@"toHomeScreenFromCreate" sender:self];
                             }];

@@ -34,17 +34,17 @@
     [super viewDidLoad];
     
     // Get the current user and game.
-    PFUser *currUser = [PFUser currentUser];
+    PFUser *currentUser = [PFUser currentUser];
     self.currentGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
-                                                    objectId:currUser[@"currentGameID"]];
+                                                    objectId:currentUser[@"currentGameID"]];
     // Set the title to show the user.
-    NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currUser.username];
+    NSString *title = [NSString stringWithFormat:@"Welcome, %@!", currentUser.username];
     [self.navBar setTitle:title];
     
     [self.currentGame refresh];
     if (self.currentGame.playersRemaining > 1) {
         // Get the target from the cycle in the user's current game.
-        PFUser *target = [self.currentGame getTarget:currUser];
+        PFUser *target = [self.currentGame getTarget:currentUser];
         
         // Set the view controller to display the current user and target.
         self.targetDisplay.text = [NSString stringWithFormat:@"Your target is: %@",
@@ -66,7 +66,7 @@
 
 - (IBAction)buttonTapped:(id)sender
 {
-    PFUser *currUser = [PFUser currentUser];
+    PFUser *currentUser = [PFUser currentUser];
     if (sender == self.suicideButton || sender == self.murderButton) {
         NSLog(@"leaveButton/murderButton tapped");
         // Disable buttons during operation
@@ -80,15 +80,15 @@
         }
         else {
             NSLog(@"User leaving game, hopefully.");
-            [self.currentGame removePlayer:currUser];
+            [self.currentGame removePlayer:currentUser];
             
             // Update Parse cloud storage
             [self.currentGame saveInBackground];
         }
         
         // Update the currentGameID in the User who left.
-        currUser[@"currentGameID"] = [NSNull null];
-        [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        currentUser[@"currentGameID"] = [NSNull null];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Sucessfully saved in background.");
                 

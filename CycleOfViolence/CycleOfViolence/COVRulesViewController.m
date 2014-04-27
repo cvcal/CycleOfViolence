@@ -30,10 +30,10 @@
     [super viewDidLoad];
     
     // Set the rules according to the correct game.
-    PFUser *currUser = [PFUser currentUser];
-    COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
-                                                    objectId:currUser[@"currentGameID"]];
-    self.rules.text = currGame.rules;
+    PFUser *currentUser = [PFUser currentUser];
+    COVGame *currentGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+                                                    objectId:currentUser[@"currentGameID"]];
+    self.rules.text = currentGame.rules;
 }
 
 - (void)didReceiveMemoryWarning

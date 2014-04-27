@@ -35,23 +35,23 @@
     [super viewDidLoad];
     
     // Get the current user and game.
-    PFUser *currUser = [PFUser currentUser];
-    COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
-                                                    objectId:currUser[@"currentGameID"]];
+    PFUser *currentUser = [PFUser currentUser];
+    COVGame *currentGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+                                                    objectId:currentUser[@"currentGameID"]];
     
     // Set the view controller to display the current game.
     self.targetDisplay.text = [NSString stringWithFormat:
                                @"You are in the game \"%@,\" which hasn't started yet.",
-                               currGame.name];
+                               currentGame.name];
     
     // Show the countdown until the game starts.
-    NSTimeInterval timeToStart = [currGame.startTime timeIntervalSinceNow];
+    NSTimeInterval timeToStart = [currentGame.startTime timeIntervalSinceNow];
     if (timeToStart <= 0) {
         self.countdown.text = @"Starting soon...";
     } else {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
-        NSString *date = [dateFormatter stringFromDate:currGame.startTime];
+        NSString *date = [dateFormatter stringFromDate:currentGame.startTime];
         self.countdown.text = [NSString stringWithFormat:@"Game starts %@",
                                date];
     }
@@ -59,13 +59,13 @@
     
     // Show the buttons selectively.
     // If we're the manager...
-    if ([currUser.objectId isEqualToString: currGame.gameManagerId]){
+    if ([currentUser.objectId isEqualToString: currentGame.gameManagerId]){
         [self.leaveButton setTitle:@"Delete Game" forState:UIControlStateNormal];
         // We cannot start the game until it's time.
         if (timeToStart > 0) {
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
-            NSString *date = [dateFormatter stringFromDate:currGame.startTime];
+            NSString *date = [dateFormatter stringFromDate:currentGame.startTime];
             self.countdown.text = [NSString stringWithFormat:@"May start %@",
                                    date];
             [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
@@ -89,9 +89,9 @@
 
 - (IBAction)buttonTapped:(id)sender
 {
-    PFUser *currUser = [PFUser currentUser];
-    COVGame *currGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
-                                                    objectId:currUser[@"currentGameID"]];
+    PFUser *currentUser = [PFUser currentUser];
+    COVGame *currentGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
+                                                    objectId:currentUser[@"currentGameID"]];
     
     if(sender == self.startButton) {
         // Start the game!
@@ -102,8 +102,8 @@
         [self.leaveButton setEnabled:NO];
         
         
-        [currGame startGame];
-        [currGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [currentGame startGame];
+        [currentGame saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Sucessfully saved in background.");
                 
@@ -133,25 +133,25 @@
         
         // This button either lets a user leave the game, or it deletes the game if
         // the user is the manager
-        if ([currUser.objectId isEqualToString: currGame.gameManagerId]) {
-            [currGame abortGame];
+        if ([currentUser.objectId isEqualToString: currentGame.gameManagerId]) {
+            [currentGame abortGame];
         }
         else {
-            [currGame removePlayer:currUser];
+            [currentGame removePlayer:currentUser];
             // If we abandon a game before it begins, we don't want it to show up
             // in our history.
-            [currUser[@"gameHistory"] removeObjectAtIndex:0];
+            [currentUser[@"gameHistory"] removeObjectAtIndex:0];
             
             // Game not yet started, so decrease total number of players.
-            --currGame.numberOfPlayers;
+            --currentGame.numberOfPlayers;
             
             // Update Parse cloud storage.
-            [currGame saveInBackground];
+            [currentGame saveInBackground];
         }
         
         // Update the currentGameID in the User who left, or the manager who deleted the game.
-        currUser[@"currentGameID"] = [NSNull null];
-        [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        currentUser[@"currentGameID"] = [NSNull null];
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Sucessfully saved in background.");
                 

@@ -65,12 +65,12 @@
         // Disable button during operation
         [self.joinGameButton setEnabled:NO];
         
-        PFUser *currUser = [PFUser currentUser];
-        [self.currentGame addPlayer:currUser]; // This method also saves the game.
+        PFUser *currentUser = [PFUser currentUser];
+        [self.currentGame addPlayer:currentUser]; // This method also saves the game.
         
         // Save the game and manually return to the home screen when finished.
         [self.currentGame saveInBackground];
-        [currUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Sucessfully saved in background.");
                 
