@@ -44,6 +44,10 @@
     // Set the backgrounds for the signUp button. The latter background appears when the button is pressed.
     [self.signUpView.signUpButton setBackgroundImage:defaultButtonImage forState:UIControlStateNormal];
     [self.signUpView.signUpButton setBackgroundImage:highlightedButtonImage forState:UIControlStateHighlighted];
+    [self.signUpView.dismissButton setBackgroundImage:[UIImage imageNamed:@"clearButton.png"]
+        forState:UIControlStateNormal];
+    [self.signUpView.dismissButton setBackgroundImage:[UIImage imageNamed:@"clearButton.png"]
+        forState:UIControlStateNormal];
     
     // Rename the textfields and and change the text color to white, background color to black
     self.signUpView.usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Email" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
