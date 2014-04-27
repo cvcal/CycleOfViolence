@@ -22,7 +22,8 @@
     
     // Add image for button appearance.
     UIImage *defaultButtonImage = [UIImage imageNamed:@"button.png"];
-    defaultButtonImage = [defaultButtonImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20.0, 0, 20.0)];
+    defaultButtonImage = [defaultButtonImage
+                          resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20.0, 0, 20.0)];
     [[UIButton appearance] setBackgroundImage:defaultButtonImage forState:UIControlStateNormal];
         
     // Make Parse recognized COVGame as a real subclass of PFObject.
