@@ -1,9 +1,9 @@
 //
 //  COVJoinGameViewController.m
-//  ParseStarterProject
+//  CycleOfViolence
 //
 //  Created by James Yu on 12/29/11.
-// Adapted by John Phillpot and Reyna Hulett 2/27/2014.
+//  Adapted by John Phillpot and Reyna Hulett 2/27/2014.
 //
 
 #import "COVJoinGameViewController.h"
