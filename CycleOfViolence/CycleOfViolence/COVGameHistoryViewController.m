@@ -53,7 +53,7 @@
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
     
-    [query orderByDescending:@"startTime"];
+    [query orderByDescending:@"actualStartTime"];
     
     PFUser *currentUser = [PFUser currentUser];
     
@@ -89,9 +89,7 @@
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd 'at' HH:mm"];
-    
-    //NSString *startTime = [dateFormatter stringFromDate:((COVGame *)object).startTime];
-    NSString *startTime = [dateFormatter stringFromDate:[object objectForKey:@"startTime"]];
+    NSString *startTime = [dateFormatter stringFromDate:[object objectForKey:@"actualStartTime"]];
     
     cell.detailTextLabel.numberOfLines = 4;
     cell.detailTextLabel.text = [NSString stringWithFormat:

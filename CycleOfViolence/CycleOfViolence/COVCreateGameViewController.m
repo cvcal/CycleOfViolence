@@ -101,6 +101,7 @@
                 [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
                 
                 newGame.startTime = [dateFormatter dateFromString:self.startDateField.text];
+                newGame.actualStartTime = [dateFormatter dateFromString:self.startDateField.text];
                 if (newGame.startTime != nil) {
                     NSLog(@"Initialized COVGame");
                     

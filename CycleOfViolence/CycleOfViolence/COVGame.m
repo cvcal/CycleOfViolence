@@ -20,6 +20,7 @@
 @dynamic state;
 @dynamic rules;
 @dynamic startTime;
+@dynamic actualStartTime;
 @dynamic winnerName;
 @dynamic managerName;
 @dynamic uniqueId;
@@ -81,6 +82,7 @@
 - (void)startGame
 {
     self.state = inProgress;
+    self.actualStartTime = [NSDate date];
 }
 
 - (void)abortGame
