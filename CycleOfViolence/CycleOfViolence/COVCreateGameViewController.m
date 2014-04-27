@@ -135,11 +135,20 @@
                     if (succeeded){
                         [self performSegueWithIdentifier:@"toHomeScreenFromCreate"
                                                   sender:self];
+                    } else {
+                        NSLog(@"Failed to save user in background.");
+                        [[[UIAlertView alloc] initWithTitle:@"Cloud save failed"
+                                                    message:@"Please try again some other time."
+                                                   delegate:nil
+                                          cancelButtonTitle:@"ok"
+                                          otherButtonTitles:nil] show];
+                        // re-enable create button during operation
+                        [self.createButton setEnabled:YES];
                     }
                 }];
                 
             } else {
-                NSLog(@"Failed to save in background.");
+                NSLog(@"Failed to save game in background.");
                 [[[UIAlertView alloc] initWithTitle:@"Cloud save failed"
                                             message:@"Please try again some other time."
                                            delegate:nil
