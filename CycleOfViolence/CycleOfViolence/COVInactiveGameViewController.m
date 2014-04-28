@@ -71,7 +71,7 @@
             [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
             [self.startButton setEnabled:NO];
         } else {
-            self.countdown.text = @"Hey manager! Please start the game";
+            self.countdown.text = @"Hey manager! Please start the game.";
             [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
             [self.startButton setEnabled:YES];
         }
@@ -91,12 +91,12 @@
 {
     PFUser *currentUser = [PFUser currentUser];
     COVGame *currentGame = (COVGame *)[PFQuery getObjectOfClass:@"COVGame"
-                                                    objectId:currentUser[@"currentGameID"]];
+                                                       objectId:currentUser[@"currentGameID"]];
     
     if(sender == self.startButton) {
         // Start the game!
         NSLog(@"startButton tapped");
-        
+    
         // Disable buttons during operation
         [self.startButton setEnabled:NO];
         [self.leaveButton setEnabled:NO];
