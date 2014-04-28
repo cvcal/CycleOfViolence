@@ -165,6 +165,7 @@
     // Nothing else to do. Actions handled in prepareForSegue.
 }
 
+// Allows other views to refer users back to home screen before logging them out.
 - (IBAction)unwindAndLogOut:(UIStoryboardSegue *)segue
 {
     [PFUser logOut];

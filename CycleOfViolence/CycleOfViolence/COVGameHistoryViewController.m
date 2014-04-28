@@ -80,7 +80,7 @@
                                       reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell
+    // Retrieve and present the game name, winner, manager name, actual start date, and status.
     cell.textLabel.text = [object objectForKey:@"name"];
     
     NSString *status = [((COVGame*) object) getStatusAsString];
@@ -99,23 +99,6 @@
                                  manager,
                                  startTime];
     return cell;
-}
-
-#pragma mark - Table view data source
-
-#pragma mark - Table view delegate
-
-// Segue to the ConfirmJoinGameViewController upon selecting a row.
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    
-}
-
-// Allow COVJoinGameViewController to be unwound to.
--(IBAction)unwindToJoinGame:(UIStoryboardSegue *)segue
-{
-    // Nothing to do.
 }
 
 @end

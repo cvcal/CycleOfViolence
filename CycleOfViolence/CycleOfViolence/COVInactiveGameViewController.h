@@ -13,6 +13,8 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)viewDidLoad;
+
+// Handle various button presses.
 - (IBAction)buttonTapped:(id)sender;
 
 @end

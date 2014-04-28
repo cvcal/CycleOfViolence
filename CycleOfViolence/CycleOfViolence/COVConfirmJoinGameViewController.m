@@ -27,6 +27,7 @@
     self.gameInfo.text = [NSString stringWithFormat:@"Game name: %@\n",
                           self.currentGame.name];
     
+    // Calculate time left to game start.
     NSTimeInterval timeToStart = [self.currentGame.startTime timeIntervalSinceNow];
     if (timeToStart <= 0) {
         self.countdown.text = @"Starting soon...";
@@ -46,19 +47,20 @@
 {
     if (sender == self.joinGameButton) {
         NSLog(@"Called prepareForSegue from Join Game button.");
-        // Disable button during operation
+        // Disable button during operation (so that users cannot press it more than once).
         [self.joinGameButton setEnabled:NO];
         
         PFUser *currentUser = [PFUser currentUser];
-        [self.currentGame addPlayer:currentUser]; // This method also saves the game.
+        [self.currentGame addPlayer:currentUser];
         
-        // Save the game and manually return to the home screen when finished.
+        // Save the game and manually and return to the home screen when finished.
         [self.currentGame saveInBackground];
         [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"Sucessfully saved in background.");
                 
                 // Since user is now in the game, return them to the home screen.
+                // (The homescreen redirects users appropriately based on their game status.)
                 [self performSegueWithIdentifier:@"toHomeScreenFromConfirm" sender:self];
                 
             } else {
@@ -76,12 +78,6 @@
     } else {
         return;
     }
-}
-
-// Add the user to the game if they selected Join Game.
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    NSLog(@"Called prepareForSegue.");
 }
 
 @end

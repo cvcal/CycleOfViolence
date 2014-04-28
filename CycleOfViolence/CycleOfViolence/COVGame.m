@@ -76,7 +76,7 @@
     // Make the game the latest in the player's history.
     [newPlayer[@"gameHistory"] insertObject:self.objectId atIndex:0];
     
-    // The calling function should update Parse cloud storage
+    // The calling function should update Parse cloud storage.
 }
 
 - (void)startGame

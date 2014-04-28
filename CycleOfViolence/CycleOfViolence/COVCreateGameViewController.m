@@ -40,7 +40,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    // This is useful so that the scroll view actually scrolls to the bottom.
+    // Make the rules scroll view actually scrolls to the bottom.
     [self.scrollView setContentSize:CGSizeMake(320, 808)];
 }
 
@@ -51,17 +51,17 @@
     if (sender == self.createButton) {
         // Let us know how we got here.
         NSLog(@"Called buttonTapped via createButton");
-        // Disable create button during operation
+        // Disable create button during operation.
         [self.createButton setEnabled:NO];
         
-        // Check
+        // Make sure the game has a non-empty name.
         if ([self.name.text isEqualToString: @""]) {
             [[[UIAlertView alloc] initWithTitle:@"Missing Game Name"
                                         message:@"Please include a name for your game."
                                        delegate:nil
                               cancelButtonTitle:@"ok"
                               otherButtonTitles:nil] show];
-            // re-enable create button during operation
+            // Re-enable create button during operation
             [self.createButton setEnabled:YES];
             
             return;
@@ -83,7 +83,7 @@
                                        delegate:nil
                               cancelButtonTitle:@"ok"
                               otherButtonTitles:nil] show];
-            // re-enable create button during operation
+            // Re-enable create button during operation.
             [self.createButton setEnabled:YES];
             return;
         }
@@ -103,7 +103,7 @@
               delegate:nil
               cancelButtonTitle:@"ok"
               otherButtonTitles:nil] show];
-            // re-enable create button during operation
+            // Re-enable create button during operation
             [self.createButton setEnabled:YES];
             return;
         }
@@ -142,7 +142,7 @@
                                                    delegate:nil
                                           cancelButtonTitle:@"ok"
                                           otherButtonTitles:nil] show];
-                        // re-enable create button during operation
+                        // Re-enable create button during operation
                         [self.createButton setEnabled:YES];
                     }
                 }];
@@ -154,7 +154,7 @@
                                            delegate:nil
                                   cancelButtonTitle:@"ok"
                                   otherButtonTitles:nil] show];
-                // re-enable create button during operation
+                // Re-enable create button during operation
                 [self.createButton setEnabled:YES];
             }
         }];

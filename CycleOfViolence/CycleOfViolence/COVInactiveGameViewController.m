@@ -71,7 +71,7 @@
             [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
             [self.startButton setEnabled:NO];
         } else {
-            self.countdown.text = @"Hey manager! Please start the game.";
+            self.countdown.text = @"Hey manager! Start the game!";
             [self.startButton setTitle:@"Start Game" forState:UIControlStateNormal];
             [self.startButton setEnabled:YES];
         }
@@ -120,7 +120,7 @@
             }
         }];
         
-        // ReEnable button if operation failed
+        // Re-enable button if operation failed
         [self.startButton setEnabled:YES];
         [self.leaveButton setEnabled:YES];
     }

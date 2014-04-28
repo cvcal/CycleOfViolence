@@ -22,7 +22,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 
-// Unwind Methods
+// Need to be able to unwind from COVConfirmJoinGameViewController
 - (IBAction)unwindToJoinGame:(UIStoryboardSegue *)segue;
 
 @end

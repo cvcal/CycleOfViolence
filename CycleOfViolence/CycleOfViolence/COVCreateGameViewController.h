@@ -16,6 +16,7 @@
 
 // Own methods
 - (IBAction)buttonTapped:(id)sender;
+
 // Called when return is pressed in one of the text fields.
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 

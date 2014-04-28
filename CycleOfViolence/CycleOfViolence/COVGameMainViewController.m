@@ -62,7 +62,7 @@
             NSLog(@"User leaving game, hopefully.");
             [self.currentGame removePlayer:currentUser];
             
-            // Update Parse cloud storage
+            // Update Parse cloud storage.
             [self.currentGame saveInBackground];
         }
         
@@ -113,7 +113,7 @@
     }
     else {
         self.targetDisplay.text = @"You're the last one alive. Congrats on winning!";
-        // Disable the 'I've been killed' button
+        // Disable the 'I've been killed' button.
         [self.murderButton setEnabled:NO];
     }
 }
